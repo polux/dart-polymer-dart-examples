@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+  </head>
+ 
+  <body>
+    <p>
+      The below will appear and disappear as a model object is
+      bound and unbound from the template. Conditionals are implemented
+      simply as "this template appears if something is bound" and
+      "this template disappears if nothing is bound".
+    </p>
+    
+    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=11983 -->
+
+    <template id="tmpl" bind>
+      <p>Hello {{msg}}</p>
+    </template>
+    
+    <script type="application/dart" src="index.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
