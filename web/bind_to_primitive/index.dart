@@ -8,6 +8,5 @@ class Message {
 main() {
   mdv.initialize();
   
-  var message = new Message()..msg = 'world';
-  query('#tmpl').model = message;
+  query('#tmpl').model = 'world';
 }
