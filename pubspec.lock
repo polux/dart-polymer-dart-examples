@@ -17,6 +17,10 @@ packages:
     description: csslib
     source: hosted
     version: "0.4.7+10"
+  fancy_syntax:
+    description: fancy_syntax
+    source: hosted
+    version: "0.0.3"
   html5lib:
     description: html5lib
     source: hosted

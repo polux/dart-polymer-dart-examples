@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+  </head>
+ 
+  <body>   
+    <template id="tmpl" bind>
+      <p>Hello {{name}}</p>
+      <template bind="{{address}}">
+        <p>You live in {{city}} {{zip}}</p>
+      </template>
+    </template>
+    
+    <!-- Or... -->
+      
+    <template id="tmpl2" bind>
+      <p>Hello {{name}}</p>
+      <p>You live in {{address.city}} {{address.zip}}</p>
+    </template>
+    
+    <script type="application/dart" src="index.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
