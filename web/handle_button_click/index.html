@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+  </head>
+ 
+  <body>
+    
+    <element name="my-element" extends="div">
+      <template>
+        <p>
+          <button on-click="showMessage">Show Message</button>
+          <button on-click="hideMessage">Hide Message</button>
+        </p>
+        
+        <p id="show" style="display:none">
+          You clicked Show.
+        </p>
+        
+        <p id="hide" style="display:none">
+          You clicked Hide.
+        </p>
+      </template>
+      
+      <script type="application/dart">
+        import 'package:polymer/polymer.dart';
+        import 'dart:html';
+        
+        class MyElement extends PolymerElement {
+          
+          void showMessage(Event e, var detail, Node target) {
+            shadowRoot.query('#show').style.display = 'inline';
+            shadowRoot.query('#hide').style.display = 'none';
+          }
+          
+          void hideMessage(Event e, var detail, Node target) {
+            shadowRoot.query('#show').style.display = 'none';
+            shadowRoot.query('#hide').style.display = 'inline';
+          }
+        }
+        
+      </script>
+    </element>
+    
+    <my-element></my-element>
+    
+    <script type="application/dart" src="index.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
