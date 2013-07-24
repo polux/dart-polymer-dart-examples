@@ -19,6 +19,19 @@
       <p>Hello {{msg}}</p>
     </template>
     
+    <!-- or... -->
+    
+    <p>
+      The below will appear and disappear if the conditional value
+      is true or false.
+    </p>
+    
+    <!-- because we are binding a boolean directly as the model,
+         there's no further path for the {{ and }} -->
+    <template id="tmpl2" bind if="{{ }}">
+      <p>Activated!</p>
+    </template>
+    
     <script type="application/dart" src="index.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </body>

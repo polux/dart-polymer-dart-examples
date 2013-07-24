@@ -9,14 +9,17 @@ class Message {
 main() {
   mdv.initialize();
   
-  var message = new Message()..msg = 'world';
-  var template = query('#tmpl');
+  Message message = new Message()..msg = 'world';
+  TemplateElement template = query('#tmpl');
+  TemplateElement ifTemplate = query('#tmpl2');
   
   new Timer.periodic(const Duration(seconds: 1), (_) {
     if (template.model != null) {
       template.model = null;
+      ifTemplate.model = false;
     } else {
       template.model = message;
+      ifTemplate.model = true;
     }
   });
   
