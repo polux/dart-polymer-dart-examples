@@ -14,3 +14,8 @@ General notes:
 * Use `<polymer-element>` instead of `<element>`
 
 * Declarative event binding requires custom elements.
+
+* If you use an `if` attribute on your template, the `bind` attribute
+  is optional.
+  
+* Go through `shadowRoot` to find nodes inside of your custom element.

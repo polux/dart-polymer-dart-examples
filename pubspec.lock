@@ -20,7 +20,7 @@ packages:
   fancy_syntax:
     description: fancy_syntax
     source: hosted
-    version: "0.0.4"
+    version: "0.0.1"
   html5lib:
     description: html5lib
     source: hosted
@@ -33,6 +33,10 @@ packages:
     description: mdv
     source: hosted
     version: "0.6.9+2"
+  mdv_observe:
+    description: mdv_observe
+    source: hosted
+    version: "0.6.1"
   meta:
     description: meta
     source: hosted

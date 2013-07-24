@@ -30,6 +30,9 @@
         class MyElement extends PolymerElement {
           
           void showMessage(Event e, var detail, Node target) {
+          
+            // shadowRoot is the root of the internals of the custom element
+            
             shadowRoot.query('#show').style.display = 'inline';
             shadowRoot.query('#hide').style.display = 'none';
           }
