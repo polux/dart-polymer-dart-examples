@@ -2,30 +2,21 @@
 <!-- This file was auto-generated from index.html. -->
 <html><head><style>template { display: none; }</style>
     <title>index</title>
+    <!-- you have to import the HTML file that contains the custom element -->
+    
   </head>
  
-  <body>
-    
-    <element name="my-element" extends="div">
+  <body><polymer-element name="my-element" extends="div">
       <template>
-        <p>
-          <button on-click="showMessage">Show Message</button>
-          <button on-click="hideMessage">Hide Message</button>
-        </p>
-        
-        <p id="show" style="display:none">
-          You clicked Show.
-        </p>
-        
-        <p id="hide" style="display:none">
-          You clicked Hide.
-        </p>
+        <p>Hello from inside of a custom element!</p>
       </template>
       
       
-    </element>
+    </polymer-element>
+
     
-    <my-element></my-element>
+    <!-- custom elements must have a - in their name -->
+    <div is="my-element"></div>
     
     
     <script src="../packages/browser/dart.js"></script>
