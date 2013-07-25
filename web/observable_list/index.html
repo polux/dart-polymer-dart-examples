@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+  </head>
+ 
+  <body>   
+    <ul>
+      <!-- the bind attribute is optional if repeat exists -->
+      <template id="tmpl" repeat>
+        <li>{{}}</li> <!-- the empty {{}} essentially calls toString on the
+                           current iteration object -->
+      </template>
+    </ul>
+    
+    <script type="application/dart" src="index.dart"></script>
+    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

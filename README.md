@@ -19,3 +19,6 @@ General notes:
   is optional.
   
 * Go through `shadowRoot` to find nodes inside of your custom element.
+
+* `@observable` doesn't really work right now. Use the manual
+  `notifyPropertyChange` from `ObservableMixin`
