@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- This file was auto-generated from index.html. -->
+<html><head><style>template { display: none; }</style>
+    <title>index</title>
+    
+  <link rel="stylesheet" type="text/css" href="index.html.css"></head>
+ 
+  <body><polymer-element name="my-element" extends="div">
+    
+    <template>
+        <div id="message">
+            Polymer.dart is fun!
+        </div>
+        <div class="important">
+            Always update your SDK.
+        </div>
+        <p>
+            Ask your questions on Stack Overflow. Thanks!
+        </p>
+    </template>
+  </polymer-element>
+   
+    <div is="my-element"></div>
+
+    <p>
+        This p should not be styled.
+    </p>
+
+    <p class="important">
+        This should not be styled.
+    </p>
+
+    <p id="message">
+        This should not be styled.
+    </p>
+
+    
+    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+    <script src="../packages/browser/dart.js"></script>
+  
+
+<script type="text/javascript" src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script type="application/dart" src="index.html_bootstrap.dart"></script></body></html>
