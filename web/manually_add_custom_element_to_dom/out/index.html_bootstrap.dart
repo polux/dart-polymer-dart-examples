@@ -4,7 +4,7 @@ import 'package:polymer/polymer.dart' as polymer;
 
 import 'index.dart' as userMain;
 
-import 'my_element.html.dart';
+import 'my_element.dart';
 
 void main() {
   userMain.main();
