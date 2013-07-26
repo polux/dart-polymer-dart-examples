@@ -2,41 +2,45 @@
 <!-- This file was auto-generated from index.html. -->
 <html><head><style>template { display: none; }</style>
     <title>index</title>
-  <link rel="stylesheet" type="text/css" href="index.html.css"></head>
- 
-  <body><polymer-element name="my-test" extends="div">
-          <template>
-              
-              <p>Inside element, should be red</p>
+<link rel="stylesheet" type="text/css" href="index.html.css"></head>
 
-              <div id="message">
-                  The message should be pink
-              </div>
+<body><polymer-element name="my-test" extends="div">
+        <template>
+            
+            <p>Inside element, should be red</p>
 
-              <div class="important">
-                  Important is green
-              </div>
-          </template>
-      </polymer-element>
+            <div id="message">
+                The message should be pink
+            </div>
 
-      
+            <div class="important">
+                Important is green
+            </div>
+        </template>
+    </polymer-element>
 
-      <p>outside of element, should be black</p>
 
-      <div id="message">
-          The outside message should be black
-      </div>
+    <!-- XXX polymer.dart currently has a bug, this sample does not work.
+         check out https://code.google.com/p/dart/issues/detail?id=12051 -->
 
-      <div class="important">
-          Outside important is black
-      </div>
+    
 
-      <div is="my-test"></div>
+    <p>outside of element, should be black</p>
+
+    <div id="message">
+        The outside message should be black
+    </div>
+
+    <div class="important">
+        Outside important is black
+    </div>
+
+    <div is="my-test"></div>
 
     
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
     <script src="../packages/browser/dart.js"></script>
-  
+
 
 <script type="text/javascript" src="packages/shadow_dom/shadow_dom.debug.js"></script>
 <script type="application/dart" src="index.html_bootstrap.dart"></script></body></html>

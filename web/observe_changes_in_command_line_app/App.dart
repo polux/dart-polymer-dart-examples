@@ -37,4 +37,9 @@ main() {
 
     print(fieldValue);
   });
+
+  // Or... if you want easier access to the new value
+
+  new PathObserver(app, 'counter')
+      ..bindSync((newValue) => print('counter changed to $newValue'));
 }
