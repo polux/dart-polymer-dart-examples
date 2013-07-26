@@ -2,15 +2,15 @@
 /* DO NOT EDIT. */
 
 /* ==================================================== 
-   Component my-element stylesheet 
+   Component my-test stylesheet 
    ==================================================== */
 p {
-  color: #008000;
-}
-#message {
   color: #f00;
 }
-.important {
+#message {
   color: #ffc0cb;
+}
+.important {
+  color: #008000;
 }
 

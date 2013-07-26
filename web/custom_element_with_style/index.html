@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+<head>
     <title>index</title>
-    <link rel="import" href="my_element.html">
-  </head>
- 
-  <body>   
-    <my-element></my-element>
+</head>
 
-    <p>
-        This p should not be styled.
-    </p>
+<body>
 
-    <p class="important">
-        This should not be styled.
-    </p>
+    <!-- XXX polymer.dart currently has a bug, this sample does not work.
+         check out https://code.google.com/p/dart/issues/detail?id=12051 -->
 
-    <p id="message">
-        This should not be styled.
-    </p>
+    <polymer-element name="my-test" extends="div">
+        <template>
+            <style>
+                p {
+                    color: red;
+                }
 
-    <script type="application/dart" src="index.dart"></script>
+                #message {
+                    color: pink;
+                }
+
+                .important {
+                    color: green;
+                }
+            </style>
+            <p>Inside element, should be red</p>
+
+            <div id="message">
+                The message should be pink
+            </div>
+
+            <div class="important">
+                Important is green
+            </div>
+        </template>
+    </polymer-element>
+
+    <p>outside of element, should be black</p>
+
+    <div id="message">
+        The outside message should be black
+    </div>
+
+    <div class="important">
+        Outside important is black
+    </div>
+
+    <my-test></my-test>
+
+    <script type="application/dart">main() {}</script>
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
     <script src="packages/browser/dart.js"></script>
-  </body>
+</body>
 </html>

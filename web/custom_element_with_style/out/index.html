@@ -2,37 +2,36 @@
 <!-- This file was auto-generated from index.html. -->
 <html><head><style>template { display: none; }</style>
     <title>index</title>
-    
   <link rel="stylesheet" type="text/css" href="index.html.css"></head>
  
-  <body><polymer-element name="my-element" extends="div">
-    
-    <template>
-        <div id="message">
-            Polymer.dart is fun!
-        </div>
-        <div class="important">
-            Always update your SDK.
-        </div>
-        <p>
-            Ask your questions on Stack Overflow. Thanks!
-        </p>
-    </template>
-  </polymer-element>
-   
-    <div is="my-element"></div>
+  <body><polymer-element name="my-test" extends="div">
+          <template>
+              
+              <p>Inside element, should be red</p>
 
-    <p>
-        This p should not be styled.
-    </p>
+              <div id="message">
+                  The message should be pink
+              </div>
 
-    <p class="important">
-        This should not be styled.
-    </p>
+              <div class="important">
+                  Important is green
+              </div>
+          </template>
+      </polymer-element>
 
-    <p id="message">
-        This should not be styled.
-    </p>
+      
+
+      <p>outside of element, should be black</p>
+
+      <div id="message">
+          The outside message should be black
+      </div>
+
+      <div class="important">
+          Outside important is black
+      </div>
+
+      <div is="my-test"></div>
 
     
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
