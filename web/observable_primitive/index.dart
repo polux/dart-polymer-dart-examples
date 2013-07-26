@@ -15,8 +15,7 @@ class App extends Object with ObservableMixin {
   int get counter => _counter;
   void set counter(int c) {
     int oldValue = _counter;
-    _counter = c;
-    notifyPropertyChange(const Symbol('counter'), oldValue, _counter);
+    _counter = notifyPropertyChange(const Symbol('counter'), _counter, c);
   }
 }
 

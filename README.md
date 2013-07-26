@@ -22,3 +22,6 @@ General notes:
 
 * `@observable` doesn't really work right now. Use the manual
   `notifyPropertyChange` from `ObservableMixin`
+
+* When manually observing an object, the ChangeRecord only has the field name.
+  Not the old and new value. You have to use mirrors.
