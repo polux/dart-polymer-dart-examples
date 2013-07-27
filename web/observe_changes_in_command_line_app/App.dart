@@ -22,8 +22,8 @@ main() {
     app.counter++;
   });
 
-  app.changes.listen((List<ChangeRecord> records) {
-    ChangeRecord record = records[0];
+  app.changes.listen((List<PropertyChangeRecord> records) {
+    PropertyChangeRecord record = records[0];
 
     // XXX any way to get before and after values?
     // Quick look: no. Have to go through mirrors.
