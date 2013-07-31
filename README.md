@@ -26,6 +26,8 @@ Binding, conditionals:
 * If you use custom elements, you should include packages/polymer/boot.js
   and *NOT* dart.js
   
+* Custom tag classes now need @CustomTag('element-name')
+  
 ## Known issues:
 
 conditional_templates:

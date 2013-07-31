@@ -13,5 +13,6 @@ main() {
     timestamps.add(new DateTime.now());
     
     // Why isn't Observable.dirtyCheck() required here?
+    // Apparently, ObservableList does its own change notifications.
   });
 }
