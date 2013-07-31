@@ -9,8 +9,6 @@ Binding, conditionals:
 
 ## General notes:
 
-* Custom elements still require a build (as of 2013-07-23).
-
 * Use `<polymer-element>` instead of `<element>`
 
 * Declarative event binding requires custom elements.
@@ -20,11 +18,13 @@ Binding, conditionals:
   
 * Go through `shadowRoot` to find nodes inside of your custom element.
 
-* `@observable` doesn't really work right now. Use the manual
-  `notifyPropertyChange` from `ObservableMixin`
-
 * When manually observing an object, the ChangeRecord only has the field name.
   Not the old and new value. You have to use mirrors.
+  
+* Custom element classes now require @CustomTag("my-element")
+
+* If you use custom elements, you should include packages/polymer/boot.js
+  and *NOT* dart.js
   
 ## Known issues:
 

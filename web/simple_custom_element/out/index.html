@@ -4,6 +4,10 @@
     <title>index</title>
     <!-- you have to import the HTML file that contains the custom element -->
     
+    
+    <!-- This is the bootstrap script for polymer. Do NOT use this with
+         dart.js -->
+    
   </head>
  
   <body><polymer-element name="my-element" extends="div">
@@ -15,11 +19,11 @@
     </polymer-element>
 
     
-    <!-- custom elements must have a - in their name -->
+    <!-- you must close custom elements -->
     <div is="my-element"></div>
     
     
-    <script src="../packages/browser/dart.js"></script>
   
 <script type="text/javascript" src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script type="text/javascript" src="packages/browser/dart.js"></script>
 <script type="application/dart" src="index.html_bootstrap.dart"></script></body></html>
