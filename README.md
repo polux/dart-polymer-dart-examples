@@ -1,6 +1,7 @@
 # Polymer.dart Samples and Examples
 
-In which I learn all about polymer.dart.
+In which I learn all about polymer.dart. Discuss polymer.dart at
+web-ui@dartlang.org mailing list. Ask question on Stack Overflow.
 
 Docs that I found useful:
 
@@ -26,15 +27,26 @@ Binding, conditionals:
 * If you use custom elements, you should include packages/polymer/boot.js
   and *NOT* dart.js
   
-* Custom tag classes now need @CustomTag('element-name')
+* Custom tag classes now need @CustomTag('element-name'). There's another
+  way, but to limit confusion, I won't mention it here. :)
+  
+* The constructor attribute on <polymer-element> is no longer used.
   
 ## Known issues:
 
 conditional_templates:
-https://code.google.com/p/dart/issues/detail?id=11983
+https://code.google.com/p/dart/issues/detail?id=11983 but this could be
+my misunderstanding.
 
 bind_to_a_map:
 Keys must be Symbols. https://code.google.com/p/dart/issues/detail?id=11980
 
 custom_element_with_style:
 https://code.google.com/p/dart/issues/detail?id=12051
+
+manually_add_custom_element_to_dom:
+https://code.google.com/p/dart/issues/detail?id=12089
+
+handle_button_click:
+https://code.google.com/p/dart/issues/detail?id=12152 but maybe I did
+something wrong.
