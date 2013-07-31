@@ -46,7 +46,3 @@ https://code.google.com/p/dart/issues/detail?id=12051
 
 manually_add_custom_element_to_dom:
 https://code.google.com/p/dart/issues/detail?id=12089
-
-handle_button_click:
-https://code.google.com/p/dart/issues/detail?id=12152 but maybe I did
-something wrong.
