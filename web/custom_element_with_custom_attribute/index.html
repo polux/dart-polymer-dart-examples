@@ -6,13 +6,14 @@
   </head>
  
   <body>
-    
-    <ul>
-      <!-- the empty {{ }} means "bind to the current object itself -->
-      <template id="tmpl" repeat>
-        <li>{{}}</li>
-      </template>
-    </ul>
+    <!-- XXX IN PROGRESS - DOES NOT WORK YET -->
+
+    <polymer-element name="my-element" extends="div">
+      <template>
+        <h1>Hello from the custom element</h1>
+      </template>  
+      
+    </polymer-element>
     
     <script type="application/dart" src="index.dart"></script>
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->

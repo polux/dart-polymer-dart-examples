@@ -3,23 +3,17 @@ import 'dart:mirrors';
 import 'package:observe/observe.dart';
 
 class App extends Object with ObservableMixin {
-  // XXX soon, I can use:
-  // @observable int counter = 0;
-
-  int _counter = 0;
-
-  void set counter(int _c) {
-    int oldValue = _counter;
-    _counter = notifyPropertyChange(const Symbol('counter'), _counter, _c);
-  }
-
-  int get counter => _counter;
+  @observable
+  int counter = 0;
 }
 
 main() {
   App app = new App();
   new Timer.periodic(const Duration(seconds: 1), (t) {
     app.counter++;
+    
+    // Required.
+    Observable.dirtyCheck();
   });
 
   app.changes.listen((List<PropertyChangeRecord> records) {

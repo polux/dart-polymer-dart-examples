@@ -11,5 +11,7 @@ main() {
 
   new Timer.periodic(const Duration(seconds: 1), (_) {
     timestamps.add(new DateTime.now());
+    
+    // Why isn't Observable.dirtyCheck() required here?
   });
 }
