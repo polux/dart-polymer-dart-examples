@@ -37,7 +37,17 @@ Binding, conditionals:
 ## Questions
 
 * Can I have a custom element _without_ a Dart class, and still use boot.js?
-  See custom_element_with_style
+  See custom_element_with_style. When I tried, the custom element didn't
+  show up in the page (probably because nothing registered it?)
+  
+* How do we set a custom attribute with a literal? e.g. foo="11" ?
+
+* How to set FancySyntax now? TemplateElement.syntax doesn't exit.
+  Do we need to update FancySyntax's README ?
+  
+* Why do I need to manually repeatedly call dirtyCheck()
+  when I want to bind an input field to a model field ?
+  See bind_to_input_text_field.
   
 ## Known issues:
 
