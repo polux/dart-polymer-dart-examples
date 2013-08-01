@@ -4,11 +4,9 @@ import 'package:polymer/polymer.dart';
 import 'package:mdv/mdv.dart' as mdv;
 
 // Be sure to mixin ObservableMixin with you use @observable.
-// The @observable annotation at the class level marks all fields as observable.
-@observable
+
 class App extends Object with ObservableMixin {
-  // You could also annotate just the fields you want observable.
-  // If you use @observable on fields, don't use it on the class.
+  @observable
   int counter = 0;
 }
 

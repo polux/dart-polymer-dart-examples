@@ -21,8 +21,6 @@ Binding, conditionals:
 
 * When manually observing an object, the ChangeRecord only has the field name.
   Not the old and new value. You have to use mirrors.
-  
-* Custom element classes now require @CustomTag("my-element")
 
 * If you use custom elements, you should include packages/polymer/boot.js
   and *NOT* dart.js
@@ -31,6 +29,15 @@ Binding, conditionals:
   way, but to limit confusion, I won't mention it here. :)
   
 * The constructor attribute on <polymer-element> is no longer used.
+
+* Null is falsey for MDV if expressions.
+
+* Calling `mdv.initialize()` is still required with boot.js.
+
+## Questions
+
+* Can I have a custom element _without_ a Dart class, and still use boot.js?
+  See custom_element_with_style
   
 ## Known issues:
 

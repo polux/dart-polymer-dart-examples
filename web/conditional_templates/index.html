@@ -3,19 +3,20 @@
 <html>
   <head>
     <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
   </head>
  
   <body>
-    <p>
-      The below will appear and disappear as a model object is
-      bound and unbound from the template. Conditionals are implemented
-      simply as "this template appears if something is bound" and
-      "this template disappears if nothing is bound".
-    </p>
-    
-    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=11983 -->
 
-    <template id="tmpl" bind>
+    <!-- BUG: https://code.google.com/p/dart/issues/detail?id=11983 -->
+    <!-- Not sure why I need an if here. Why isn't bind/unbind enough? -->
+
+    <p>
+      The below will appear and disappear if the model is not null,
+      and will disappear if the model is null.
+    </p>
+
+    <template id="tmpl" if="{{ }}">
       <p>Hello {{msg}}</p>
     </template>
     
@@ -30,11 +31,10 @@
          there's no further path for the {{ and }} -->
 
     <!-- also, the bind attribute here is optional -->
-    <template id="tmpl2" bind if="{{ }}">
+    <template id="tmpl2" if="{{ }}">
       <p>Activated!</p>
     </template>
     
     <script type="application/dart" src="index.dart"></script>
-    <script src="packages/browser/dart.js"></script>
   </body>
 </html>

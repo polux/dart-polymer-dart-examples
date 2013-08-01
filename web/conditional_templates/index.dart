@@ -13,6 +13,7 @@ main() {
   TemplateElement template = query('#tmpl');
   TemplateElement ifTemplate = query('#tmpl2');
   
+  
   new Timer.periodic(const Duration(seconds: 1), (_) {
     if (template.model != null) {
       template.model = null;
@@ -20,7 +21,7 @@ main() {
     } else {
       template.model = message;
       ifTemplate.model = true;
-    }
+    }    
   });
   
 }
