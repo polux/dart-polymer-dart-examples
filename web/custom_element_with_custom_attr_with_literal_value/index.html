@@ -8,7 +8,7 @@
  
   <body>
     <polymer-element name="my-element" extends="div" attributes="volume">
-      <template>
+      <template bind>
         <h1>Hello from the custom element. The volume is {{volume}}</h1>
       </template>  
       <script type="application/dart">
@@ -25,10 +25,8 @@
          Here I need to bind an object to a template first. I'd
          rather just do volume="11". -->
     
-    <template id="tmpl" bind>
-      <my-element volume="{{}}"></my-element>
-    </template>
-    
+      <my-element volume="11"></my-element>
+      
     <script type="application/dart" src="index.dart"></script>
   </body>
 </html>

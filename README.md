@@ -34,11 +34,10 @@ Binding, conditionals:
 
 * Calling `mdv.initialize()` is still required with boot.js.
 
-## Questions
+* Every custom element must have a Dart class. Use an empty Dart class
+  if necessary. See https://code.google.com/p/dart/issues/detail?id=12254
 
-* Can I have a custom element _without_ a Dart class, and still use boot.js?
-  See custom_element_with_style. When I tried, the custom element didn't
-  show up in the page (probably because nothing registered it?)
+## Questions
   
 * How do we set a custom attribute with a literal? e.g. foo="11" ?
 
