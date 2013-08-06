@@ -58,8 +58,11 @@ packages:
     source: hosted
     version: "0.6.15+2"
   polymer:
-    description: polymer
-    source: hosted
+    description:
+      ref: polymer
+      resolved-ref: "53b40e36b94839d086c0f04ff21355f3bc61cd50"
+      url: "git@github.com:dart-lang/web-ui.git"
+    source: git
     version: "0.5.3"
   serialization:
     description: serialization

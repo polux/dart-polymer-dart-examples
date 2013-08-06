@@ -7,9 +7,11 @@
   </head>
  
   <body>
-    <polymer-element name="my-element" attributes="volume">
-      <template bind>
-        <h1>Hello from the custom element. The volume is {{volume}}</h1>
+    <polymer-element name="my-element" attributes="volume,int-thing,flag,double-thing">
+      <template>
+        <h1>Hello from the custom element. The volume is {{volume}}
+        and intThing is {{intThing}} and flag is {{flag}}
+        and doubleThing is {{doubleThing}}</h1>
       </template>  
       <script type="application/dart">
         import 'package:polymer/polymer.dart';
@@ -17,16 +19,21 @@
         @CustomTag('my-element')
         class MyElement extends PolymerElement with ObservableMixin {
           @observable String volume;
+          @observable int intThing = 0;  // Be sure to initialize
+                                         // your non-String fields with a
+                                         // default value, so that polymer.dart
+                                         // knows how to convert the attribute
+                                         // value for you.
+          @observable bool flag = false;
+          @observable double doubleThing = 0.0;
         }
       </script>
     </polymer-element>
     
-    <!-- How to set a custom attribute with a literal value?
-         Here I need to bind an object to a template first. I'd
-         rather just do volume="11". -->
+    <!-- I don't see "The volume is 11", I just see "The volume is" -->
     
-      <my-element volume="11"></my-element>
+    <my-element volume="11" int-thing="42" flag="true" double-thing="100.001"></my-element>
       
-    <script type="application/dart" src="index.dart"></script>
+    <script type="application/dart">main() {}</script>
   </body>
 </html>

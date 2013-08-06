@@ -43,13 +43,13 @@ Binding, conditionals:
 * The `extends` attribute on polymer-element is optional. If you use it,
   you should use the form of `<div is="my-element">`. If you omit the
   `extends` attribute, you are safe to use `<my-element>`.
+  
+* If you expose a non-String field as a custom attribute on a custom
+  element, be sure to initialize it with a default value. This tells
+  polymer.dart how to convert the text value from the attribute to the correctly
+  typed field in your class for your custom element.
 
 ## Questions
-  
-* How do we set a custom attribute with a literal? e.g. foo="11" ?
-
-* How to set FancySyntax now? TemplateElement.syntax doesn't exit.
-  Do we need to update FancySyntax's README ?
   
 * Why do I need to manually repeatedly call dirtyCheck()
   when I want to bind an input field to a model field ?
