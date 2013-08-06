@@ -36,6 +36,13 @@ Binding, conditionals:
 
 * Every custom element must have a Dart class. Use an empty Dart class
   if necessary. See https://code.google.com/p/dart/issues/detail?id=12254
+  If you really don't want to create an empty class, use the
+  `registerPolymerElement('my-element', () => new PolymerElement())`
+  technique.
+  
+* The `extends` attribute on polymer-element is optional. If you use it,
+  you should use the form of `<div is="my-element">`. If you omit the
+  `extends` attribute, you are safe to use `<my-element>`.
 
 ## Questions
   

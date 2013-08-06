@@ -15,8 +15,8 @@ main() {
   
   
   new Timer.periodic(const Duration(seconds: 1), (_) {
-    if (template.model != null) {
-      template.model = null;
+    if (!template.bindings.isEmpty) {
+      template.unbindAll();
       ifTemplate.model = false;
     } else {
       template.model = message;

@@ -16,7 +16,7 @@
       and will disappear if the model is null.
     </p>
 
-    <template id="tmpl" if="{{ }}">
+    <template id="tmpl" bind if="{{}}">
       <p>Hello {{msg}}</p>
     </template>
     
@@ -31,7 +31,7 @@
          there's no further path for the {{ and }} -->
 
     <!-- also, the bind attribute here is optional -->
-    <template id="tmpl2" if="{{ }}">
+    <template id="tmpl2" if="{{}}">
       <p>Activated!</p>
     </template>
     
