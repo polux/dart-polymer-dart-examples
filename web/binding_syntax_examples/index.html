@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>   
+    <template id="tmpl" bind>
+      <!-- The following works with the default syntax -->
+      <div>First name: {{firstName}}</div>
+      <div>Last name: {{lastName}}</div>
+      <div>Full name: {{fullName}}</div> <!-- getters work -->
+      <div>Age: {{age}}</div> <!-- ints work -->
+      <div>Signed agreement? {{signedAgreement}}</div>
+      <div>Number of favorite colors: {{favoriteColors.length}}</div>
+      <div>Number of addresses: {{addresses.length}}</div>
+      
+      <!-- This works with the default syntax. -->
+      <ul>
+        <template repeat="{{favoriteColors}}">
+          <li>{{}}</li>
+        </template>
+      </ul>
+      
+      <!-- This only works with fancy-syntax. -->
+      <!-- Notice: You can also use a name during iteration. -->
+      <ul>
+        <template repeat="{{color in favoriteColors}}">
+          <li>{{color}}</li>
+        </template>
+      </ul>
+      
+      <!-- This only works with fancy-syntax -->
+      <div>Dotted notation works into lists: {{favoriteColors[0].name}}</div>
+      <div>Dotted notation works into maps: {{addresses['home'].city}}</div>
+      
+      <!-- This only works with fancy-syntax -->
+      <div>You can do math: {{ (1+2) / 3 * 100 }}</div>
+      <div>You can logic not (!): {{ !signedAgreement }}</div>
+      
+      <!-- This works with the default syntax -->
+      <template if="{{signedAgreement}}">
+        <div>Yay they signed the agreement.</div>
+      </template>
+      
+      <!-- This works with fancy syntax -->
+      <template if="{{!signedAgreement}}">
+        <div>Why you no like to sign?</div>
+      </template>
+      
+      <!-- Only with fancy-syntax -->
+      <template if="{{age > 21}}">
+        <div>Conditionals work</div>
+      </template>
+      
+      <!-- Only with fancy-syntax -->
+      <template if="{{age > 21 && signedAgreement}}">
+        <div>&& and || also works</div>
+      </template>
+    </template>
+    <script type="application/dart" src="index.dart"></script>
+  </body>
+</html>

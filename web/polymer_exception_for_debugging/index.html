@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>
+    <polymer-element name="my-element">
+      <template>
+        <h1>hello from the custom element! The value is {{value}}</h1>
+      </template>
+      <script type="application/dart">
+        import 'package:polymer/polymer.dart';
+        
+        @CustomTag('my-element')
+        class MyElement extends PolymerElement {
+          String get value {
+            throw 'DOH!';  // On purpose, to test debugging
+          }
+        }
+      </script>
+    </polymer-element>
+    
+    <my-element></my-element>
+    
+    <script type="application/dart">main() {}</script>
+  </body>
+</html>

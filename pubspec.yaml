@@ -1,8 +1,7 @@
 name: dart_polymer_examples
 description: A sample web application
 dependencies:
-  fancy_syntax: any
-  polymer:
-    git:
-      url: git@github.com:dart-lang/web-ui.git
-      ref: polymer
+  polymer: any
+#    git:
+#      url: git@github.com:dart-lang/web-ui.git
+#      ref: polymer
