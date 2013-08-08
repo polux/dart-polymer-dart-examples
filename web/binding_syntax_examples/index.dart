@@ -6,6 +6,7 @@ class Person {
   String lastName;
   bool signedAgreement;
   int age;
+  String company; // keep as null
   Map<String, Address> addresses = new Map<String, Address>();
   List<Color> favoriteColors = new List<Color>();
   

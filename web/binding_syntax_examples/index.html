@@ -25,7 +25,7 @@
       </ul>
       
       <!-- This only works with fancy-syntax. -->
-      <!-- Notice: You can also use a name during iteration. -->
+      <!-- Notice: You can use a name during iteration. -->
       <ul>
         <template repeat="{{color in favoriteColors}}">
           <li>{{color}}</li>
@@ -48,17 +48,46 @@
       
       <!-- This only works with fancy-syntax -->
       <div>You can do math: {{ (1+2) / 3 * 100 }}</div>
-      <div>You can logic not (!): {{ !signedAgreement }}</div>
+      <div>You can logical not (!): {{ !signedAgreement }}</div>
       
       <!-- This works with the default syntax -->
+      <!-- signedAgreement is a boolean, so true and false work here -->
       <template if="{{signedAgreement}}">
         <div>Yay they signed the agreement.</div>
+      </template>
+      
+      <!-- conditionals also work with null (false) -->
+      <template if="{{company}}">
+        <div>Does not show up, company is null</div>
+      </template>
+      
+      <!-- This works with fancy syntax -->
+      <template if="{{!company}}">
+        <div>This does show up, company is null, which is treated as false</div>
       </template>
       
       <!-- This works with fancy syntax -->
       <template if="{{!signedAgreement}}">
         <div>Why you no like to sign?</div>
       </template>
+      
+      <!-- This should work, but doesn't.
+           See https://github.com/dart-lang/fancy-syntax/issues/24 -->
+      <!--
+      <template bind="{{fullName as name}}">
+        <div>You can give names to expressions, like this: {{name}}</div> 
+      </template>
+      -->
+        
+      <!-- This should work, but doesn't.
+           See https://github.com/dart-lang/fancy-syntax/issues/25 -->
+      <!-- Requires fancy-syntax -->
+      <!--
+      <div class="{{rainbow: favoriteColors.length > 2; has-company: company}}">
+        Labeled bindings result in a space-separated list of labels
+        for truthy expressions. {{rainbow: favoriteColors.length > 2}}
+      </div>
+      -->
       
       <!-- Only with fancy-syntax -->
       <template if="{{age > 21}}">
@@ -84,6 +113,9 @@
       -->
       
       <!-- Only with fancy-syntax -->
+      <!-- Transform a field with the | transformers -->
+      <!-- This comes from a global transformer function registered with
+           fancy-syntax in index.dart -->
       <div>Uppercase: {{fullName | uppercase}}</div>
       
     </template>

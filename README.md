@@ -75,3 +75,6 @@ https://github.com/dart-lang/fancy-syntax/issues/9
 
 iterating over keys in a map with fancy syntax crashes dartium:
 https://code.google.com/p/dart/issues/detail?id=12316
+
+fancy-syntax doesn't seem to support named bindings:
+https://github.com/dart-lang/fancy-syntax/issues/24
