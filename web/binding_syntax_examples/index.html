@@ -36,6 +36,16 @@
       <div>Dotted notation works into lists: {{favoriteColors[0].name}}</div>
       <div>Dotted notation works into maps: {{addresses['home'].city}}</div>
       
+      <!-- Only works with fancy-syntax -->
+      <!-- Bug. See https://code.google.com/p/dart/issues/detail?id=12316 -->
+      <!--
+      <ul>
+      <template repeat="{{k in addresses.keys}}">
+        <li>{{addresses[k].city}}</li>
+      </template>
+      </ul>
+      -->
+      
       <!-- This only works with fancy-syntax -->
       <div>You can do math: {{ (1+2) / 3 * 100 }}</div>
       <div>You can logic not (!): {{ !signedAgreement }}</div>
@@ -59,6 +69,21 @@
       <template if="{{age > 21 && signedAgreement}}">
         <div>&& and || also works</div>
       </template>
+      
+      <!-- Only with fancy-syntax -->
+      <template if="{{age == 42}}">
+        <div>== also works, as does !=</div>
+      </template>
+      
+      <!-- This should work, but doesn't -->
+      <!-- See https://github.com/dart-lang/fancy-syntax/issues/9 -->
+      <!--
+      <template repeat="{{a > 21 ? [1,2,3] : [5,6,7]}}">
+        <li>{{}}</li>
+      </template>
+      -->
+        
+      
     </template>
     <script type="application/dart" src="index.dart"></script>
   </body>

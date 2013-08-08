@@ -69,3 +69,9 @@ https://code.google.com/p/dart/issues/detail?id=12051
 
 manually_add_custom_element_to_dom:
 https://code.google.com/p/dart/issues/detail?id=12089
+
+fancy-syntax doesn't support list literals:
+https://github.com/dart-lang/fancy-syntax/issues/9
+
+iterating over keys in a map with fancy syntax crashes dartium:
+https://code.google.com/p/dart/issues/detail?id=12316
