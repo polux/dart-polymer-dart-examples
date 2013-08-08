@@ -40,6 +40,8 @@ main() {
       ..addresses['work'] = new Address('oak way', 'gotham');
   
   TemplateElement template = query('#tmpl');
-  template.bindingDelegate = new FancySyntax();
+  template.bindingDelegate = new FancySyntax(globals: {
+    'uppercase': (String input) => input.toUpperCase()
+  });
   template.model = bob;
 }
