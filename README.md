@@ -78,3 +78,6 @@ https://code.google.com/p/dart/issues/detail?id=12316
 
 fancy-syntax doesn't seem to support named bindings:
 https://github.com/dart-lang/fancy-syntax/issues/24
+
+Binding to an input field replaces edits with initial values:
+https://code.google.com/p/dart/issues/detail?id=12328

@@ -17,6 +17,18 @@
       <div>Number of favorite colors: {{favoriteColors.length}}</div>
       <div>Number of addresses: {{addresses.length}}</div>
       
+      <!-- Conditional attributes are supported. -->
+      <div signed-agreement?="{{signedAgreement}}">Check my attributes, I have a signed-agreement attr</div>
+      <div has-company?="{{company}}">I will not have a has-company attr</div>
+      
+      <!-- Input fields should work, but not yet. -->
+      <!-- See https://code.google.com/p/dart/issues/detail?id=12328 -->
+      <!--
+      <div>
+      <input type="text" value="{{firstName}}" name="firstName">
+      </div>
+      -->
+      
       <!-- This works with the default syntax. -->
       <ul>
         <template repeat="{{favoriteColors}}">

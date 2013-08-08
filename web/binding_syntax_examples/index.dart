@@ -1,8 +1,9 @@
 import 'dart:html';
+import 'package:polymer/polymer.dart';
 import 'package:fancy_syntax/syntax.dart';
 
 class Person {
-  String firstName;
+  @observable String firstName;
   String lastName;
   bool signedAgreement;
   int age;
