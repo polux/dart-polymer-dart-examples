@@ -2,7 +2,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'package:fancy_syntax/syntax.dart';
 
-class Person {
+class Person extends Object with ObservableMixin {
   @observable String firstName;
   String lastName;
   bool signedAgreement;

@@ -23,11 +23,9 @@
       
       <!-- Input fields should work, but not yet. -->
       <!-- See https://code.google.com/p/dart/issues/detail?id=12328 -->
-      <!--
       <div>
       <input type="text" value="{{firstName}}" name="firstName">
       </div>
-      -->
       
       <!-- This works with the default syntax. -->
       <ul>
@@ -50,14 +48,15 @@
       
       <!-- Only works with fancy-syntax -->
       <!-- Bug. See https://code.google.com/p/dart/issues/detail?id=12316 -->
-      <!--
+<!--
       <ul>
       <template repeat="{{k in addresses.keys}}">
         <li>{{addresses[k].city}}</li>
       </template>
       </ul>
-      -->
+-->
       
+      <!--
       <!-- This only works with fancy-syntax -->
       <div>You can do math: {{ (1+2) / 3 * 100 }}</div>
       <div>You can logical not (!): {{ !signedAgreement }}</div>
@@ -98,6 +97,15 @@
       <div class="{{rainbow: favoriteColors.length > 2; has-company: company}}">
         Labeled bindings result in a space-separated list of labels
         for truthy expressions. {{rainbow: favoriteColors.length > 2}}
+      </div>
+      -->
+        
+      <!-- However, you can use map literals for the same effect. -->
+      <!-- This doesn't work, see https://github.com/dart-lang/fancy-syntax/issues/26 -->
+      <!--
+      <div class="{{ {'rainbow': favoriteColors.length > 1, 'has-company': company, 'has-name': firstName} }}">
+        Map-literal bindings result in a space-separated list of labels
+        for truthy expressions.
       </div>
       -->
       

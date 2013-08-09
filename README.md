@@ -20,10 +20,10 @@ Binding, conditionals:
 * Go through `shadowRoot` to find nodes inside of your custom element.
 
 * When manually observing an object, the ChangeRecord only has the field name.
-  Not the old and new value. You have to use mirrors.
+  Not the old and new value. You have to use mirrors to get the new value.
 
-* If you use custom elements, you should include packages/polymer/boot.js
-  and *NOT* dart.js
+* You should include packages/polymer/boot.js
+  and *NOT* dart.js.
   
 * Custom tag classes now need @CustomTag('element-name'). There's another
   way, but to limit confusion, I won't mention it here. :)
@@ -32,7 +32,7 @@ Binding, conditionals:
 
 * Null is falsey for MDV if expressions.
 
-* Calling `mdv.initialize()` is still required with boot.js.
+* Calling `mdv.initialize()` is NOT required with boot.js.
 
 * Every custom element must have a Dart class. Use an empty Dart class
   if necessary. See https://code.google.com/p/dart/issues/detail?id=12254
@@ -48,6 +48,7 @@ Binding, conditionals:
   element, be sure to initialize it with a default value. This tells
   polymer.dart how to convert the text value from the attribute to the correctly
   typed field in your class for your custom element.
+  See also https://code.google.com/p/dart/issues/detail?id=12262
 
 ## Questions
   
@@ -59,7 +60,8 @@ Binding, conditionals:
 
 conditional_templates:
 https://code.google.com/p/dart/issues/detail?id=11983 but this could be
-my misunderstanding.
+my misunderstanding. It is almost certainly my misunderstanding. Keeping
+in this list to better change the sample.
 
 bind_to_a_map:
 Keys must be Symbols. https://code.google.com/p/dart/issues/detail?id=11980
@@ -79,5 +81,5 @@ https://code.google.com/p/dart/issues/detail?id=12316
 fancy-syntax doesn't seem to support named bindings:
 https://github.com/dart-lang/fancy-syntax/issues/24
 
-Binding to an input field replaces edits with initial values:
-https://code.google.com/p/dart/issues/detail?id=12328
+fancy-syntax map literals in class attribute aren't treating non-null as true:
+https://github.com/dart-lang/fancy-syntax/issues/26
