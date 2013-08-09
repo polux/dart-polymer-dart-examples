@@ -1,7 +1,6 @@
 import 'dart:html';
 import 'dart:async';
 import 'package:polymer/polymer.dart';
-import 'package:mdv/mdv.dart' as mdv;
 
 // Be sure to mixin ObservableMixin with you use @observable.
 
@@ -11,9 +10,6 @@ class App extends Object with ObservableMixin {
 }
 
 main() {
-  // You'll get a warning if you don't init MDV.
-  mdv.initialize();
-  
   App app = new App();
   
   new Timer.periodic(const Duration(seconds: 1), (_) {
