@@ -1,5 +1,4 @@
 import 'dart:html';
-import 'package:mdv/mdv.dart' as mdv;
 
 class Person {
   String name;
@@ -12,8 +11,6 @@ class Address {
 }
 
 main() {
-  mdv.initialize();
-  
   var person = new Person()
       ..name = 'Bob Smith'
       ..address = (new Address()

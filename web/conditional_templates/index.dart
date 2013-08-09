@@ -1,5 +1,4 @@
 import 'dart:html';
-import 'package:mdv/mdv.dart' as mdv;
 import 'dart:async';
 
 class Message {
@@ -7,8 +6,6 @@ class Message {
 }
 
 main() {
-  mdv.initialize();
-  
   Message message = new Message()..msg = 'world';
   TemplateElement template = query('#tmpl');
   TemplateElement ifTemplate = query('#tmpl2');

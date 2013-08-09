@@ -49,12 +49,6 @@ Binding, conditionals:
   polymer.dart how to convert the text value from the attribute to the correctly
   typed field in your class for your custom element.
   See also https://code.google.com/p/dart/issues/detail?id=12262
-
-## Questions
-  
-* Why do I need to manually repeatedly call dirtyCheck()
-  when I want to bind an input field to a model field ?
-  See bind_to_input_text_field.
   
 ## Known issues:
 

@@ -14,9 +14,6 @@ main() {
   
   new Timer.periodic(const Duration(seconds: 1), (_) {
     app.counter++;
-    // IMPORTANT: If your change happens outside of a UI event (e.g. click),
-    // then you need to call the following line:
-    Observable.dirtyCheck();
   });
   
   // Binds the model object to the DOM.
