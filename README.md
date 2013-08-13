@@ -44,12 +44,6 @@ Binding, conditionals:
   you should use the form of `<div is="my-element">`. If you omit the
   `extends` attribute, you are safe to use `<my-element>`.
   
-* If you expose a non-String field as a custom attribute on a custom
-  element, be sure to initialize it with a default value. This tells
-  polymer.dart how to convert the text value from the attribute to the correctly
-  typed field in your class for your custom element.
-  See also https://code.google.com/p/dart/issues/detail?id=12262
-  
 ## Known issues:
 
 conditional_templates:
@@ -77,3 +71,6 @@ https://github.com/dart-lang/fancy-syntax/issues/24
 
 fancy-syntax map literals in class attribute aren't treating non-null as true:
 https://github.com/dart-lang/fancy-syntax/issues/26
+
+Custom element, custom attribute, non-String value doesn't work:
+https://code.google.com/p/dart/issues/detail?id=12262
