@@ -72,5 +72,8 @@ https://github.com/dart-lang/fancy-syntax/issues/24
 fancy-syntax map literals in class attribute aren't treating non-null as true:
 https://github.com/dart-lang/fancy-syntax/issues/26
 
-Custom element, custom attribute, non-String value doesn't work:
+Custom element, custom attribute, values doesn't work:
 https://code.google.com/p/dart/issues/detail?id=12262
+
+Custom element, custom attribute, binding via template doesn't work:
+http://code.google.com/p/dart/issues/detail?id=12440

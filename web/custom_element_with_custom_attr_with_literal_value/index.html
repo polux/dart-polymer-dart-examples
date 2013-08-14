@@ -18,7 +18,7 @@
         
         @CustomTag('my-element')
         class MyElement extends PolymerElement with ObservableMixin {
-          @observable String volume;
+          @observable String volume = '';
           @observable int intThing = 0;  // Be sure to initialize
                                          // your non-String fields with a
                                          // default value, so that polymer.dart
@@ -30,7 +30,8 @@
       </script>
     </polymer-element>
     
-    <!-- I don't see "The volume is 11", I just see "The volume is" -->
+    <!-- WARNING: this does not work yet -->
+    <!-- See https://code.google.com/p/dart/issues/detail?id=12262 -->
     
     <my-element volume="11" int-thing="42" flag="true" double-thing="100.001"></my-element>
       
