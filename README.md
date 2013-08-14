@@ -76,4 +76,5 @@ Custom element, custom attribute, values doesn't work:
 https://code.google.com/p/dart/issues/detail?id=12262
 
 Custom element, custom attribute, binding via template doesn't work:
+custom_element_with_custom_attribute_binding
 http://code.google.com/p/dart/issues/detail?id=12440

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>
+    <template id="tmpl" bind>
+      <div>
+        Accept terms: <input type="checkbox" checked="{{checked}}">
+      </div>
+      <div>
+        You accepted {{checked}}
+      </div>
+    </template>
+    
+    <script type="application/dart" src="index.dart"></script>
+  </body>
+</html>
