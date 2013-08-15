@@ -44,6 +44,9 @@ Binding, conditionals:
   you should use the form of `<div is="my-element">`. If you omit the
   `extends` attribute, you are safe to use `<my-element>`.
   
+* Getters are no longer observable. Instead, use bindProperty
+  to let the system know that a getter should be read. See observable_getter.
+  
 ## Known issues:
 
 conditional_templates:
