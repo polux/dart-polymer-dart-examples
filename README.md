@@ -81,3 +81,10 @@ https://code.google.com/p/dart/issues/detail?id=12262
 Custom element, custom attribute, binding via template doesn't work:
 custom_element_with_custom_attribute_binding
 http://code.google.com/p/dart/issues/detail?id=12440
+
+## Additional authors
+
+This project received help from:
+
+* Nelson Silva <nelson.silva@inevo.pt>
+* Chris Buckett <chrisbuckett@gmail.com>
