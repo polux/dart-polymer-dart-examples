@@ -82,6 +82,11 @@ Custom element, custom attribute, binding via template doesn't work:
 custom_element_with_custom_attribute_binding
 http://code.google.com/p/dart/issues/detail?id=12440
 
+## TODO
+
+* Lifecycle methods
+* select box
+
 ## Additional authors
 
 This project received help from:
