@@ -58,6 +58,7 @@ Binding, conditionals:
   
 * Similar to boot.js required to be in `<head>`, your .dart script
   needs to be in `<body>`, ideally at the end.
+  This might change, see https://code.google.com/p/dart/issues/detail?id=12388
   
 ## Known issues:
 
