@@ -7,15 +7,11 @@
 // element.
 
 import 'package:dart_polymer_examples/custom_elements.dart';
-
-import 'dart:html' show query;
+import 'package:dart_polymer_examples/custom_elements_main.dart' as ce;
+import 'dart:html';
 
 // Every app needs a main()
 
 main() {
-  AElement a = query('#a').xtag;
-  BElement b = query('#b').xtag;
-  
-  print(a is AElement);
-  print(b is BElement);
+  ce.main();
 }
