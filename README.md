@@ -23,6 +23,8 @@ Binding, conditionals:
   Not the old and new value. You have to use mirrors to get the new value.
 
 * You should include packages/polymer/boot.js and *NOT* dart.js.
+
+* boot.js **must** go into the `<head>` and not the `<body>`
   
 * Custom tag classes now need @CustomTag('element-name'). There's another
   way, but to limit confusion, I won't mention it here. :)
@@ -50,6 +52,9 @@ Binding, conditionals:
 
 * Polymer.dart does **not** support polymer.js's `noscript` attribute on
   `polymer-element`. All custom elements must have a Dart class (see above).
+  
+* `main()` functions are run in document depth-first order, after
+  `DOMContentLoaded`. There is no main main anymore, just a bunch of mains.
   
 ## Known issues:
 
@@ -87,6 +92,8 @@ http://code.google.com/p/dart/issues/detail?id=12440
 
 * Lifecycle methods
 * select box
+* textarea
+* CSS in external file
 
 ## Additional authors
 
