@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <!-- you have to import the HTML file that contains the custom element -->
+    <link rel="import" href="packages/dart_polymer_examples/a_element.html">
+    <link rel="import" href="packages/dart_polymer_examples/b_element.html">
+    
+    <!-- This is the bootstrap script for polymer. Use this INSTEAD of
+         dart.js -->
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>
+    
+    <!-- you must close custom elements -->
+    <a-element id="a"></a-element>
+    
+    <b-element id="b"></b-element>
+    
+    <script type="application/dart" src="index.dart"></script>
+  </body>
+</html>
