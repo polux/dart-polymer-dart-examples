@@ -8,4 +8,5 @@ import 'package:polymer/polymer.dart';
 @CustomTag("b-element")
 class BElement extends PolymerElement {
   // custom functionality goes here
+  String foo = 'b';
 }
