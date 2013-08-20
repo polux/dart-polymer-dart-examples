@@ -3,15 +3,12 @@
 //import 'package:dart_polymer_examples/a_element.dart';
 //import 'package:dart_polymer_examples/b_element.dart';
 
-// Or, you can create a single library that exports each custom
-// element.
+// Or, you can import a shared app that already imported the custom elements.
 
-import 'package:dart_polymer_examples/custom_elements.dart';
-import 'package:dart_polymer_examples/custom_elements_main.dart' as ce;
-import 'dart:html';
+import 'package:dart_polymer_examples/app_shared.dart' as app;
 
 // Every app needs a main()
 
 main() {
-  ce.main();
+  app.init();
 }

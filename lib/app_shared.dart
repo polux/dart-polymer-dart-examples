@@ -3,7 +3,10 @@ library custom_elements_main;
 import 'dart:html';
 import 'package:dart_polymer_examples/custom_elements.dart';
 
-main() {
+// Let's pretend this is an app available to anyone. They can just import
+// it and call its init().
+
+init() {
   AElement a = query('#a').xtag;
   BElement b = query('#b').xtag;
   print(a.runtimeType);
