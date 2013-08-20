@@ -46,6 +46,11 @@ Binding, conditionals:
   
 * Getters are no longer observable. Instead, use bindProperty
   to let the system know that a getter should be read. See observable_getter.
+
+* You **must** call `super` in your `created`/`inserted` lifecycle callbacks.
+
+* Polymer.dart does **not** support polymer.js's `noscript` attribute on
+  `polymer-element`. All custom elements must have a Dart class (see above).
   
 ## Known issues:
 

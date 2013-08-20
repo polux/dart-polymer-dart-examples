@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="packages/polymer/boot.js"></script>
+</head>
+<body>
+  <polymer-element name="foo-bar">
+    <template>
+      The foo:
+      <content select=".foo"></content>
+      <br>
+      The bar:
+      <content select=".bar"></content>
+    </template>
+    <script type="application/dart">
+    import 'package:polymer/polymer.dart';
+    @CustomTag('foo-bar')
+    class FooBar extends PolymerElement {}
+    </script>
+  </polymer-element>
+
+  <foo-bar>
+    <span class="foo">FOOOOO</span>
+    <input class="bar" value="BARBARBAZ"></input>
+  </foo-bar>
+  <script type="application/dart">main() {}</script>
+</body>
+</html>
