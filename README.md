@@ -22,8 +22,7 @@ Binding, conditionals:
 * When manually observing an object, the ChangeRecord only has the field name.
   Not the old and new value. You have to use mirrors to get the new value.
 
-* You should include packages/polymer/boot.js
-  and *NOT* dart.js.
+* You should include packages/polymer/boot.js and *NOT* dart.js.
   
 * Custom tag classes now need @CustomTag('element-name'). There's another
   way, but to limit confusion, I won't mention it here. :)
@@ -61,9 +60,6 @@ in this list to better change the sample.
 
 bind_to_a_map:
 Keys must be Symbols. https://code.google.com/p/dart/issues/detail?id=11980
-
-custom_element_with_style:
-https://code.google.com/p/dart/issues/detail?id=12051
 
 manually_add_custom_element_to_dom:
 https://code.google.com/p/dart/issues/detail?id=12089
