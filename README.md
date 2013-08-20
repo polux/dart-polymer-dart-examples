@@ -56,6 +56,9 @@ Binding, conditionals:
 * `main()` functions are run in document depth-first order, after
   `DOMContentLoaded`. There is no main main anymore, just a bunch of mains.
   
+* Similar to boot.js required to be in `<head>`, your .dart script
+  needs to be in `<body>`, ideally at the end.
+  
 ## Known issues:
 
 conditional_templates:
