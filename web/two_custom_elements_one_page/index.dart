@@ -2,8 +2,7 @@ import 'a_element.dart';
 import 'b_element.dart';
 import 'dart:html';
 
-// In this case, we're empty. Every app needs a main function.
-// You could put this inline in index.html.
+// Every app needs a main()
 
 main() {
   AElement a = query('#a').xtag;
