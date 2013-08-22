@@ -3,6 +3,3 @@ description: A sample web application
 homepage: https://github.com/sethladd/dart-polymer-dart-examples
 dependencies:
   polymer: any
-#    git:
-#      url: git@github.com:dart-lang/web-ui.git
-#      ref: polymer

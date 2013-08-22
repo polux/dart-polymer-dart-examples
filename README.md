@@ -59,6 +59,14 @@ Binding, conditionals:
 * Similar to boot.js required to be in `<head>`, your .dart script
   needs to be in `<body>`, ideally at the end.
   This might change, see https://code.google.com/p/dart/issues/detail?id=12388
+
+* apply-author-styles (which used to be on the `<element>` tag) is now set
+  as a getter property on the class for the custom element. e.g.:
+
+    class MyElement extends PolymerElement {
+       bool get applyAuthorStyles => true;
+       // ...
+    }
   
 ## Known issues:
 
