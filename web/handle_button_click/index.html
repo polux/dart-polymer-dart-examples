@@ -10,6 +10,12 @@
     
     <polymer-element name="my-element" extends="div">
       <template>
+        <style>
+          button {
+            width: 200px;
+            height: 100px;
+          }
+        </style>
         <p>
           <button on-click="showMessage">Show Message</button>
           <button on-click="hideMessage">Hide Message</button>
@@ -24,31 +30,10 @@
         </p>
       </template>
       
-      <script type="application/dart">
-        import 'package:polymer/polymer.dart';
-        import 'dart:html';
-        
-        @CustomTag('my-element')
-        class MyElement extends PolymerElement {
-          
-          void showMessage(Event e, var detail, Node target) {
-          
-            // shadowRoot is the root of the internals of the custom element
-            
-            shadowRoot.query('#show').style.display = 'inline';
-            shadowRoot.query('#hide').style.display = 'none';
-          }
-          
-          void hideMessage(Event e, var detail, Node target) {
-            shadowRoot.query('#show').style.display = 'none';
-            shadowRoot.query('#hide').style.display = 'inline';
-          }
-        }
-        
-      </script>
+      <script type="application/dart" src="index.dart"></script>
     </polymer-element>
     
-    <my-element></my-element>
+    <my-element id="hello"></my-element>
     
     <script type="application/dart">main() {}</script>
   </body>
