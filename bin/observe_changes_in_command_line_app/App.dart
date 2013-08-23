@@ -17,13 +17,15 @@ main() {
     Observable.dirtyCheck();
   });
 
-  app.changes.listen((List<PropertyChangeRecord> records) {
-    PropertyChangeRecord record = records[0];
+  app.changes.listen((List<ChangeRecord> records) {
+    print('There was ${records.length} change(s)');
+    
+    PropertyChangeRecord record = records[0] as PropertyChangeRecord;
 
     // XXX any way to get before and after values?
     // Quick look: no. Have to go through mirrors.
 
-    print('Change from ${record.field}');
+    print('Change on ${record.field}');
 
     // This is how you get the new (current) value.
 
