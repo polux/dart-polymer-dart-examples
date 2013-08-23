@@ -104,6 +104,12 @@ custom_element_with_custom_attr_with_literal_value
 lifecycle_callbacks
 https://code.google.com/p/dart/issues/detail?id=12715
 
+Polymer.dart still uses old lifecycle callbacks:
+https://code.google.com/p/dart/issues/detail?id=12716
+
+attributeChanged doesn't fire:
+https://code.google.com/p/dart/issues/detail?id=12719
+
 ## TODO
 
 * Lifecycle methods

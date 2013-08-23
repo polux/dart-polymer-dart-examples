@@ -1,6 +1,11 @@
-<polymer-element name="my-element" attributes="mood">
+<polymer-element name="my-element" attributes="timestamp">
     <template>
-        <div>Hi, the mood here is {{mood}}</div>
+        <ol>
+            <li>Created? {{isCreated}}</li>
+            <li>Entered document? {{isEntered}}</li>
+            <li>Left document? {{isLeft}}</li>
+            <li>Attribute changed? {{isAttributeChanged}} it is now {{timestamp}}</li>
+        </ol>
     </template>
     <script type="application/dart" src="my_element.dart"></script>
 </polymer-element>
