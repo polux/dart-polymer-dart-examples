@@ -2,4 +2,4 @@ name: dart_polymer_examples
 description: A sample web application
 homepage: https://github.com/sethladd/dart-polymer-dart-examples
 dependencies:
-  polymer: any
+  polymer: 0.5.5
