@@ -70,6 +70,9 @@ Binding, conditionals:
   
 ## Known issues:
 
+(This is not a complete list of bugs with polymer.dart. Just the bugs that
+I ran into.)
+
 conditional_templates:
 https://code.google.com/p/dart/issues/detail?id=12687
 
@@ -109,6 +112,9 @@ https://code.google.com/p/dart/issues/detail?id=12716
 
 attributeChanged doesn't fire:
 https://code.google.com/p/dart/issues/detail?id=12719
+
+on-change stops firing if the input field has a bound value:
+https://code.google.com/p/dart/issues/detail?id=12722
 
 ## TODO
 
