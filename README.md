@@ -71,9 +71,7 @@ Binding, conditionals:
 ## Known issues:
 
 conditional_templates:
-https://code.google.com/p/dart/issues/detail?id=11983 but this could be
-my misunderstanding. It is almost certainly my misunderstanding. Keeping
-in this list to better change the sample.
+https://code.google.com/p/dart/issues/detail?id=12687
 
 bind_to_a_map:
 Keys must be Symbols. https://code.google.com/p/dart/issues/detail?id=11980
