@@ -3,41 +3,11 @@
 <html>
   <head>
     <title>index</title>
+    <link rel="import" href="my_element.html">
     <script src='packages/polymer/boot.js'></script>
   </head>
  
   <body>
-    
-    <polymer-element name="my-element" extends="div">
-      <template>
-        <p>
-          <!-- passing arbitrary data to the updateMessage method using data- attributes -->
-          <button on-click="updateMessage" data-msg="You clicked Show">Show Message</button>
-          <button on-click="updateMessage" data-msg="You clicked Hide">Hide Message</button>
-        </p>
-        
-        <p id="message">{{ message }}</p> <!-- bind the message -->
-        
-      </template>
-      
-      <script type="application/dart">
-        import 'package:polymer/polymer.dart';
-        import 'dart:html';
-        
-        @CustomTag('my-element')
-        class MyElement extends PolymerElement with ObservableMixin {
-          @observable var message;
-          
-          void updateMessage(Event e, var detail, Element target) {
-            message = target.attributes['data-msg']; // extract the data- attribute
-                                                     // and update the 
-                                                     // bound message property
-          }          
-        }
-        
-      </script>
-    </polymer-element>
-    
     <my-element></my-element>
     
     <script type="application/dart">main() {}</script>

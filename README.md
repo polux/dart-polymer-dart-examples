@@ -84,9 +84,6 @@ https://code.google.com/p/dart/issues/detail?id=12089
 fancy-syntax doesn't support list literals:
 https://github.com/dart-lang/fancy-syntax/issues/9
 
-iterating over keys in a map with fancy syntax crashes dartium:
-https://code.google.com/p/dart/issues/detail?id=12316
-
 fancy-syntax doesn't seem to support named bindings:
 https://github.com/dart-lang/fancy-syntax/issues/24
 
@@ -94,6 +91,7 @@ fancy-syntax map literals in class attribute aren't treating non-null as true:
 https://github.com/dart-lang/fancy-syntax/issues/26
 
 Custom element, custom attribute, values doesn't work:
+custom_element_with_custom_attribute_binding
 https://code.google.com/p/dart/issues/detail?id=12262
 
 Custom element, custom attribute, binding via template doesn't work:

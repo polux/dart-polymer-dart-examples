@@ -20,9 +20,7 @@
       <!-- Conditional attributes are supported. -->
       <div signed-agreement?="{{signedAgreement}}">Check my attributes, I have a signed-agreement attr</div>
       <div has-company?="{{company}}">I will not have a has-company attr</div>
-      
-      <!-- Input fields should work, but not yet. -->
-      <!-- See https://code.google.com/p/dart/issues/detail?id=12328 -->
+
       <div>
       <input type="text" value="{{firstName}}" name="firstName">
       </div>
@@ -34,7 +32,7 @@
         </template>
       </ul>
       
-      <!-- This only works with fancy-syntax. -->
+      <!-- This only works with PolymerExpressions. -->
       <!-- Notice: You can use a name during iteration. -->
       <ul>
         <template repeat="{{color in favoriteColors}}">
@@ -48,13 +46,14 @@
       
       <!-- Only works with fancy-syntax -->
       <!-- Bug. See https://code.google.com/p/dart/issues/detail?id=12316 -->
-<!--
+
+      <div>Looping over keys in a map:</div>
       <ul>
       <template repeat="{{k in addresses.keys}}">
         <li>{{addresses[k].city}}</li>
       </template>
       </ul>
--->
+
       
       <!--
       <!-- This only works with fancy-syntax -->

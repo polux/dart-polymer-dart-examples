@@ -3,25 +3,11 @@
 <html>
   <head>
     <title>index</title>
+    <link rel="import" href="my_element.html">
     <script src="packages/polymer/boot.js"></script>
   </head>
 
   <body>
-    <polymer-element name="my-element" attributes="value">
-      <template>
-        <input value="{{value}}">
-        <p>The element's value is {{value}}</h1>
-      </template>
-      <script type="application/dart">
-        import 'package:polymer/polymer.dart';
-
-        @CustomTag('my-element')
-        class MyElement extends PolymerElement with ObservableMixin {
-          @observable String value;
-        }
-      </script>
-    </polymer-element>
-
     <template id="tmpl" bind>
       <my-element value="{{value}}"></my-element>
       
@@ -30,18 +16,6 @@
       <p>The model's value is {{value}}</p>
     </template>
 
-    <script type="application/dart">
-      import 'dart:html';
-      import 'package:polymer/polymer.dart';
-
-      class Model extends Object with ObservableMixin {
-        @observable
-        String value = "Initial value";
-      }
-
-      main() {
-        query('#tmpl').model = new Model();
-      }
-    </script>
+    <script type="application/dart" src="index.dart"></script>
   </body>
 </html>
