@@ -99,6 +99,11 @@ http://code.google.com/p/dart/issues/detail?id=12440
 Confusion around importing nested components (with boot.js)
 https://code.google.com/p/dart/issues/detail?id=12400
 
+Literal attribute values not setting class field.
+custom_element_with_custom_attr_with_literal_value
+lifecycle_callbacks
+https://code.google.com/p/dart/issues/detail?id=12715
+
 ## TODO
 
 * Lifecycle methods

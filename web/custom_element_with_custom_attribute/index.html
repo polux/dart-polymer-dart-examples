@@ -11,14 +11,7 @@
       <template>
         <h1>Hello from the custom element. The volume is {{volume}}</h1>
       </template>  
-      <script type="application/dart">
-        import 'package:polymer/polymer.dart';
-        
-        @CustomTag('my-element')
-        class MyElement extends PolymerElement with ObservableMixin {
-          @observable String volume;
-        }
-      </script>
+      <script type="application/dart" src="my_element.dart"></script>
     </polymer-element>
     
     <!-- How to set a custom attribute with a literal value?
@@ -29,10 +22,6 @@
       <my-element volume="{{}}"></my-element>
     </template>
     
-    <script type="application/dart">
-      import 'dart:html';
-      main() {
-        query('#tmpl').model = '11';
-      }</script>
+    <script type="application/dart" src="index.dart"></script>
   </body>
 </html>

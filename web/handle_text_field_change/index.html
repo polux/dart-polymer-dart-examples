@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src='packages/polymer/boot.js'></script>
+  </head>
+ 
+  <body>
+    
+    <polymer-element name="my-element" extends="div">
+      <template>
+        <style>
+          button {
+            width: 200px;
+            height: 100px;
+          }
+        </style>
+        <p>
+            on-change only fires when the text field loses focus.
+          <input type="text" on-change="handleChange">
+        </p>
+      </template>
+      
+      <script type="application/dart" src="index.dart"></script>
+    </polymer-element>
+    
+    <my-element id="hello"></my-element>
+    
+    <script type="application/dart">main() {}</script>
+  </body>
+</html>
