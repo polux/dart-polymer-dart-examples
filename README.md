@@ -120,6 +120,9 @@ https://code.google.com/p/dart/issues/detail?id=12719
 on-change stops firing if the input field has a bound value:
 https://code.google.com/p/dart/issues/detail?id=12722
 
+polymer.dart compiles to very large JavaScript files:
+https://code.google.com/p/dart/issues/detail?id=12730
+
 ## TODO
 
 * Lifecycle methods
