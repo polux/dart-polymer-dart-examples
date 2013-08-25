@@ -67,7 +67,11 @@ Binding, conditionals:
        bool get applyAuthorStyles => true;
        // ...
     }
-  
+
+* To create an app that works when compiled to JavaScript, you need to
+  build it. See deploy_to_javascript and its `build.dart` file. Notice the
+  `--deploy` argument.
+
 ## Known issues:
 
 (This is not a complete list of bugs with polymer.dart. Just the bugs that
