@@ -11,6 +11,21 @@
     <polymer-element name="my-element">
         <template>
             <style>
+                @host {
+                  * {
+                    opacity: 0.4;
+                    +transition: opacity 420ms ease-in-out;
+                  }
+                  *:hover {
+                    opacity: 1;
+                  }
+                  *:active {
+                    position: relative;
+                    top: 3px;
+                    left: 3px;
+                  }
+                }
+                
                 p {
                     color: red;
                 }
@@ -32,6 +47,10 @@
             <div class="important">
                 Important is green
             </div>
+            
+            <div>
+              <content></content>
+            </div>
         </template>
         <script type="application/dart" src="index.dart"></script>
     </polymer-element>
@@ -46,10 +65,10 @@
         Outside important is black
     </div>
 
-    <my-element></my-element>
+    <my-element>Hello from content</my-element>
 
-    // If the script is just an empty main, it's OK to include inline.
-    // Otherwise, put the app into a separate .dart file.
+    <!-- If the script is just an empty main, it's OK to include inline. -->
+    <!-- Otherwise, put the app into a separate .dart file. -->
 
     <script type="application/dart">main() {}</script>
 </body>
