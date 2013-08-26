@@ -123,6 +123,10 @@ https://code.google.com/p/dart/issues/detail?id=12722
 polymer.dart compiles to very large JavaScript files:
 https://code.google.com/p/dart/issues/detail?id=12730
 
+Names in nested templates aren't working:
+nested_templates
+https://code.google.com/p/dart/issues/detail?id=12742
+
 ## TODO
 
 * Lifecycle methods
