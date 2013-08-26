@@ -3,7 +3,8 @@ import 'package:fancy_syntax/syntax.dart';
 import 'dart:html';
 
 class Model extends Object with ObservableMixin {
-  @observable int selected = 0;
+  @observable int selected = 1; // Make sure this is not null.
+                                // Set it to the default selection index.
   List fruits = ['apples', 'bananas', 'pears'];
 }
 
