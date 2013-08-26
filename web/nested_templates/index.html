@@ -9,6 +9,17 @@
   <body>   
     <template id="tmpl" bind>
       <p>Hello {{name}}</p>
+      <ul>
+        <template repeat="{{color in colors}}">
+          <!-- testing accessing a name in a parent template -->
+          <li>
+            Your name is {{name}} and your favorite color is {{color}}
+            <template if="{{color == 'red'}}">
+              I found red for {{name}}
+            </template>
+          </li>
+        </template>
+      </ul>
       <template bind="{{address}}">
         <p>You live in {{city}} {{zip}}</p>
       </template>
