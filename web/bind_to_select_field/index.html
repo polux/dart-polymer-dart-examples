@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>
+    <template id="tmpl" bind>
+      <select selectedIndex="{{selected}}">
+        <template repeat="{{fruit in fruits}}">
+          <option>{{fruit}}</option>
+        </template>
+      </select>
+      
+      <div>
+        You selected option {{selected}}
+      </div>
+    </template>
+    <script type="application/dart" src="index.dart"></script>
+  </body>
+</html>
