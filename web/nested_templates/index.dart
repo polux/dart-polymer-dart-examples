@@ -1,5 +1,5 @@
 import 'dart:html';
-import 'package:fancy_syntax/syntax.dart';
+import 'package:polymer_expressions/polymer_expressions.dart';
 
 class Person {
   String name;
@@ -23,8 +23,8 @@ main() {
   TemplateElement tmpl = query('#tmpl') as TemplateElement;
   TemplateElement tmpl2 = query('#tmpl') as TemplateElement;
   
-  tmpl.bindingDelegate = new FancySyntax();
-  tmpl2.bindingDelegate = new FancySyntax();
+  tmpl.bindingDelegate = new PolymerExpressions();
+  tmpl2.bindingDelegate = new PolymerExpressions();
   
   tmpl.model = person;
   tmpl2.model = person;

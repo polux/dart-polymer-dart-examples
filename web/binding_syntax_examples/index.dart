@@ -1,6 +1,6 @@
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'package:fancy_syntax/syntax.dart';
+import 'package:polymer_expressions/polymer_expressions.dart';
 
 class Person extends Object with ObservableMixin {
   @observable String firstName;
@@ -42,7 +42,7 @@ main() {
       ..addresses['work'] = new Address('oak way', 'gotham');
   
   TemplateElement template = query('#tmpl');
-  template.bindingDelegate = new FancySyntax(globals: {
+  template.bindingDelegate = new PolymerExpressions(globals: {
     'uppercase': (String input) => input.toUpperCase()
   });
   template.model = bob;

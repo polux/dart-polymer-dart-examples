@@ -1,5 +1,5 @@
 import 'package:polymer/polymer.dart';
-import 'package:fancy_syntax/syntax.dart';
+import 'package:polymer_expressions/polymer_expressions.dart';
 import 'dart:html';
 
 class Model extends Object with ObservableMixin {
@@ -11,6 +11,6 @@ class Model extends Object with ObservableMixin {
 
 main() {
   TemplateElement template = query('#tmpl') as TemplateElement;
-  template.bindingDelegate = new FancySyntax();
+  template.bindingDelegate = new PolymerExpressions();
   template.model = new Model();
 }
