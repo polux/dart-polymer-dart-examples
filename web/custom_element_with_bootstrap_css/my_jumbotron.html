@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    
+    <!-- Use polymer-element instead of element -->
+    <polymer-element name="my-jumbotron">
+      <template>
+        <div class="jumbotron">
+          <div class="container">
+            <content select="h1"></content>
+            <p><a class="btn btn-primary btn-lg"><content select=".call-to-action"></content></a></p>
+          </div>
+        </div>
+      </template>
+      
+      <script type="application/dart" src="my_jumbotron.dart"></script>
+    </polymer-element>
+    
+  </body>
+</html>
