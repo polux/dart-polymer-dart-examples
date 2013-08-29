@@ -1,4 +1,4 @@
-library contacts_app;
+library contacts_view;
 
 import "package:polymer/polymer.dart";
 import "dart:html";
