@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>
+    <template id="tmpl" bind>
+      <div>
+        Type something:<br> <textarea value="{{message}}"></textarea>
+      </div>
+      <div>
+        You typed {{message}}
+      </div>
+    </template>
+    
+    <script type="application/dart" src="index.dart"></script>
+  </body>
+</html>
