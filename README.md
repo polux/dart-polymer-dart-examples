@@ -131,9 +131,6 @@ Binding to a select value doesn't work (but binding to selectedIndex works)
 bind_to_select_field
 https://code.google.com/p/dart/issues/detail?id=12779
 
-Custom elements + JS interop aren't working. Could just be my misconfiguration.
-[no issue until I confirm it's not just me]
-
 ## TODO
 
 * Lifecycle methods
