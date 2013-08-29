@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- import the parent element -->
+    <link rel="import" href="my_element.html">
+  </head>
+  <body>
+    <!-- Use polymer-element instead of element -->
+    <polymer-element name="my-element-subclass" extends="my-element">
+      <template>
+        
+        <!-- get the hosts' shadow and insert here -->
+        <shadow></shadow>
+        
+        <p>Hello from inside of the subclass!</p>
+      </template>
+      
+      <script type="application/dart" src="my_element_subclass.dart"></script>
+    </polymer-element>
+  </body>
+</html>
