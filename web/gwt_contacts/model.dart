@@ -8,15 +8,8 @@ class Contact extends Object with ObservableMixin {
   @observable String lastName;
   @observable String emailAddress;
   
-  Contact.empty() {
-    id = "";
-    firstName = "";
-    lastName = "";
-    emailAddress = "";
-  }
-  
-  Contact(String this.id, String this.firstName, String this.lastName,
-      String this.emailAddress);
+  Contact([this.id = "", this.firstName = "", this.lastName = "",
+      String this.emailAddress = ""]);
   
   Contact.copy(Contact contact) {
     id = contact.id;

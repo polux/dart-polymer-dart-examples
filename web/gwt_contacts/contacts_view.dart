@@ -19,13 +19,13 @@ class ContactsView extends PolymerElement with ObservableMixin {
   }
   
   void add() {
-    contacts.add(new Contact.empty());
+    contacts.add(new Contact());
     selectedContact = contacts.last;
   }
   
   void delete() {
-    var checkboxes = getShadowRoot("contacts-view").queryAll("input:checked");
-    var ids = checkboxes.map((InputElement checkbox) => checkbox.nextElementSibling.attributes["data-id"]);
+    List<InputElement> checkboxes = shadowRoot.queryAll("input:checked");
+    Iterable<String> ids = checkboxes.map((InputElement checkbox) => checkbox.nextElementSibling.attributes["data-id"]);
     contacts.removeWhere((Contact contact) => ids.contains(contact.id));
   }
   
