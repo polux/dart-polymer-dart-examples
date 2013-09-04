@@ -1,0 +1,19 @@
+<polymer-element name="days-until-birthday">
+  <template>
+    <div>
+      <input type="date" value="{{birthday}}">
+    </div>
+    <div>
+      <template if="{{numDays == 0}}">
+        Today's the day. Happy birthday!
+      </template>
+      <template if="{{numDays > 0}}">
+        It's {{numDays}} until your next birthday.
+      </template>
+      <template if="{{numDays == -1}}">
+        Please enter your birthdate above.
+      </template>
+    </div>
+  </template>
+  <script type="application/dart" src="days_until_birthday.dart"></script>
+</polymer-element>

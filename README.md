@@ -31,7 +31,7 @@ Binding, conditionals:
   
 * The constructor attribute on <polymer-element> is no longer used.
 
-* Null is falsey for MDV if expressions.
+* Null is falsey for MDV if expressions. (How to test for not null?)
 
 * Calling `mdv.initialize()` is NOT required with boot.js.
 
@@ -83,9 +83,6 @@ https://code.google.com/p/dart/issues/detail?id=12687
 bind_to_a_map:
 Keys must be Symbols. https://code.google.com/p/dart/issues/detail?id=11980
 
-manually_add_custom_element_to_dom:
-https://code.google.com/p/dart/issues/detail?id=12089
-
 fancy-syntax doesn't support list literals:
 https://github.com/dart-lang/fancy-syntax/issues/9
 
@@ -130,6 +127,10 @@ https://code.google.com/p/dart/issues/detail?id=12742
 Binding to a select value doesn't work (but binding to selectedIndex works)
 bind_to_select_field
 https://code.google.com/p/dart/issues/detail?id=12779
+
+Unable to compare against the literal `null` in an expression,
+when getter first returned a null, and now an int.
+e.g.: <template if="{{!numDays}}">  (works with numDays is null, not when is int)
 
 ## TODO
 
