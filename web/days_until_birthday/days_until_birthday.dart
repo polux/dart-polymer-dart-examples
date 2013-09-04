@@ -15,7 +15,7 @@ class DaysUntilBirthdayElement extends PolymerElement with ObservableMixin {
   
   int get numDays {
     if (birthday == null) {
-      return -1;
+      return null;
     } else {
       return DateTime.parse(birthday).difference(new DateTime.now()).inDays;
     }

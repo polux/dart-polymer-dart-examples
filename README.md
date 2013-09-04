@@ -71,6 +71,8 @@ Binding, conditionals:
 * To create an app that works when compiled to JavaScript, you need to
   build it. See deploy_to_javascript and its `build.dart` file. Notice the
   `--deploy` argument.
+  
+* No longer need an empty `main(){}` in your main index.html file.
 
 ## Known issues:
 
