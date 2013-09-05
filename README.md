@@ -74,6 +74,10 @@ Binding, conditionals:
   
 * No longer need an empty `main(){}` in your main index.html file.
 
+* Polymer.dart requires `{{ }}` inside of template if and repeats.
+  Old Web UI: `template instantiate="some boolean"`
+  New Polymer.dart: `template if="{{some boolean}}"`
+
 ## Known issues:
 
 (This is not a complete list of bugs with polymer.dart. Just the bugs that
