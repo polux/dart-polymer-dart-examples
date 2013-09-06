@@ -22,11 +22,15 @@ https://code.google.com/p/dart/issues/detail?id=12262
 Access to current iteration index:
 https://code.google.com/p/dart/issues/detail?id=12666
 
+Two-way binding between model and custom elements:
+https://code.google.com/p/dart/issues/detail?id=13152
+
 ## Random bugs:
 
 (This is not a complete list of bugs with polymer.dart. Just the bugs that
 I ran into. Some of these are feature-compatibility issues with Polymer
-JavaScript, others are straight-up bugs.)
+JavaScript, others are straight-up bugs. Please don't misinterpret,
+polymer.dart might be useable for you in the meantime. It depends on your app.)
 
 conditional_templates:
 https://code.google.com/p/dart/issues/detail?id=12687
