@@ -1,6 +1,6 @@
 # Polymer.dart Samples and Examples
 
-In which I learn all about polymer.dart. Discuss polymer.dart at
+In which I learn all about [polymer.dart][polymerdart]. Discuss polymer.dart at
 web-ui@dartlang.org mailing list. Ask question on Stack Overflow.
 
 Docs that I found useful:
@@ -153,3 +153,6 @@ This project received help from:
 
 * Nelson Silva <nelson.silva@inevo.pt>
 * Chris Buckett <chrisbuckett@gmail.com>
+* Richard Griffith <scribe.griff@gmail.com>
+
+[polymerdart]: https://www.dartlang.org/polymer-dart/
