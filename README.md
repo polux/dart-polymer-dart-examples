@@ -8,75 +8,10 @@ Docs that I found useful:
 Binding, conditionals:
 : https://github.com/Polymer/mdv/blob/stable/docs/template.md
 
-## General notes:
+## Upgrading from Web UI:
 
-* Use `<polymer-element>` instead of `<element>`
-
-* Declarative event binding requires custom elements.
-
-* If you use an `if` attribute on your template, the `bind` attribute
-  is optional.
-  
-* Go through `shadowRoot` to find nodes inside of your custom element.
-
-* When manually observing an object, the ChangeRecord only has the field name.
-  Not the old and new value. You have to use mirrors to get the new value.
-
-* You should include packages/polymer/boot.js and *NOT* dart.js.
-
-* boot.js **must** go into the `<head>` and not the `<body>`
-  
-* Custom tag classes now need @CustomTag('element-name'). There's another
-  way, but to limit confusion, I won't mention it here. :)
-  
-* The constructor attribute on <polymer-element> is no longer used.
-
-* Null is falsey for MDV if expressions. (How to test for not null?)
-
-* Calling `mdv.initialize()` is NOT required with boot.js.
-
-* Every custom element must have a Dart class. Use an empty Dart class
-  if necessary. See https://code.google.com/p/dart/issues/detail?id=12254
-  If you really don't want to create an empty class, use the
-  `registerPolymerElement('my-element', () => new PolymerElement())`
-  technique.
-  
-* The `extends` attribute on polymer-element is optional. If you use it,
-  you should use the form of `<div is="my-element">`. If you omit the
-  `extends` attribute, you are safe to use `<my-element>`.
-  
-* Getters are no longer observable. Instead, use bindProperty
-  to let the system know that a getter should be read. See observable_getter.
-
-* You **must** call `super` in your `created`/`inserted` lifecycle callbacks.
-
-* Polymer.dart does **not** support polymer.js's `noscript` attribute on
-  `polymer-element`. All custom elements must have a Dart class (see above).
-  
-* `main()` functions are run in document depth-first order, after
-  `DOMContentLoaded`. There is no main main anymore, just a bunch of mains.
-  
-* Similar to boot.js required to be in `<head>`, your .dart script
-  needs to be in `<body>`, ideally at the end.
-  This might change, see https://code.google.com/p/dart/issues/detail?id=12388
-
-* apply-author-styles (which used to be on the `<element>` tag) is now set
-  as a getter property on the class for the custom element. e.g.:
-
-    class MyElement extends PolymerElement {
-       bool get applyAuthorStyles => true;
-       // ...
-    }
-
-* To create an app that works when compiled to JavaScript, you need to
-  build it. See deploy_to_javascript and its `build.dart` file. Notice the
-  `--deploy` argument.
-  
-* No longer need an empty `main(){}` in your main index.html file.
-
-* Polymer.dart requires `{{ }}` inside of template if and repeats.
-  Old Web UI: `template instantiate="some boolean"`
-  New Polymer.dart: `template if="{{some boolean}}"`
+See our tips and tricks for upgrading from
+[Web UI to Polymer.dart](https://www.dartlang.org/polymer-dart/upgrading-to-polymer-from-web-ui.html).
 
 ## Web UI features that are missing from polymer.dart:
 
@@ -90,7 +25,8 @@ https://code.google.com/p/dart/issues/detail?id=12666
 ## Random bugs:
 
 (This is not a complete list of bugs with polymer.dart. Just the bugs that
-I ran into.)
+I ran into. Some of these are feature-compatibility issues with Polymer
+JavaScript, others are straight-up bugs.)
 
 conditional_templates:
 https://code.google.com/p/dart/issues/detail?id=12687
