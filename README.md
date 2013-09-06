@@ -78,7 +78,16 @@ Binding, conditionals:
   Old Web UI: `template instantiate="some boolean"`
   New Polymer.dart: `template if="{{some boolean}}"`
 
-## Known issues:
+## Web UI features that are missing from polymer.dart:
+
+Custom element, custom attribute, values doesn't work:
+custom_element_with_custom_attribute_binding
+https://code.google.com/p/dart/issues/detail?id=12262
+
+Access to current iteration index:
+https://code.google.com/p/dart/issues/detail?id=12666
+
+## Random bugs:
 
 (This is not a complete list of bugs with polymer.dart. Just the bugs that
 I ran into.)
@@ -97,10 +106,6 @@ https://github.com/dart-lang/fancy-syntax/issues/24
 
 fancy-syntax map literals in class attribute aren't treating non-null as true:
 https://github.com/dart-lang/fancy-syntax/issues/26
-
-Custom element, custom attribute, values doesn't work:
-custom_element_with_custom_attribute_binding
-https://code.google.com/p/dart/issues/detail?id=12262
 
 Custom element, custom attribute, binding via template doesn't work:
 custom_element_with_custom_attribute_binding
@@ -140,9 +145,6 @@ e.g.: <template if="{{!numDays}}">  (works with numDays is null, not when is int
 
 ## TODO
 
-* Lifecycle methods
-* select box
-* textarea
 * CSS in external file
 
 ## Additional authors
