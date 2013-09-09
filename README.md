@@ -25,6 +25,9 @@ https://code.google.com/p/dart/issues/detail?id=12666
 Two-way binding between model and custom elements:
 https://code.google.com/p/dart/issues/detail?id=13152
 
+Entry points in sub-directories:
+https://code.google.com/p/dart/issues/detail?id=13185
+
 ## Random bugs:
 
 (This is not a complete list of bugs with polymer.dart. Just the bugs that
