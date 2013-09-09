@@ -1,14 +1,16 @@
+<!DOCTYPE html>
+
 <polymer-element name="my-element" extends="div">
-    <template>
-        <p>
-            <!-- passing arbitrary data to the updateMessage method using data- attributes -->
-            <button on-click="updateMessage" data-msg="You clicked Show">Show Message</button>
-            <button on-click="updateMessage" data-msg="You clicked Hide">Hide Message</button>
-        </p>
+  <template>
+    <p>
+      <!-- passing arbitrary data to the updateMessage method using data- attributes -->
+      <button on-click="updateMessage" data-msg="You clicked Show">Show Message</button>
+      <button on-click="updateMessage" data-msg="You clicked Hide">Hide Message</button>
+    </p>
 
-        <p id="message">{{ message }}</p> <!-- bind the message -->
+    <p id="message">{{ message }}</p> <!-- bind the message -->
 
-    </template>
+  </template>
 
-    <script type="application/dart" src="my_element.dart"></script>
+  <script type="application/dart" src="my_element.dart"></script>
 </polymer-element>

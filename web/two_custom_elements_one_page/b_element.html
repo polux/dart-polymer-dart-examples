@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 
-<html>
-  <head>
-    <link rel="import" href="a_element.html">
-  </head>
-  <body>
+<link rel="import" href="a_element.html">
+
+<!-- Use polymer-element instead of element -->
+<polymer-element name="b-element">
+  <template>
+    <p>Hello from inside of B!</p>
     
-    <!-- Use polymer-element instead of element -->
-    <polymer-element name="b-element">
-      <template>
-        <p>Hello from inside of B!</p>
-        
-        <a-element></a-element>
-      </template>
-      
-      <script type="application/dart" src="b_element.dart"></script>
-    </polymer-element>
-    
-  </body>
-</html>
+    <a-element></a-element>
+  </template>
+  
+  <script type="application/dart" src="b_element.dart"></script>
+</polymer-element>
