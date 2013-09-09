@@ -12,11 +12,11 @@
         <template>
             <style>
                 @host {
-                  my-element {
+                  :scope {
                     display: block;
                   }
                   
-                  my-element:hover {
+                  :scope:hover {
                     border: 1px solid black;
                   }
                 }
@@ -32,6 +32,10 @@
                 .important {
                     color: green;
                 }
+                
+                #controls p {
+                  color: orange;
+                }
             </style>
             <p>Inside element, should be red</p>
 
@@ -46,8 +50,23 @@
             <div>
               <content></content>
             </div>
+            
+            <my-child>
+              <div id="controls">
+                <p>Content from my-element, giving to child</p>
+              </div>
+            </my-child>
         </template>
         <script type="application/dart" src="index.dart"></script>
+    </polymer-element>
+    
+    <polymer-element name="my-child">
+      <template>
+        <div id="content">
+          <p>Here in child</p>
+          <content></content>
+        </div>
+      </template>
     </polymer-element>
 
     <p>outside of element, should be black</p>

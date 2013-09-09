@@ -4,6 +4,7 @@ import 'package:polymer/polymer.dart';
 // See https://code.google.com/p/dart/issues/detail?id=12254
 
 @CustomTag('my-element')
-class MyElement extends PolymerElement {
-  
-}
+class MyElement extends PolymerElement { }
+
+@CustomTag('my-child')
+class MyChild extends PolymerElement { }
