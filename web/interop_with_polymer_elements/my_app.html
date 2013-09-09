@@ -1,10 +1,15 @@
-<script src="polymer-v0.0.20130905.min.js"></script>
-<link rel="import" href="polymer-elements/polymer-localstorage/polymer-localstorage.html">
+<!DOCTYPE html>
 
+<script src="polymer-v0.0.20130905.min.js"></script>
+<!-- build.dart doesn't like polymer.js 
+<link rel="import" href="polymer-elements/polymer-localstorage/polymer-localstorage.html">
+-->
 
 <polymer-element name="my-app">
   <template>
-    <polymer-localstorage name="test1" value="{{value}}">
+    <!--
+    <polymer-localstorage name="test1" value="{{value}}"></polymer-localstorage>
+    -->
     <p>
       The value is: {{value}}
     </p>

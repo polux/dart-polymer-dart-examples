@@ -4,3 +4,4 @@ packages
 .idea
 pubspec.lock
 .buildlog
+out/
