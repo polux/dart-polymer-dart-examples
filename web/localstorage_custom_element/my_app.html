@@ -1,0 +1,15 @@
+<link rel="import" href="codelab_localstorage.html">
+
+<polymer-element name="my-app">
+  <template>
+    <!-- in the future, you'll be able to use non-bound literals for attribute values -->
+    <codelab-localstorage name="{{'test'}}" value="{{value}}"></codelab-localstorage>
+    <p>
+      The value is {{value}}
+    </p>
+    <p>
+      <input type="text" value="{{value}}">
+    </p>
+  </template>
+  <script type="application/dart" src="my_app.dart"></script>
+</polymer-element>
