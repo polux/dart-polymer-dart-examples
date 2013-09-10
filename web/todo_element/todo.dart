@@ -73,8 +73,8 @@ class TodoElement extends PolymerElement with ObservableMixin {
   // Query the add and clear buttons.
   void created() {
     super.created();
-    addButton = shadowRoot.query("#add");
-    clearButton = shadowRoot.query("#clear");
+    addButton = getShadowRoot('todo-app').query("#add");
+    clearButton = getShadowRoot('todo-app').query("#clear");
     addButton.disabled = true;
     clearButton.disabled = true;
   }

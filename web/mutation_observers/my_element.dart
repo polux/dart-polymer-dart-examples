@@ -11,7 +11,7 @@ class MyElement extends PolymerElement with ObservableMixin {
     super.created();
     
     observer = new MutationObserver(_onMutation);
-    observer.observe(shadowRoot.query('#timestamps'), childList: true, subtree: true);
+    observer.observe(getShadowRoot('my-element').query('#timestamps'), childList: true, subtree: true);
     
     new Timer.periodic(const Duration(seconds: 1), (t) {
       timestamps.add(new DateTime.now().toString());
