@@ -32,7 +32,7 @@ class Item extends Object with ObservableMixin {
 }
 
 /// The todo-element.
-@CustomTag('todo-element')
+@CustomTag('todo-app')
 class TodoElement extends PolymerElement with ObservableMixin {
   final ObservableList<Item> items =
       toObservable([
