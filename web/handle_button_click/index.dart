@@ -8,13 +8,13 @@ class MyElement extends PolymerElement {
   
     // shadowRoot is the root of the internals of the custom element
     
-    shadowRoot.query('#show').style.display = 'inline';
-    shadowRoot.query('#hide').style.display = 'none';
+    getShadowRoot('my-element').query('#show').style.display = 'inline';
+    getShadowRoot('my-element').query('#hide').style.display = 'none';
   }
   
   void hideMessage(Event e, var detail, Node target) {
     print(attributes['id']);
-    shadowRoot.query('#show').style.display = 'none';
-    shadowRoot.query('#hide').style.display = 'inline';
+    getShadowRoot('my-element').query('#show').style.display = 'none';
+    getShadowRoot('my-element').query('#hide').style.display = 'inline';
   }
 }
