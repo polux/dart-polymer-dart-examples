@@ -8,6 +8,8 @@ import 'package:polymer/component_build.dart';
 import 'package:polymer/deploy.dart' as deploy;
 
 void main() {
-  build(new Options().arguments, ['web/deploy_to_javascript/index.html'])
-      .then((_) => deploy.main());
+// Waiting for https://code.google.com/p/dart/issues/detail?id=13185 to be fixed.
+  
+//  build(new Options().arguments, ['web/deploy_to_javascript/index.html'])
+//      .then((_) => deploy.main());
 }
