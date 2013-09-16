@@ -2,105 +2,41 @@ library todo;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-
-/// The Item class represents an item in the Todo list.
-class Item extends Object with ObservableMixin {
-  @observable String text;
-  @observable bool done;
-
-  Item([this.text = '', this.done = false]) {
-    // Monitor the done boolean to add/remove done class.
-    bindProperty(this, const Symbol('done'),
-        () => notifyProperty(this, const Symbol('doneClass')));
-  }
-
-  // Check if item text is empty.
-  bool get isEmpty => text.isEmpty;
-
-  // Copy the item.
-  Item clone() => new Item(text, done);
-
-  // Clear the items.
-  void clear() {
-    text = '';
-    done = false;
-  }
-
-  // Apply a done class for completed items.
-  String get doneClass {
-    if (done) return 'done';
-    else return '';
-  }
-}
+import 'models.dart';
 
 /// The todo-element.
 @CustomTag('todo-app')
 class TodoElement extends PolymerElement with ObservableMixin {
-  final ObservableList<Item> items =
-      toObservable([
-                    new Item('Learn about Dart', true),
-                    new Item('Learn about Polymer'),
-                    new Item('Create first Polymer app')
-                    ]);
-  @observable Item newItem = new Item();
-  ButtonElement addButton;
-  ButtonElement clearButton;
+  final ObservableList<Item> items = toObservable([]);
 
   TodoElement() {
     // Need to check if the items list gets added to or has something removed.
     items.changes.listen((records) {
       notifyProperty(this, const Symbol('remaining'));
     });
-
-    // Also need to check if any of the items in items has a property that
-    // changes.
-    for (Item item in items) {
-      item.changes.listen((records) {
-        notifyProperty(this, const Symbol('remaining'));
-      });
-    }
-
-    // Check if text has been entered to enable buttons.
-    newItem.changes.listen((records) {
-      if (newItem.isEmpty) {
-        addButton.disabled = true;
-        clearButton.disabled = true;
-      } else {
-        addButton.disabled = false;
-        clearButton.disabled = false;
-      }
-    });
   }
-
-  // Query the add and clear buttons.
-  void created() {
-    super.created();
-    addButton = getShadowRoot('todo-app').query("#add");
-    clearButton = getShadowRoot('todo-app').query("#clear");
-    addButton.disabled = true;
-    clearButton.disabled = true;
-  }
+  
+  int get remainingCount => items.where((i) => !i.done).length;
 
   // Apply the styles.
   bool get applyAuthorStyles => true;
 
-  // Calculate remaining todo items.
-  int get remaining => items.where((i) => !i.done).length;
-
-  // Add a new item.
-  void add(Event e, var detail, Node target) {
-    if (newItem.text.isEmpty) return;
-    Item item = newItem.clone();
-    items.add(item);
-    newItem.clear();
-    item.changes.listen((records) {
-      notifyProperty(this, const Symbol('remaining'));
-    });
+  void addTodo(KeyboardEvent e, var detail, Node target) {
+    KeyEvent event = new KeyEvent(e);
+    if (event.keyCode == KeyCode.ENTER) {
+      InputElement newTodo = target as InputElement;
+      Item item = new Item(text: newTodo.value, done: false);
+      item.changes.listen((_) => notifyProperty(this, const Symbol('remaining')));
+      items.add(item);
+      newTodo.value = '';
+    }
   }
-
-  // Clear the item before adding it.
-  void clear(Event e, var detail, Node target) {
-    newItem.clear();
+  
+  void cancelTodo(Event e, var detail, Node target) {
+    KeyEvent event = new KeyEvent(e);
+    if (event.keyCode == KeyCode.ESC) {
+      (target as InputElement).value = '';
+    }
   }
 
   // Mark all items as done.

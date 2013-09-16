@@ -1,0 +1,15 @@
+<polymer-element name="todo-item" extends="li" attributes="item">
+  <template>
+    <style>
+      label.done {
+        color: gray;
+        text-decoration: line-through;
+      }
+    </style>
+    <label class="checkbox {{item.doneClass}}">
+      <input type="checkbox" checked="{{item.done}}" on-change="change">
+      {{item.text}}
+    </label>
+  </template>
+  <script type="application/dart" src="todo_item.dart"></script>
+</polymer-element>

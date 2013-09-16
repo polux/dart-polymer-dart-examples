@@ -11,6 +11,9 @@ class Person extends Object with ObservableMixin {
   Map<String, Address> addresses = new Map<String, Address>();
   List<Color> favoriteColors = new List<Color>();
   
+  List<Color> nullColors;
+  Address thisIsNull;
+  
   String get fullName => '$firstName $lastName';
   
   Address addressFor(String name) => addresses[name];

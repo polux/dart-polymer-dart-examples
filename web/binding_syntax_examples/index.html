@@ -137,6 +137,12 @@
            fancy-syntax in index.dart -->
       <div>Uppercase: {{fullName | uppercase}}</div>
       
+      <div>This should not break the app, even though we're accessing a null: {{ thisIsNull.street }}</div>
+      
+      <template repeat="{{nullColor in nullColors}}">
+        <p>this should not break the app</p>
+      </template>
+      
     </template>
     <script type="application/dart" src="index.dart"></script>
   </body>
