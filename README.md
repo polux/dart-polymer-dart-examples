@@ -3,11 +3,6 @@
 In which I learn all about [polymer.dart][polymerdart]. Discuss polymer.dart at
 web-ui@dartlang.org mailing list. Ask question on Stack Overflow.
 
-Docs that I found useful:
-
-Binding, conditionals:
-: https://github.com/Polymer/mdv/blob/stable/docs/template.md
-
 ## Upgrading from Web UI:
 
 See our tips and tricks for upgrading from
