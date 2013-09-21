@@ -1,15 +1,12 @@
-import 'dart:html';
 import 'package:polymer/polymer.dart';
 
-class App extends Object with ObservableMixin {
-  @observable
-  bool blue = false;
-  @observable
-  bool green = false;
-  @observable
-  bool red = false;
+@CustomTag('my-example')
+class MyExample extends PolymerElement with ObservableMixin {
+  @observable bool blue = false;
+  @observable bool green = false;
+  @observable bool red = false;
   
-  App() {
+  MyExample() {
     bindProperty(this, const Symbol('red'),
         () => notifyProperty(this, const Symbol('favoriteColor')));
     bindProperty(this, const Symbol('green'),
@@ -29,8 +26,4 @@ class App extends Object with ObservableMixin {
     }
     return value;
   }
-}
-
-main() {
-  query('#tmpl').model = new App();
 }

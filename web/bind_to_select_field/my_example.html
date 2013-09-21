@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<polymer-element name="my-example">
+  <template>
+    <!-- Binding to value doesn't work yet -->
+    <!-- See https://code.google.com/p/dart/issues/detail?id=12779 -->
+    
+    <select selectedIndex="{{selected}}" value="{{value}}">
+      <option template repeat="{{fruit in fruits}}">{{fruit}}</option>
+    </select>
+    
+    <div>
+      You selected option {{selected}} with value-from-list
+      {{fruits[selected]}} and value-from-binding {{value}}
+    </div>
+  </template>
+  <script type="application/dart" src="my_example.dart"></script>
+</polymer-element>

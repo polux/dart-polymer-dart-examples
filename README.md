@@ -81,6 +81,13 @@ Unable to compare against the literal `null` in an expression,
 when getter first returned a null, and now an int.
 e.g.: <template if="{{!numDays}}">  (works with numDays is null, not when is int)
 
+Radio buttons not un-setting.
+bind_to_radio_buttons
+https://code.google.com/p/dart/issues/detail?id=13478
+
+PolymerExpressions throws exception when encounters a non-existant field:
+https://code.google.com/p/dart/issues/detail?id=13481
+
 ## TODO
 
 * CSS in external file
