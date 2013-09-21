@@ -4,17 +4,10 @@
   <head>
     <title>index</title>
     <script src="packages/polymer/boot.js"></script>
+    <link rel="import" href="my_element.html">
   </head>
  
   <body>   
-    <ul>
-      <!-- the bind attribute is optional if repeat exists -->
-      <template id="tmpl" repeat>
-        <li>{{}}</li> <!-- the empty {{}} essentially calls toString on the
-                           current iteration object -->
-      </template>
-    </ul>
-    
-    <script type="application/dart" src="index.dart"></script>
+    <my-element></my-element>
   </body>
 </html>

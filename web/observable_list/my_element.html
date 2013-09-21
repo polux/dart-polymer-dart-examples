@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+      
+<!-- Use polymer-element instead of element -->
+<polymer-element name="my-element">
+  <template>
+    <ul>
+      <template repeat="{{timestamps}}">
+        <li>{{}}</li> <!-- the empty {{}} essentially calls toString on the
+                           current iteration object -->
+      </template>
+    </ul>
+    
+    <p>Also, you can give a name to the current repeat variable</p>
+    
+    <ul>
+      <template repeat="{{ts in timestamps}}">
+        <li>{{ts}}</li> <!-- the empty {{}} essentially calls toString on the
+                           current iteration object -->
+      </template>
+    </ul>
+  </template>
+  
+  <script type="application/dart" src="my_element.dart"></script>
+</polymer-element>
