@@ -44,4 +44,12 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
       return term.toLowerCase().contains(lower);
     }));
   }
+  
+  keyup(Event e, var detail, Node target) {
+    print(e.keyCode);
+    if (new KeyEvent(e).keyCode == KeyCode.ESC) {
+      search = '';
+      isSelected = true;
+    }
+  }
 }
