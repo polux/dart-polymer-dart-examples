@@ -5,11 +5,16 @@
     <title>index</title>
     <link rel="import" href="auto_complete.html">
     <script src="packages/polymer/boot.js"></script>
+    <style>
+      auto-complete * {
+        display: none;
+      }
+    </style>
   </head>
  
   <body>
     <auto-complete>
-      <ul class="data-source" style="display:none">
+      <ul class="data-source">
        <li>ActionScript</li>
        <li>AppleScript</li>
        <li>Asp</li>
