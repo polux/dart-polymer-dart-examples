@@ -99,5 +99,6 @@ This project received help from:
 * Nelson Silva <nelson.silva@inevo.pt>
 * Chris Buckett <chrisbuckett@gmail.com>
 * Richard Griffith <scribe.griff@gmail.com>
+* Gabor Szabo <szgabsz91@gmail.com>
 
 [polymerdart]: https://www.dartlang.org/polymer-dart/
