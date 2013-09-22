@@ -29,16 +29,16 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
   
   void select(Event e, var detail, Node target) {
     search = target.text;
-    results.clear();
+    _reset();
     isSelected = true;
   }
   
   _performSearch() {
-    results.clear();
     if (isSelected) {
       isSelected = false;
       return;
     }
+    results.clear();
     if (search.trim().isEmpty) return;
     String lower = search.toLowerCase();
     results.addAll(haystack.where((String term) {
@@ -79,6 +79,7 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
   }
   
   _clear() {
+    _reset();
     search = '';
     isSelected = true;
   }
@@ -86,7 +87,12 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
   _select() {
     List<Element> lis = shadowRoot.queryAll('ul li');
     search = lis[keyboardSelect].text;
-    results.clear();
     isSelected = true;
+    _reset();
+  }
+  
+  _reset() {
+    keyboardSelect = -1;
+    results.clear();
   }
 }
