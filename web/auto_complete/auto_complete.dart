@@ -8,6 +8,7 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
   UListElement dataSource;
   final List<String> haystack = [];
   bool isSelected = false;
+  int keyboardSelect = -1;
   
   void created() {
     super.created();
@@ -41,15 +42,51 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
     if (search.trim().isEmpty) return;
     String lower = search.toLowerCase();
     results.addAll(haystack.where((String term) {
-      return term.toLowerCase().contains(lower);
+      return term.toLowerCase().startsWith(lower);
     }));
   }
   
-  keyup(Event e, var detail, Node target) {
-    print(e.keyCode);
-    if (new KeyEvent(e).keyCode == KeyCode.ESC) {
-      search = '';
-      isSelected = true;
+  keyup(KeyboardEvent e, var detail, Node target) {
+    switch (new KeyEvent(e).keyCode) {
+      case KeyCode.ESC:
+        _clear();
+        break;
+      case KeyCode.UP:
+        _moveUp();
+        break;
+      case KeyCode.DOWN:
+        _moveDown();
+        break;
+      case KeyCode.ENTER:
+        _select();
+        break;
     }
+  }
+  
+  _moveDown() {
+    List<Element> lis = shadowRoot.queryAll('ul li');
+    if (keyboardSelect >= 0) lis[keyboardSelect].classes.remove('selecting');
+    keyboardSelect = ++keyboardSelect == lis.length ? 0 : keyboardSelect;
+    lis[keyboardSelect].classes.add('selecting');
+  }
+  
+  _moveUp() {
+    List<Element> lis = shadowRoot.queryAll('ul li');
+    if (keyboardSelect >= 0) lis[keyboardSelect].classes.remove('selecting');
+    if (keyboardSelect == -1) keyboardSelect = lis.length;
+    keyboardSelect = --keyboardSelect == -1 ? lis.length-1 : keyboardSelect;
+    lis[keyboardSelect].classes.add('selecting');
+  }
+  
+  _clear() {
+    search = '';
+    isSelected = true;
+  }
+  
+  _select() {
+    List<Element> lis = shadowRoot.queryAll('ul li');
+    search = lis[keyboardSelect].text;
+    results.clear();
+    isSelected = true;
   }
 }
