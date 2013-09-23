@@ -7,12 +7,27 @@ class MyExample extends PolymerElement with ObservableMixin {
   @observable bool red = false;
   
   MyExample() {
-    bindProperty(this, const Symbol('red'),
-        () => notifyProperty(this, const Symbol('favoriteColor')));
-    bindProperty(this, const Symbol('green'),
-        () => notifyProperty(this, const Symbol('favoriteColor')));
-    bindProperty(this, const Symbol('blue'),
-        () => notifyProperty(this, const Symbol('favoriteColor')));
+    bindProperty(this, const Symbol('red'), () {
+        if (red) {
+          green = false;
+          blue = false;
+        }
+        notifyProperty(this, const Symbol('favoriteColor'));
+      });
+    bindProperty(this, const Symbol('green'), () {
+        if (green) {
+          red = false;
+          blue = false;
+        }
+        notifyProperty(this, const Symbol('favoriteColor'));
+      });
+    bindProperty(this, const Symbol('blue'), () {
+        if (blue) {
+          red = false;
+          green = false;
+        }
+        notifyProperty(this, const Symbol('favoriteColor'));
+      });
   }
   
   String get favoriteColor {

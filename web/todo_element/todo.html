@@ -43,7 +43,7 @@
       <p>Remaining: <b>{{remainingCount}}</b> of <b>{{items.length}}</b> items</p>
       <ul class="well unstyled">
         <template repeat="{{item in items}}" >
-          <li is="todo-item" class="{{item.doneClass}}" item="{{item}}"></li>
+          <li is="todo-item" class="{{item.doneClass}}" item="{{item}}" on-todochange="todoChanged"></li>
         </template>
       </ul>
       

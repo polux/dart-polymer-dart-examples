@@ -5,15 +5,14 @@ import 'dart:html';
 class AutoCompleteElement extends PolymerElement with ObservableMixin {
   @observable String search;
   final List<String> results = toObservable([]);
-  UListElement dataSource;
   final List<String> haystack = [];
-  bool isSelected = false;
+  bool skipSearch = false;
   int keyboardSelect = -1;
   
   void created() {
     super.created();
     
-    dataSource = host.query('.data-source') as UListElement;
+    UListElement dataSource = host.query('.data-source') as UListElement;
     if (dataSource == null) {
       print("WARNING: expected to find a .data-source <ul> as a child");
       return;
@@ -30,12 +29,12 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
   void select(Event e, var detail, Node target) {
     search = target.text;
     _reset();
-    isSelected = true;
+    skipSearch = true;
   }
   
   _performSearch() {
-    if (isSelected) {
-      isSelected = false;
+    if (skipSearch) {
+      skipSearch = false;
       return;
     }
     results.clear();
@@ -81,13 +80,13 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
   _clear() {
     _reset();
     search = '';
-    isSelected = true;
+    skipSearch = true;
   }
   
   _select() {
     List<Element> lis = shadowRoot.queryAll('ul li');
     search = lis[keyboardSelect].text;
-    isSelected = true;
+    skipSearch = true;
     _reset();
   }
   

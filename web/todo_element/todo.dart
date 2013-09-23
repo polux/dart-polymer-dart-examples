@@ -48,4 +48,8 @@ class TodoElement extends PolymerElement with ObservableMixin {
   void archiveDone(Event e, var detail, Node target) {
     items.removeWhere((item) => item.done);
   }
+  
+  void todoChanged(Event e, var detail, Node target) {
+    print("the todo changed! I'm here for demo purposes");
+  }
 }
