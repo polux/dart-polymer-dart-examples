@@ -12,7 +12,7 @@ class TodoElement extends PolymerElement with ObservableMixin {
   TodoElement() {
     // Need to check if the items list gets added to or has something removed.
     items.changes.listen((records) {
-      notifyProperty(this, const Symbol('remaining'));
+      notifyProperty(this, const Symbol('remainingCount'));
     });
   }
   
@@ -50,6 +50,6 @@ class TodoElement extends PolymerElement with ObservableMixin {
   }
   
   void todoChanged(Event e, var detail, Node target) {
-    print("the todo changed! I'm here for demo purposes");
+    notifyProperty(this, const Symbol('remainingCount'));
   }
 }
