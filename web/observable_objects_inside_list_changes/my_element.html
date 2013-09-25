@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<link rel="import" href="person_tag.html">
+
+<polymer-element name="my-element">
+  <template>
+    <p>
+      Name: <input type="text" value="{{newPerson.name}}"><br>
+      <button on-click="save">Save</button>
+    </p>
+    <ul>
+      <template repeat="{{person in people}}">
+        <li is="person-tag" person="{{person}}" people="{{people}}"></li>
+      </template>
+    </ul>
+    <p>
+      Total number of people that signed the agreement: {{signedCount}}
+    </p>
+  </template>
+  
+  <script type="application/dart" src="my_element.dart"></script>
+</polymer-element>
