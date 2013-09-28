@@ -88,6 +88,9 @@ https://code.google.com/p/dart/issues/detail?id=13478
 PolymerExpressions throws exception when encounters a non-existant field:
 https://code.google.com/p/dart/issues/detail?id=13481
 
+Can't build Polymer for JavaScript
+https://code.google.com/p/dart/issues/detail?id=13668
+
 ## TODO
 
 * CSS in external file
