@@ -1,7 +1,10 @@
 library models;
 
-import 'package:polymer/polymer.dart'
-show ObservableMixin, observable, bindProperty, notifyProperty;
+// Waiting on bug https://code.google.com/p/dart/issues/detail?id=13849
+//import 'package:polymer/polymer.dart'
+//show ObservableMixin, observable, bindProperty, notifyProperty;
+
+import 'package:polymer/polymer.dart';
 
 /// The Item class represents an item in the Todo list.
 class Item extends Object with ObservableMixin {
