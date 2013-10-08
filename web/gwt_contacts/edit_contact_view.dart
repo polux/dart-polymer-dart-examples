@@ -6,7 +6,7 @@ import "dart:async";
 import "model.dart";
 
 @CustomTag("edit-contact-view")
-class EditContactView extends PolymerElement with ObservableMixin {
+class EditContactView extends PolymerElement {
   @observable Contact _contact;
   Contact _originalContact;
   

@@ -1,16 +1,14 @@
 import 'package:polymer/polymer.dart';
 
 @CustomTag('days-until-birthday')
-class DaysUntilBirthdayElement extends PolymerElement with ObservableMixin {
+class DaysUntilBirthdayElement extends PolymerElement {
   @observable String birthday;
   
   created() {
     super.created();
     
     // When birthday changes, signal that numDays changes.
-    
-    bindProperty(this, const Symbol('birthday'),
-        () => notifyProperty(this, const Symbol('numDays')));
+    bindProperty(#numDays, this, 'birthday');
   }
   
   int get numDays {

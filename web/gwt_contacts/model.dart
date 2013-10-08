@@ -12,6 +12,7 @@ class Contact extends Object with ObservableMixin {
       String this.emailAddress = ""]);
   
   Contact.copy(Contact contact) {
+    if (contact == null) throw new ArgumentError('contact must not be null');
     id = contact.id;
     firstName = contact.firstName;
     lastName = contact.lastName;

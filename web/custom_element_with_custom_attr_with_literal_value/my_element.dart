@@ -1,7 +1,7 @@
 import 'package:polymer/polymer.dart';
 
 @CustomTag('my-element')
-class MyElement extends PolymerElement with ObservableMixin {
+class MyElement extends PolymerElement {
   @observable String volume = '';
   @observable int intThing = 0;  // Be sure to initialize
 // your non-String fields with a

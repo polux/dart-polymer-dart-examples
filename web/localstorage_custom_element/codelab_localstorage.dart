@@ -2,9 +2,10 @@ import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'dart:async';
 import 'dart:json' as json;
+import 'package:meta/meta.dart';
 
 @CustomTag('codelab-localstorage')
-class CodelabLocalstorage extends PolymerElement with ObservableMixin {
+class CodelabLocalstorage extends PolymerElement {
   @observable String name;
   @observable var value;
   @observable bool useRaw = false;
@@ -17,14 +18,21 @@ class CodelabLocalstorage extends PolymerElement with ObservableMixin {
   void created() {
     super.created();
     
-    bindProperty(this, const Symbol('value'), () {
+    new PathObserver(this, 'value').changes.listen((_) {
       if (loaded) {
         save();
       }
     });
   }
   
-  // TODO: the name of this method will change to enteredDocument at some point.
+  valueChanged() {
+    if (loaded) {
+      save();
+    }
+  }
+  
+  // TODO: the name of this method will change to enteredView at some point.
+  @override
   void inserted() {
     super.inserted();
     print('codelab-localstorage inserted');

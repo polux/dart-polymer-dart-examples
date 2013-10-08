@@ -2,7 +2,7 @@ import 'package:polymer/polymer.dart';
 import 'dart:html';
 
 @CustomTag('my-element')
-class MyElement extends PolymerElement with ObservableMixin {
+class MyElement extends PolymerElement {
   @observable var message;
 
   void updateMessage(Event e, var detail, Element target) {

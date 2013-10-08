@@ -3,7 +3,7 @@ import 'dart:html';
 import 'models.dart';
 
 @CustomTag('todo-item')
-class TodoItemElement extends PolymerElement with ObservableMixin {
+class TodoItemElement extends PolymerElement {
   @observable Item item;
   
   bool get applyAuthorStyles => true;

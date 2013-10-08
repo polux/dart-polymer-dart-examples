@@ -1,7 +1,8 @@
 import 'package:polymer/polymer.dart';
+import 'package:meta/meta.dart';
 
 @CustomTag('my-element')
-class MyElement extends PolymerElement with ObservableMixin {
+class MyElement extends PolymerElement {
   @observable bool isCreated = false;
   @observable bool isEntered = false;
   @observable bool isLeft = false;
@@ -20,8 +21,9 @@ class MyElement extends PolymerElement with ObservableMixin {
   
   // BUG: this does not work: https://code.google.com/p/dart/issues/detail?id=12719
   
-  void attributeChanged(String attrName, String oldVal, String newVal) {
-    super.attributeChanged(attrName, oldVal, newVal);
+  @override
+  void attributeChanged(String attrName, String oldVal) {
+    super.attributeChanged(attrName, oldVal);
 
     isAttributeChanged = true;
   }

@@ -1,7 +1,7 @@
 import 'package:polymer/polymer.dart';
 
 @CustomTag('my-toggle')
-class ToggleComponent extends PolymerElement with ObservableMixin {
+class ToggleComponent extends PolymerElement {
   @observable String state = 'On';
   
   void toggle() {

@@ -5,7 +5,7 @@ import 'dart:html';
 import 'models.dart';
 
 @CustomTag("my-element")
-class MyElement extends PolymerElement with ObservableMixin {
+class MyElement extends PolymerElement {
   final List people = toObservable([]); // observe adds/removes to the list
   final Person newPerson = new Person();
   

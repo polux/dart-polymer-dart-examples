@@ -4,7 +4,7 @@ import 'models.dart';
 import 'dart:html';
 
 @CustomTag('my-example')
-class MyExample extends PolymerElement with ObservableMixin {
+class MyExample extends PolymerElement {
 
   @observable Person bob;
   

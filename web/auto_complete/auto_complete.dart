@@ -2,7 +2,7 @@ import 'package:polymer/polymer.dart';
 import 'dart:html';
 
 @CustomTag('auto-complete')
-class AutoCompleteElement extends PolymerElement with ObservableMixin {
+class AutoCompleteElement extends PolymerElement {
   @observable String search;
   final List<String> results = toObservable([]);
   final List<String> haystack = [];
@@ -23,7 +23,7 @@ class AutoCompleteElement extends PolymerElement with ObservableMixin {
       haystack.add(e.text);
     });
     
-    bindProperty(this, const Symbol('search'), _performSearch);
+    new PathObserver(this, "search").changes.listen((_) => _performSearch());
   }
   
   void select(Event e, var detail, Node target) {

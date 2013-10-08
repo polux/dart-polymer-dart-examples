@@ -2,7 +2,7 @@ import 'package:polymer/polymer.dart';
 import 'dart:html';
 
 @CustomTag('todo-input')
-class TodoInputElement extends PolymerElement with ObservableMixin {
+class TodoInputElement extends PolymerElement {
   void keypress(KeyboardEvent e, var detail, Node target) {
     KeyEvent event = new KeyEvent(e);
     if (event.keyCode == KeyCode.ENTER) {

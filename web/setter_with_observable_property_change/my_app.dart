@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 import 'dart:async';
 
 @CustomTag('my-app')
-class MyApp extends PolymerElement with ObservableMixin {
+class MyApp extends PolymerElement {
   String _time;
   
   String get time => _time;

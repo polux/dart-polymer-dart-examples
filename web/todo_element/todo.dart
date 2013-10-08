@@ -6,7 +6,7 @@ import 'models.dart';
 
 /// The todo-element.
 @CustomTag('todo-app')
-class TodoElement extends PolymerElement with ObservableMixin {
+class TodoElement extends PolymerElement {
   final ObservableList<Item> items = toObservable([]);
 
   TodoElement() {

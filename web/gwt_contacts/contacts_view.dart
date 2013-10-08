@@ -5,7 +5,7 @@ import "dart:html";
 import "model.dart";
 
 @CustomTag("contacts-view")
-class ContactsView extends PolymerElement with ObservableMixin {
+class ContactsView extends PolymerElement {
   @observable ObservableList<Contact> contacts;
   @observable Contact selectedContact;
   
@@ -14,8 +14,16 @@ class ContactsView extends PolymerElement with ObservableMixin {
   void created() {
     super.created();
     
-    bindProperty(this, const Symbol("selectedContact"), () =>
-        notifyProperty(this, const Symbol("_hasSelectedContact")));
+    new PathObserver(this, 'selectedContact').changes.listen((_) {
+      notifyProperty(this, const Symbol("_hasSelectedContact"));
+    });
+    
+    // This doesn't work, it wants _hasSelectedContact to have a setter
+    //bindProperty(#_hasSelectedContact, this, "selectedContact");
+    
+    // This was Polymer.dart <= 0.7
+//    bindProperty(this, const Symbol("selectedContact"), () =>
+//        notifyProperty(this, const Symbol("_hasSelectedContact")));
   }
   
   void add() {

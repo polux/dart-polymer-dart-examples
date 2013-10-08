@@ -1,7 +1,7 @@
 import 'package:polymer/polymer.dart';
 
 @CustomTag('my-example')
-class MyExample extends PolymerElement with ObservableMixin {
+class MyExample extends PolymerElement {
   // No need to mark this as @observable, because the variable itself
   // isn't going to change. The contents will change, but toObservable()
   // takes care of that for us.

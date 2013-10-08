@@ -3,7 +3,7 @@ import 'dart:html';
 import 'dart:async';
 
 @CustomTag("my-element")
-class MyElement extends PolymerElement with ObservableMixin {
+class MyElement extends PolymerElement {
   final List<String> timestamps = toObservable([]);
   MutationObserver observer;
   

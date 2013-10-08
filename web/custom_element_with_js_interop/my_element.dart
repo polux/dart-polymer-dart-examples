@@ -3,7 +3,7 @@ import 'dart:html';
 import 'package:js/js.dart' as js;
 
 @CustomTag('my-element')
-class MyElement extends PolymerElement with ObservableMixin {
+class MyElement extends PolymerElement {
   @observable String result;
   
   handleClick(Event e, var detail, Node target) {

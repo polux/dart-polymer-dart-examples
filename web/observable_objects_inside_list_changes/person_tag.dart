@@ -3,7 +3,7 @@ import 'dart:html';
 import 'models.dart';
 
 @CustomTag('person-tag')
-class PersonTag extends PolymerElement with ObservableMixin {
+class PersonTag extends PolymerElement {
   @observable Person person = new Person();
   @observable List<Person> people = [];
   
