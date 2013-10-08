@@ -8,8 +8,8 @@ class MyApp extends PolymerElement {
   
   String get time => _time;
   
-  void set time(String _time) {
-    this._time = notifyPropertyChange(const Symbol('time'), this._time, _time);
+  void set time(String newTime) {
+    _time = notifyPropertyChange(#time, _time, newTime);
   }
   
   @override

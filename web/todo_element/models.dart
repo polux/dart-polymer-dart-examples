@@ -13,8 +13,8 @@ class Item extends Object with ObservableMixin {
 
   Item({this.text: '', this.done: false}) {
     // Monitor the done boolean to add/remove done class.
-    new PathObserver(this, 'done').changes
-        .listen((_) => notifyProperty(this, const Symbol('doneClass')));
+    
+    onPropertyChange(this, #done, () => notifyProperty(this, const Symbol('doneClass')));
   }
 
   // Check if item text is empty.

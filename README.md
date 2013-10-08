@@ -27,18 +27,8 @@ See our tips and tricks for upgrading from
 
 ## Web UI features that are missing from polymer.dart:
 
-Custom element, custom attribute, values doesn't work:
-custom_element_with_custom_attribute_binding
-https://code.google.com/p/dart/issues/detail?id=12262
-
 Access to current iteration index:
 https://code.google.com/p/dart/issues/detail?id=12666
-
-Two-way binding between model and custom elements:
-https://code.google.com/p/dart/issues/detail?id=13152
-
-Entry points in sub-directories:
-https://code.google.com/p/dart/issues/detail?id=13185
 
 ## Random bugs:
 
@@ -46,12 +36,6 @@ https://code.google.com/p/dart/issues/detail?id=13185
 I ran into. Some of these are feature-compatibility issues with Polymer
 JavaScript, others are straight-up bugs. Please don't misinterpret,
 polymer.dart might be useable for you in the meantime. It depends on your app.)
-
-conditional_templates:
-https://code.google.com/p/dart/issues/detail?id=12687
-
-bind_to_a_map:
-Keys must be Symbols. https://code.google.com/p/dart/issues/detail?id=11980
 
 fancy-syntax doesn't support list literals:
 https://github.com/dart-lang/fancy-syntax/issues/9
@@ -62,23 +46,11 @@ https://github.com/dart-lang/fancy-syntax/issues/24
 fancy-syntax map literals in class attribute aren't treating non-null as true:
 https://github.com/dart-lang/fancy-syntax/issues/26
 
-Custom element, custom attribute, binding via template doesn't work:
-custom_element_with_custom_attribute_binding
-http://code.google.com/p/dart/issues/detail?id=12440
-
 Confusion around importing nested components (with boot.js)
 https://code.google.com/p/dart/issues/detail?id=12400
 
-Literal attribute values not setting class field.
-custom_element_with_custom_attr_with_literal_value
-lifecycle_callbacks
-https://code.google.com/p/dart/issues/detail?id=12715
-
 Polymer.dart still uses old lifecycle callbacks:
 https://code.google.com/p/dart/issues/detail?id=12716
-
-attributeChanged doesn't fire:
-https://code.google.com/p/dart/issues/detail?id=12719
 
 on-change stops firing if the input field has a bound value:
 https://code.google.com/p/dart/issues/detail?id=12722
@@ -101,12 +73,7 @@ e.g.: <template if="{{!numDays}}">  (works with numDays is null, not when is int
 Radio buttons not un-setting.
 bind_to_radio_buttons
 https://code.google.com/p/dart/issues/detail?id=13478
-
-PolymerExpressions throws exception when encounters a non-existant field:
-https://code.google.com/p/dart/issues/detail?id=13481
-
-Can't build Polymer for JavaScript
-https://code.google.com/p/dart/issues/detail?id=13668
+(In the meantime, see bind_to_radio_buttons for workaround.)
 
 ## TODO
 

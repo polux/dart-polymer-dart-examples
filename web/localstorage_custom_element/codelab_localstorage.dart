@@ -1,7 +1,7 @@
 import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'dart:async';
-import 'dart:json' as json;
+import 'dart:convert';
 import 'package:meta/meta.dart';
 
 @CustomTag('codelab-localstorage')
@@ -25,7 +25,7 @@ class CodelabLocalstorage extends PolymerElement {
     });
   }
   
-  valueChanged() {
+  valueChanged(oldValue) {
     if (loaded) {
       save();
     }
@@ -43,14 +43,14 @@ class CodelabLocalstorage extends PolymerElement {
   }
   
   void save() {
-    window.localStorage[name] = useRaw ? value : json.stringify(this.value);
+    window.localStorage[name] = useRaw ? value : JSON.encode(this.value);
   }
   
   void load() {
     var s = window.localStorage[name];
     if (s != null && !useRaw) {
       try {
-        value = json.parse(s);
+        value = JSON.decode(s);
       } catch (x) {
         value = s;
       }

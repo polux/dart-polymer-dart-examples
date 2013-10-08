@@ -23,7 +23,7 @@ class AutoCompleteElement extends PolymerElement {
       haystack.add(e.text);
     });
     
-    new PathObserver(this, "search").changes.listen((_) => _performSearch());
+    onPropertyChange(this, #search, _performSearch);
   }
   
   void select(Event e, var detail, Node target) {

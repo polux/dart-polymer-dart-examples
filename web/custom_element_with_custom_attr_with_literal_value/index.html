@@ -7,7 +7,7 @@
   </head>
  
   <body>
-    <polymer-element name="my-element" attributes="volume,intthing,flag,doublething">
+    <polymer-element name="my-element">
       <template>
         <h1>Hello from the custom element. The volume is {{volume}}
         and intThing is {{intThing}} and flag is {{flag}}
@@ -15,9 +15,6 @@
       </template>  
       <script type="application/dart" src="my_element.dart"></script>
     </polymer-element>
-    
-    <!-- WARNING: this does not work yet -->
-    <!-- See https://code.google.com/p/dart/issues/detail?id=12262 -->
     
     <my-element volume="11" intthing="42" flag="true" doublething="100.001"></my-element>
   </body>
