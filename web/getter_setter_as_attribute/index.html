@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>
+    <polymer-element name="my-volume">
+      <template>
+        You turned it up to {{nob}}.
+      </template>
+      <script type="application/dart">
+      import 'package:polymer/polymer.dart';
+      
+      @CustomTag('my-volume')
+      class MyVolumeElement extends PolymerElement {
+        String _internalSetting;
+        
+        @published String get nob => _internalSetting;
+        void set nob(String n) { _internalSetting = n; }
+      }
+      </script>
+    </polymer-element>
+    <my-volume nob="11"></my-volume>
+  </body>
+</html>
