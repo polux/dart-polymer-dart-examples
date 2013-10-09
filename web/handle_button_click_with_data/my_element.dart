@@ -3,11 +3,11 @@ import 'dart:html';
 
 @CustomTag('my-element')
 class MyElement extends PolymerElement {
-  @observable var message;
+  @observable String message;
 
   void updateMessage(Event e, var detail, Element target) {
     message = target.attributes['data-msg']; // extract the data- attribute
-// and update the
-// bound message property
+                                             // and update the
+                                             // bound message property
   }
 }

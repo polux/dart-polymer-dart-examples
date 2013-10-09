@@ -11,7 +11,7 @@ class MyElement extends PolymerElement {
   
   MyElement() {
     ListPathObserver observer = new ListPathObserver(people, 'signedAgreement');
-    observer.changes.listen((_) => notifyProperty(this, const Symbol('signedCount')));
+    observer.changes.listen((_) => notifyProperty(this, #signedCount));
   }
   
   int get signedCount => people.where((Person p) => p.signedAgreement).length;

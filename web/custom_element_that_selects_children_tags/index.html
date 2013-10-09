@@ -4,7 +4,7 @@
 <script src="packages/polymer/boot.js"></script>
 </head>
 <body>
-  <polymer-element name="foo-bar">
+  <polymer-element name="foo-bar" noscript>
     <template>
       The foo:
       <content select=".foo"></content>
@@ -12,7 +12,6 @@
       The bar:
       <content select=".bar"></content>
     </template>
-    <script type="application/dart" src="my_element.dart"></script>
   </polymer-element>
 
   <foo-bar>

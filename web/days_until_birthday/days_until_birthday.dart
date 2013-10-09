@@ -8,7 +8,7 @@ class DaysUntilBirthdayElement extends PolymerElement {
     super.created();
     
     // When birthday changes, signal that numDays changes.
-    bindProperty(#numDays, this, 'birthday');
+    onPropertyChange(this, #birthday, () => notifyProperty(this, #numDays));
   }
   
   int get numDays {

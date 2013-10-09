@@ -23,6 +23,7 @@ See our tips and tricks for upgrading from
 * convenience methods such as fire/asyncFire (for custom events)
 * No more need for `extends PolymerElement with ObservableMixin`, just extend PolymerElement - Confirmed!
 * Use @published on fields that should be used for attributes (don't need the attributes attribute) - Confirmed!
+* onMutation
 
 ## Web UI features that are missing from polymer.dart:
 
@@ -37,6 +38,10 @@ JavaScript, others are straight-up bugs. Please don't misinterpret,
 polymer.dart might be useable for you in the meantime. It depends on your app.)
 
 See the full list of [Polymer.dart issues](http://goo.gl/n5kTC3) if interested.
+
+Setting selectedIndex doesn't change select's visible option
+bind_to_select_field
+https://code.google.com/p/dart/issues/detail?id=13922
 
 PolymerExpressions doesn't support list literals:
 https://github.com/dart-lang/fancy-syntax/issues/9
@@ -71,6 +76,8 @@ https://code.google.com/p/dart/issues/detail?id=12779
 Unable to compare against the literal `null` in an expression,
 when getter first returned a null, and now an int.
 e.g.: <template if="{{!numDays}}">  (works with numDays is null, not when is int)
+days_until_birthday
+https://code.google.com/p/dart/issues/detail?id=13044
 
 Radio buttons not un-setting.
 bind_to_radio_buttons
