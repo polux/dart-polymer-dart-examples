@@ -8,7 +8,7 @@ class MyElement extends PolymerElement {
   @observable bool isLeft = false;
   @observable bool isAttributeChanged = false;
   
-  @observable @published String timestamp;
+  @published String timestamp;
 
   // The following two callbacks should be stable.
   
