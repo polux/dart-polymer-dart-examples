@@ -8,7 +8,7 @@ class MyElement extends PolymerElement {
   @observable bool isLeft = false;
   @observable bool isAttributeChanged = false;
   
-  @observable @published String timestamp;
+  @published String timestamp;
 
   // The following two callbacks should be stable.
   
@@ -18,8 +18,6 @@ class MyElement extends PolymerElement {
 
     isCreated = true;
   }
-  
-  // BUG: this does not work: https://code.google.com/p/dart/issues/detail?id=12719
   
   @override
   void attributeChanged(String attrName, String oldVal) {

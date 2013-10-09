@@ -37,7 +37,7 @@
     
     <ul>
       <template repeat="{{k in bob.addresses.keys}}">
-        <li>{{addresses[k].city}}</li>
+        <li>{{bob.addresses[k].city}}</li>
       </template>
     </ul>
 
@@ -92,7 +92,6 @@
       
     <!-- This should work, but doesn't.
          See https://code.google.com/p/dart/issues/detail?id=12661 -->
-    <!-- Requires fancy-syntax -->
     <!--
     <div class="{{rainbow: favoriteColors.length > 2; has-company: company}}">
       Labeled bindings result in a space-separated list of labels
@@ -126,15 +125,13 @@
     
     <h1>Gracefully handle a non-existant property</h1>
     
-    <!-- This isn't working. See https://code.google.com/p/dart/issues/detail?id=13481
     <div>This should not break the app, even though we're accessing a null: {{ thisIsNull.street }}</div>
-    -->
-    
-    <!-- PolymerExpressions isn't tolerant of null fields yet
+
+    <!-- PolymerExpressions is tolerant of null fields -->
     <template repeat="{{nullColor in bob.nullColors}}">
       <p>this should not break the app</p>
     </template>
-    -->
+
     
   </template>
   <script type="application/dart" src="my_example.dart"></script>

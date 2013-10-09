@@ -1,0 +1,20 @@
+<polymer-element name="my-element">
+  <template>
+    <div id="find-me">
+      Hello from inside of the custom element
+    </div>
+  </template>
+  <script type="application/dart">
+  import 'package:polymer/polymer.dart';
+  
+  @CustomTag('my-element')
+  class MyElement extends PolymerElement {
+    created() {
+      super.created();
+      
+      Element insideDiv = $['find-me'];
+      insideDiv.text = 'I was set from inside the created() method';
+    }
+  }
+  </script>
+</polymer-element>

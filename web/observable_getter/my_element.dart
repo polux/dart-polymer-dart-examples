@@ -19,7 +19,7 @@ class MyElement extends PolymerElement {
   }
   
   timestampChanged(DateTime oldValue) {
-    notifyProperty(this, const Symbol('second'));
+    notifyProperty(this, #second);
   }
   
   @override
