@@ -22,13 +22,16 @@
         created() {
           super.created();
           
-          // WARNING this only fires once,
+          // NOTE this only fires once,
           // see https://groups.google.com/forum/#!topic/polymer-dev/llfRAC_cMIo
+          // This is useful for waiting for a node to change in response
+          // to some data change. Since we don't know when the node will
+          // change, we can use onMutation.
           onMutation($['list'], (MutationObserver obs) {
             $['out'].text = 'Change detected at ${new DateTime.now()}';
           });
           
-          new Timer.periodic(const Duration(seconds:1), (_) {
+          new Timer(const Duration(seconds:1), (_) {
             $['list'].children.add(new LIElement()..text='hello from timer');
           });
         }
