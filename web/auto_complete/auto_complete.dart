@@ -3,40 +3,44 @@ import 'dart:html';
 
 @CustomTag('auto-complete')
 class AutoCompleteElement extends PolymerElement {
-  @observable String search;
+  String _search;
   final List<String> results = toObservable([]);
   final List<String> haystack = [];
-  bool skipSearch = false;
   int keyboardSelect = -1;
-  
+
   void created() {
     super.created();
-    
+
     UListElement dataSource = host.query('.data-source') as UListElement;
     if (dataSource == null) {
       print("WARNING: expected to find a .data-source <ul> as a child");
       return;
     }
-    
+
     dataSource.children.forEach((LIElement e) {
       if (e is! LIElement) return;
       haystack.add(e.text);
     });
-    
-    onPropertyChange(this, #search, _performSearch);
   }
-  
+
+  String get search => _search;
+
+  void _setSearch(String str) {
+    _search = str;
+    notifyProperty(this, #search);
+  }
+
+  set search(String str) {
+    _setSearch(str);
+    _performSearch();
+  }
+
   void select(Event e, var detail, Node target) {
-    search = target.text;
+    _setSearch(target.text);
     _reset();
-    skipSearch = true;
   }
-  
+
   _performSearch() {
-    if (skipSearch) {
-      skipSearch = false;
-      return;
-    }
     results.clear();
     if (search.trim().isEmpty) return;
     String lower = search.toLowerCase();
@@ -44,7 +48,7 @@ class AutoCompleteElement extends PolymerElement {
       return term.toLowerCase().startsWith(lower);
     }));
   }
-  
+
   keyup(KeyboardEvent e, var detail, Node target) {
     switch (new KeyEvent(e).keyCode) {
       case KeyCode.ESC:
@@ -61,14 +65,14 @@ class AutoCompleteElement extends PolymerElement {
         break;
     }
   }
-  
+
   _moveDown() {
     List<Element> lis = shadowRoot.queryAll('ul li');
     if (keyboardSelect >= 0) lis[keyboardSelect].classes.remove('selecting');
     keyboardSelect = ++keyboardSelect == lis.length ? 0 : keyboardSelect;
     lis[keyboardSelect].classes.add('selecting');
   }
-  
+
   _moveUp() {
     List<Element> lis = shadowRoot.queryAll('ul li');
     if (keyboardSelect >= 0) lis[keyboardSelect].classes.remove('selecting');
@@ -76,20 +80,18 @@ class AutoCompleteElement extends PolymerElement {
     keyboardSelect = --keyboardSelect == -1 ? lis.length-1 : keyboardSelect;
     lis[keyboardSelect].classes.add('selecting');
   }
-  
+
   _clear() {
     _reset();
-    search = '';
-    skipSearch = true;
+    _setSearch('');
   }
-  
+
   _select() {
     List<Element> lis = shadowRoot.queryAll('ul li');
-    search = lis[keyboardSelect].text;
-    skipSearch = true;
+    _setSearch(lis[keyboardSelect].text);
     _reset();
   }
-  
+
   _reset() {
     keyboardSelect = -1;
     results.clear();
