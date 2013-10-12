@@ -39,6 +39,10 @@ polymer.dart might be useable for you in the meantime. It depends on your app.)
 
 See the full list of [Polymer.dart issues](http://goo.gl/n5kTC3) if interested.
 
+Binding into a camelCase attribute forces lowercase
+custom_element_with_custom_attribute
+https://code.google.com/p/dart/issues/detail?id=14060
+
 Setting selectedIndex doesn't change select's visible option
 bind_to_select_field
 https://code.google.com/p/dart/issues/detail?id=13922
