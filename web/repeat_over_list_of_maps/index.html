@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>index</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>   
+    <polymer-element name="my-element">
+      <template>
+        <h1>Hello from inside the custom element</h1>
+        <template repeat="{{item in itemList}}">
+          <p>{{item['key']}} {{item['MyCaseSensitiveKey']}}</p>
+        </template>
+      </template>
+      <script type="application/dart">
+      import 'package:polymer/polymer.dart';
+      
+      @CustomTag('my-element')
+      class MyElement extends PolymerElement {
+        
+        final List itemList = toObservable([]);
+        
+        created() {
+          super.created();
+          
+          itemList.addAll([
+            {'key': 'value1','MyCaseSensitiveKey': 'hi1'},
+            {'key': 'value2','MyCaseSensitiveKey': 'hi2'}
+          ]);
+        }
+      }
+      </script>
+    </polymer-element>
+    
+    <my-element></my-element>
+  </body>
+</html>
