@@ -12,7 +12,6 @@
         <h1>Hello from inside the custom element</h1>
         <template repeat="{{item in itemList}}">
           <p>{{item['key']}} {{item['MyCaseSensitiveKey']}}</p>
-          <p><my-child attr="{{item['MyCaseSensitiveKey']}}"></my-child></p>
         </template>
       </template>
       <script type="application/dart">
@@ -31,37 +30,6 @@
             {'key': 'value2', 'MyCaseSensitiveKey': 'hi from MyCaseSensitiveKey 2'}
           ]);
         }
-      }
-      </script>
-    </polymer-element>
-    
-    <polymer-element name="my-child">
-      <template>
-        Hello from child: {{attr}}
-        <p>
-          <my-grand-child attr="{{attr}}"></my-grand-child>
-        </p>
-      </template>
-      <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      
-      @CustomTag('my-child')
-      class MyChild extends PolymerElement {
-        @published String attr = '';  // XXX delete this initialization and everything works
-      }
-      </script>
-    </polymer-element>
-    
-    <polymer-element name="my-grand-child">
-      <template>
-        Hello from grandchild: {{attr}}
-      </template>
-      <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      
-      @CustomTag('my-grand-child')
-      class MyGrandChild extends PolymerElement {
-        @published String attr = '';
       }
       </script>
     </polymer-element>

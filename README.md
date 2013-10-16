@@ -39,9 +39,9 @@ polymer.dart might be useable for you in the meantime. It depends on your app.)
 
 See the full list of [Polymer.dart issues](http://goo.gl/n5kTC3) if interested.
 
-Repeating over a list of maps with case sensitive keys
-repeat_over_list_of_maps
-https://code.google.com/p/dart/issues/detail?id=14061
+Nested components with published fields that initialize overwrite all bound field values
+nested_components_with_published_fields
+https://code.google.com/p/dart/issues/detail?id=14088
 
 Binding into a camelCase attribute forces lowercase
 custom_element_with_custom_attribute
