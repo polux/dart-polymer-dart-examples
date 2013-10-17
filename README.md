@@ -24,6 +24,7 @@ See our tips and tricks for upgrading from
 * No more need for `extends PolymerElement with ObservableMixin`, just extend PolymerElement - Confirmed!
 * Use @published on fields that should be used for attributes (don't need the attributes attribute) - Confirmed!
 * onMutation
+* Provide direct access to oldValue/newValue in ChangeRecord (http://code.google.com/p/dart/issues/detail?id=12075)
 
 ## Web UI features that are missing from polymer.dart:
 
