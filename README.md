@@ -25,6 +25,8 @@ See our tips and tricks for upgrading from
 * Use @published on fields that should be used for attributes (don't need the attributes attribute) - Confirmed!
 * onMutation
 * Provide direct access to oldValue/newValue in ChangeRecord (http://code.google.com/p/dart/issues/detail?id=12075)
+* Attaching custom objects to custom events
+* PropertyChangeEvent has oldValue and newValue (and target)
 
 ## Web UI features that are missing from polymer.dart:
 
