@@ -27,6 +27,7 @@ See our tips and tricks for upgrading from
 * Provide direct access to oldValue/newValue in ChangeRecord (http://code.google.com/p/dart/issues/detail?id=12075)
 * Attaching custom objects to custom events
 * PropertyChangeEvent has oldValue and newValue (and target)
+* Directly extend the DOM class
 
 ## Web UI features that are missing from polymer.dart:
 
