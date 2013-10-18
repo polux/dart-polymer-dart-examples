@@ -40,6 +40,7 @@ class GoogleSignIn extends PolymerElement {
       print(authenticationContext.tokenType);
       
       plusClient = new Plus(authenticationContext);
+      plusClient.makeAuthRequests = true;
       plusClient.people.get('me').then((Person person) {
         print(person.displayName);
       });
