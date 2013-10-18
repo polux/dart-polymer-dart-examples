@@ -5,26 +5,35 @@
 <html>
   <head>
     <title>Sign-in with Google+</title>
-    <link rel="import" href="google_sign_in.html">
     <script src="packages/polymer/boot.js"></script>
-    <script type="text/javascript">
-
-    (function() {
-      var po = document.createElement('script');
-      po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://plus.google.com/js/client:plusone.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(po, s);
-    })();
-    </script>
-    <script src="packages/browser/interop.js"></script>
-    <script src="packages/js/dart_interop.js"></script>
+    <script src="https://plus.google.com/js/client:plusone.js"></script>
   </head>
  
   <body>   
+  
+  <polymer-element name="google-sign-in">
+    <template>
+      <div id="google-connect">
+        <button
+          id="signin"
+          class="g-signin"
+          data-scope="https://www.googleapis.com/auth/games https://www.googleapis.com/auth/appstate"
+          data-clientId="{{clientId}}"
+          data-callback="onSignInCallback"
+          data-accesstype="offline"
+          data-cookiepolicy="single_host_origin">
+          <content select=".sign-in-msg"></content>
+        </button>
+      </div>
+    </template>
+    <script type="application/dart" src="google_sign_in.dart"></script>
+  </polymer-element>
+
     <google-sign-in clientId="250963735330.apps.googleusercontent.com">
       <span class="sign-in-msg">Please Sign In</span>
-      <span class="sign-out-msg">Sign Out</span>
     </google-sign-in>
+    
+    <script src="packages/browser/interop.js"></script>
+    <script src="packages/js/dart_interop.js"></script>
   </body>
 </html>
