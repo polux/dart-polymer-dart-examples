@@ -1,0 +1,31 @@
+
+<polymer-element name="google-sign-in">
+  <template>
+    <div id="google-connect">
+        <button
+          id="signin"
+          class="g-signin"
+          data-scope="https://www.googleapis.com/auth/games https://www.googleapis.com/auth/appstate"
+          data-clientId="{{clientId}}"
+          data-callback="onSignInCallback"
+          data-accesstype="offline"
+          data-cookiepolicy="single_host_origin">
+          <content select=".sign-in-msg"></content>
+        </button>
+    </div>
+
+    <template if="{{isConnected}}">
+      <div class="sign-out">
+        <button id="disconnect" on-click="disconnect">
+          <content select=".sign-out-msg"></content>
+        </button>
+      </div>
+    </template>
+
+    <!-- TODO: get rid of this div -->
+    <div id="auth-disconnect" style="display:none"></div>
+
+  </template>
+  <script type="application/dart" src="google_sign_in.dart"></script>
+</polymer-element>
+
