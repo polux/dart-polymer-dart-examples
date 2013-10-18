@@ -1,8 +1,11 @@
 import 'package:polymer/polymer.dart';
 import "package:google_oauth2_client/google_oauth2_browser.dart";
+import "package:google_plus_v1_api/plus_v1_api_browser.dart";
 import "package:js/js.dart" as js;
 import 'dart:html';
 import 'package:logging/logging.dart';
+import 'package:meta/meta.dart';
+import 'dart:convert' show JSON;
 
 typedef OnSignInCallback(SimpleOAuth2 authenticationContext, [Map authResult]);
 typedef OnSignOutCallback();
@@ -13,13 +16,48 @@ final Logger log = new Logger('google-sign-in-element');
 class GoogleSignIn extends PolymerElement {
   @observable bool isConnected = false;
   @published String clientId;
+  @published String signInMsg;
   
   OnSignInCallback signInCallback;
   OnSignOutCallback signOutCallback;
   SimpleOAuth2 authenticationContext;
+  @observable Plus plusClient;
 
-  _onSignInCallback() {
-    print('here!');
+  _onSignInCallback(Map authResult) {
+    log.fine('In signin callback');
+    if (authResult["access_token"] != null) {
+      log.fine('looks like signin worked!');
+      
+      print(authResult);
+      
+      authenticationContext = new SimpleOAuth2(null);
+      
+      // Enable Authenticated requested with the granted token in the client libary
+      authenticationContext.token = authResult["access_token"];
+      authenticationContext.tokenType = authResult["token_type"];
+      
+      print(authenticationContext.token);
+      print(authenticationContext.tokenType);
+      
+      plusClient = new Plus(authenticationContext);
+      plusClient.people.get('me').then((Person person) {
+        print(person.displayName);
+      });
+      
+      isConnected = true;
+      dispatchEvent(new CustomEvent('signincomplete'));
+
+    } else if (authResult["error"] != null) {
+      log.severe("There was an error authenticating: ${authResult["error"]}");
+    }
+  }
+  
+  // BUG, can't use shadow dom for some reason.
+  // See https://code.google.com/p/dart/issues/detail?id=14210
+  @override
+  ShadowRoot shadowFromTemplate(Element template) {
+    TemplateElement tmpl = template as TemplateElement;
+    host.append(tmpl.content.clone(true));
   }
 
   void created() {
@@ -33,10 +71,22 @@ class GoogleSignIn extends PolymerElement {
      */
     js.scoped(() {
       js.context["onSignInCallback"] =  new js.Callback.many((js.Proxy authResult) {
-        _onSignInCallback();
+        Map dartAuthResult =
+            JSON.decode(js.context["JSON"]["stringify"](authResult));
+        _onSignInCallback(dartAuthResult);
       });
       
-      js.context.gapi.signin.render($['signin'], js.map($['signin'].dataset));
+      ButtonElement button = host.query('#signin');
+      button.dataset['clientId'] = clientId;
+      print(new Map.from(button.dataset));
+      button.text = signInMsg;
+      
+      //js.context.gapi.signin.render(button, js.map(button.dataset));
+      
+      ScriptElement script = new ScriptElement()
+        ..src = 'https://plus.google.com/js/client:plusone.js'
+        ..async = true;
+      document.body.append(script);
     });
   }
 }
