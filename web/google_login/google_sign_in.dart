@@ -7,9 +7,6 @@ import 'package:logging/logging.dart';
 import 'package:meta/meta.dart';
 import 'dart:convert' show JSON;
 
-typedef OnSignInCallback(SimpleOAuth2 authenticationContext, [Map authResult]);
-typedef OnSignOutCallback();
-
 final Logger log = new Logger('google-sign-in-element');
 
 @CustomTag('google-sign-in')
@@ -18,8 +15,6 @@ class GoogleSignIn extends PolymerElement {
   @published String clientId;
   @published String signInMsg;
   
-  OnSignInCallback signInCallback;
-  OnSignOutCallback signOutCallback;
   SimpleOAuth2 authenticationContext;
   @observable Plus plusClient;
 
@@ -28,33 +23,27 @@ class GoogleSignIn extends PolymerElement {
     if (authResult["access_token"] != null) {
       log.fine('looks like signin worked!');
       
-      print(authResult);
-      
       authenticationContext = new SimpleOAuth2(null);
       
       // Enable Authenticated requested with the granted token in the client libary
       authenticationContext.token = authResult["access_token"];
       authenticationContext.tokenType = authResult["token_type"];
       
-      print(authenticationContext.token);
-      print(authenticationContext.tokenType);
-      
       plusClient = new Plus(authenticationContext);
       plusClient.makeAuthRequests = true;
-      plusClient.people.get('me').then((Person person) {
-        print(person.displayName);
-      });
       
       isConnected = true;
       dispatchEvent(new CustomEvent('signincomplete'));
 
     } else if (authResult["error"] != null) {
       log.severe("There was an error authenticating: ${authResult["error"]}");
+      dispatchEvent(new CustomEvent('signinerror', detail: authResult["error"]));
     }
   }
   
   // BUG, can't use shadow dom for some reason.
   // See https://code.google.com/p/dart/issues/detail?id=14210
+  // See also https://code.google.com/p/dart/issues/detail?id=14230
   @override
   ShadowRoot shadowFromTemplate(Element template) {
     TemplateElement tmpl = template as TemplateElement;
@@ -79,12 +68,12 @@ class GoogleSignIn extends PolymerElement {
       
       ButtonElement button = host.query('#signin');
       button.dataset['clientId'] = clientId;
-      print(new Map.from(button.dataset));
       button.text = signInMsg;
       
       //js.context.gapi.signin.render(button, js.map(button.dataset));
       
       ScriptElement script = new ScriptElement()
+        ..type = 'text/javascript'
         ..src = 'https://plus.google.com/js/client:plusone.js'
         ..async = true;
       document.body.append(script);
