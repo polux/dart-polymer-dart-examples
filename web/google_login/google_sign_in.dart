@@ -71,12 +71,12 @@ class GoogleSignIn extends PolymerElement {
       button.text = signInMsg;
       
       //js.context.gapi.signin.render(button, js.map(button.dataset));
-      
-      ScriptElement script = new ScriptElement()
-        ..type = 'text/javascript'
-        ..src = 'https://plus.google.com/js/client:plusone.js'
-        ..async = true;
-      document.body.append(script);
     });
+    
+    ScriptElement script = new ScriptElement()
+    ..type = 'text/javascript'
+    ..src = 'https://plus.google.com/js/client:plusone.js'
+    ..async = true;
+    document.body.append(script);
   }
 }
