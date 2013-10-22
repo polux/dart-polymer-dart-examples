@@ -28,6 +28,8 @@ See our tips and tricks for upgrading from
 * Attaching custom objects to custom events
 * PropertyChangeEvent has oldValue and newValue (and target)
 * Directly extend the DOM class
+* Override shadowFromTemplate (https://code.google.com/p/dart/issues/detail?id=14230)
+  to generate nodes not in the shadow dom
 
 ## Web UI features that are missing from polymer.dart:
 
