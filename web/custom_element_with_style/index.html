@@ -12,32 +12,34 @@
 
     <polymer-element name="my-element" noscript>
         <template>
+            <!-- BUG: https://code.google.com/p/dart/issues/detail?id=14382 -->
+            <!--  link rel="stylesheet" href="styles.css" -->
             <style>
-                @host {
-                  :scope {
-                    display: block;
-                  }
-                  
-                  :scope:hover {
-                    border: 1px solid black;
-                  }
-                }
-                
-                p {
-                    color: red;
-                }
-
-                #message {
-                    color: pink;
-                }
-
-                .important {
-                    color: green;
-                }
-                
-                #controls p {
-                  color: orange;
-                }
+            @host {
+              :scope {
+                display: block;
+              }
+              
+              :scope:hover {
+                border: 1px solid black;
+              }
+            }
+            
+            p {
+                color: red;
+            }
+            
+            #message {
+                color: pink;
+            }
+            
+            .important {
+                color: green;
+            }
+            
+            #controls p {
+              color: orange;
+            }
             </style>
             <p>Inside element, should be red</p>
 
