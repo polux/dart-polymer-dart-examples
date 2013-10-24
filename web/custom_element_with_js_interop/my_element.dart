@@ -6,6 +6,8 @@ import 'package:js/js.dart' as js;
 class MyElement extends PolymerElement {
   @observable String result;
   
+  MyElement.created() : super.created();
+  
   handleClick(Event e, var detail, Node target) {
     var context = js.context;
     js.scoped(() {

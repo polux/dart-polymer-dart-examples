@@ -6,24 +6,12 @@ import 'package:meta/meta.dart';
 
 @CustomTag('codelab-localstorage')
 class CodelabLocalstorage extends PolymerElement {
-  @observable String name;
-  @observable var value;
+  @published String name;
+  @published var value;
   @observable bool useRaw = false;
-  
   @observable bool loaded = false;
   
-  // Because we don't have attr-changed helpers like polymer.js,
-  // setup a watcher by hand
-  
-  void created() {
-    super.created();
-    
-    new PathObserver(this, 'value').changes.listen((_) {
-      if (loaded) {
-        save();
-      }
-    });
-  }
+  CodelabLocalstorage.created() : super.created();
   
   valueChanged(oldValue) {
     if (loaded) {
@@ -33,13 +21,13 @@ class CodelabLocalstorage extends PolymerElement {
   
   // TODO: the name of this method will change to enteredView at some point.
   @override
-  void inserted() {
-    super.inserted();
+  void enteredView() {
+    super.enteredView();
     print('codelab-localstorage inserted');
     
     // let the bindings complete, so run this async
     // TODO: should we use runAsync here?
-    Timer.run(load);
+    scheduleMicrotask(load);
   }
   
   void save() {

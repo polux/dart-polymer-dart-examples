@@ -2,7 +2,7 @@ library model;
 
 import "package:polymer/polymer.dart";
 
-class Contact extends Object with ObservableMixin {
+class Contact extends Object with Observable {
   @observable String id;
   @observable String firstName;
   @observable String lastName;

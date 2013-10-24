@@ -5,7 +5,7 @@ import 'package:polymer/polymer.dart';
 // belongs to.
 @CustomTag("my-jumbotron")
 class MyJumbotron extends PolymerElement {
-  // custom functionality goes here
+  MyJumbotron.created() : super.created();
   
   // This lets the Bootstrap CSS "bleed through" into the Shadow DOM
   // of this element.

@@ -3,12 +3,14 @@
 <html>
 <head>
     <title>index</title>
-    <script src="packages/polymer/boot.js"></script>
+    <script type="application/dart"
+          src="packages/polymer/init.dart"></script>
+    <script src="packages/browser/dart.js"></script>
 </head>
 
 <body>
 
-    <polymer-element name="my-element">
+    <polymer-element name="my-element" noscript>
         <template>
             <style>
                 @host {
@@ -57,10 +59,9 @@
               </div>
             </my-child>
         </template>
-        <script type="application/dart" src="index.dart"></script>
     </polymer-element>
     
-    <polymer-element name="my-child">
+    <polymer-element name="my-child" noscript>
       <template>
         <div id="content">
           <p>Here in child</p>

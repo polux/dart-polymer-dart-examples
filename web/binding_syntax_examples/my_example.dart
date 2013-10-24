@@ -8,7 +8,7 @@ class MyExample extends PolymerElement {
 
   @observable Person bob;
   
-  MyExample() {
+  MyExample.created() : super.created() {
     bob = new Person()
       ..firstName = 'Bob'
       ..lastName = 'Smith'

@@ -6,6 +6,8 @@ import 'dart:html';
 @CustomTag('input-focus-test')
 class InputFocusTest extends PolymerElement {
   @observable String lastEvent = "None";
+  
+  InputFocusTest.created() : super.created();
 
   void handleFocus(Event e, var detail, Node target) {
     lastEvent = "focus";

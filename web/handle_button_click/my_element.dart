@@ -4,6 +4,8 @@ import 'dart:html';
 @CustomTag('my-element')
 class MyElement extends PolymerElement {
   
+  MyElement.created() : super.created();
+  
   void showMessage(Event e, var detail, Node target) {
   
     // The $ finds nodes inside the shadow dom

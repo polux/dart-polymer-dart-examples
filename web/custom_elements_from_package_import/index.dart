@@ -1,3 +1,5 @@
+library my_app;
+
 // Pulling in elements one-by-one works.
 
 //import 'package:dart_polymer_examples/a_element.dart';

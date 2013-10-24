@@ -8,32 +8,37 @@ import 'models.dart';
 @CustomTag('todo-app')
 class TodoElement extends PolymerElement {
   final ObservableList<Item> items = toObservable([]);
+  
+  @observable int remainingCount;
 
-  TodoElement() {
+  TodoElement.created() : super.created() {
     // Need to check if the items list gets added to or has something removed.
     items.changes.listen((records) {
-      notifyProperty(this, const Symbol('remainingCount'));
+      remainingCount = _remainingCount;
     });
+    new ListPathObserver(items, 'done')
+        ..changes.listen((_) {
+          remainingCount = _remainingCount;
+        });
   }
   
-  int get remainingCount => items.where((i) => !i.done).length;
+  int get _remainingCount => items.where((i) => !i.done).length;
 
   // Apply the styles.
   bool get applyAuthorStyles => true;
 
   void addTodo(KeyboardEvent e, var detail, Node target) {
-    KeyEvent event = new KeyEvent(e);
+    KeyEvent event = new KeyEvent.wrap(e);
     if (event.keyCode == KeyCode.ENTER) {
       InputElement newTodo = target as InputElement;
       Item item = new Item(text: newTodo.value, done: false);
-      item.changes.listen((_) => notifyProperty(this, const Symbol('remaining')));
       items.add(item);
       newTodo.value = '';
     }
   }
   
-  void cancelTodo(Event e, var detail, Node target) {
-    KeyEvent event = new KeyEvent(e);
+  void cancelTodo(KeyboardEvent e, var detail, Node target) {
+    KeyEvent event = new KeyEvent.wrap(e);
     if (event.keyCode == KeyCode.ESC) {
       (target as InputElement).value = '';
     }
@@ -50,6 +55,6 @@ class TodoElement extends PolymerElement {
   }
   
   void todoChanged(Event e, var detail, Node target) {
-    notifyProperty(this, const Symbol('remainingCount'));
+    remainingCount = _remainingCount;
   }
 }

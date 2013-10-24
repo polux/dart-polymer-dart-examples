@@ -8,13 +8,14 @@ import 'models.dart';
 class MyElement extends PolymerElement {
   final List people = toObservable([]); // observe adds/removes to the list
   final Person newPerson = new Person();
+  @observable int signedCount;
   
-  MyElement() {
+  MyElement.created() : super.created() {
     ListPathObserver observer = new ListPathObserver(people, 'signedAgreement');
-    observer.changes.listen((_) => notifyProperty(this, #signedCount));
+    observer.changes.listen((_) {
+      signedCount = people.where((Person p) => p.signedAgreement).length;
+    });
   }
-  
-  int get signedCount => people.where((Person p) => p.signedAgreement).length;
   
   void save(Event e, var detail, Node target) {
     people.add(new Person.from(newPerson));

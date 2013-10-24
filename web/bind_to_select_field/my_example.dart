@@ -6,4 +6,6 @@ class MyExample extends PolymerElement {
                                 // Set it to the default selection index.
   final List fruits = ['apples', 'bananas', 'pears'];
   @observable String value = 'bananas';
+  
+  MyExample.created() : super.created();
 }

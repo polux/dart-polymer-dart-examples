@@ -4,53 +4,12 @@
   <head>
     <meta charset="utf-8">
     <title>Sample app</title>
-    <script src="packages/polymer/boot.js"></script>
+    <link rel="import" href="all_elements.html">
+    <script type="application/dart"
+          src="packages/polymer/init.dart"></script>
+    <script src="packages/browser/dart.js"></script>
   </head>
-  <body>
-    <polymer-element name="x-c">
-      <template>
-        <p>C: [{{type}}]</p>
-      </template>
-      <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      
-      @CustomTag('x-c')
-      class C extends PolymerElement {
-        @published String type = '';
-      }
-      </script>
-    </polymer-element>
-    
-    <polymer-element name="x-b">
-      <template>
-        <p>B: [{{type}}]</p>
-        <x-c type="{{type}}"></x-c>
-      </template>
-      <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      
-      @CustomTag('x-b')
-      class B extends PolymerElement {
-        @published String type = '';
-      }
-      </script>
-    </polymer-element>
-    
-    <polymer-element name="x-a">
-      <template>
-        <p>A: [{{type}}]</p>
-        <x-b type="{{type}}"></x-b>
-      </template>
-      <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      
-      @CustomTag('x-a')
-      class A extends PolymerElement {
-        @observable String type = 'From A';
-      }
-      </script>
-    </polymer-element>
-    
+  <body>    
     <x-a></x-a>
   </body>
 </html>

@@ -4,35 +4,23 @@
 From https://github.com/hpoul/dart-polymer-dart-examples/tree/master/web/simple_focus_blur
  -->
 
+
+<!--  THIS SAMPLE DOES NOT WORK, KNOWN BUG -->
+
 <html>
   <head>
     <title>index</title>
     <!-- you have to import the HTML file that contains the custom element -->
     <link rel="import" href="my_element.html">
-    <script src="packages/polymer/boot.js"></script>
+    <script type="application/dart"
+          src="packages/polymer/init.dart"></script>
+    <script src="packages/browser/dart.js"></script>
   </head>
  
   <body>
     
     <p>Here is the input box: </p>
     <input-focus-test></input-focus-test>
-    
-    <p id="wrapper">
-      Try focus and blur from in here.
-      <input type="text" id="test-me">
-      <output id="output"></output>
-    </p>
-    
-    <script type="text/javascript">
-    var input = document.getElementById('test-me');
-    input.addEventListener('focus', function (e) {
-      console.log('focused!');
-    }, true);
-    input.addEventListener('blur', function (e) {
-      console.log('blurred!');
-    }, true);
-    </script>
-    
-    <script type="application/dart" src="index.dart"></script>
+
   </body>
 </html>

@@ -5,5 +5,5 @@ import 'package:polymer/polymer.dart';
 // belongs to.
 @CustomTag("my-element")
 class MyElement extends PolymerElement {
-  // custom functionality goes here
+  MyElement.created() : super.created();
 }

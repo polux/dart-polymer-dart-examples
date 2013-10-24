@@ -1,11 +1,11 @@
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 
-class Model extends Object with ObservableMixin {
+class Model extends Object with Observable {
   @observable
   String value = "Initial value";
 }
 
 main() {
-  query('#tmpl').model = new Model();
+  querySelector('#tmpl').model = new Model();
 }

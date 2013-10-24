@@ -2,7 +2,7 @@ library models;
 
 import 'package:polymer/polymer.dart';
 
-class Person extends Object with ObservableMixin {
+class Person extends Object with Observable {
   @observable String firstName;
   String lastName;
   bool signedAgreement;

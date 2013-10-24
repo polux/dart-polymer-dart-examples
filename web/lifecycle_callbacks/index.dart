@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:html';
 
 main() {
-  Element elem = query('#elem');
+  Element elem = querySelector('#elem');
   
   // Continually set the attribute.
   new Timer.periodic(const Duration(seconds:1), (_) {

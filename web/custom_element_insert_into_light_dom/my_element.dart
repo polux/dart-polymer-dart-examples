@@ -6,17 +6,16 @@ import 'dart:html';
 // belongs to.
 @CustomTag("my-element")
 class MyElement extends PolymerElement {
-  void created() {
-    super.created();
+  MyElement.created() : super.created() {
     
     // Access the host element to add nodes to the "light" DOM
 
-    host.children.add(new Element.html('<p>CREATED: Hello from the light DOM</p>'));
+    children.add(new Element.html('<p>CREATED: Hello from the light DOM</p>'));
     
     // Copy out children from the Shadown DOM and insert into the host.
     // NOTE: only for illustration, not implying you should do this.
     
     Node shadow = shadowRoot.children.first.clone(true);
-    host.children.add(shadow);
+    children.add(shadow);
   }
 }

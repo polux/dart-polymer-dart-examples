@@ -12,48 +12,28 @@ class MyElement extends PolymerElement {
 
   // The following two callbacks should be stable.
   
-  void created() {
-    // ALWAYS call super's lifecycle method
-    super.created();
-
+  MyElement.created() : super.created() {
     isCreated = true;
   }
   
   @override
-  void attributeChanged(String attrName, String oldVal) {
-    super.attributeChanged(attrName, oldVal);
-
+  void attributeChanged(String attrName, String oldVal, String newVal) {
+    super.attributeChanged(attrName, oldVal, newVal);
     isAttributeChanged = true;
   }
   
-  // BUG: Use these when https://code.google.com/p/dart/issues/detail?id=12716
-  // is fixed.
+  @override
+  void enteredView() {
+    super.enteredView();
 
-//  void enteredDocument() {
-//    super.enteredDocument();
-//
-//    isEntered = true;
-//  }
-//
-//  void leftDocument() {
-//    super.leftDocument();
-//
-//    isLeft = false;
-//  }
-
-  // The following two callbacks are historical, they will go away.
-  // BUG tracked at: https://code.google.com/p/dart/issues/detail?id=12716
-  
-  void inserted() {
-    super.inserted(); // I don't think we really need this.
-    
     isEntered = true;
   }
-  
-  void removed() {
-    super.removed(); // I don't think we really need this.
-    
-    isLeft = true;
+
+  @override
+  void leftView() {
+    super.leftView();
+
+    isLeft = false;
   }
 
 }

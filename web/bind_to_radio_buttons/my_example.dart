@@ -5,6 +5,8 @@ import 'dart:html';
 class MyExample extends PolymerElement {
   @observable String favoriteColor = '';
   
+  MyExample.created() : super.created();
+  
   void updateRadios(Event e, var detail, Node target) {
     favoriteColor = (e.target as InputElement).value;
   }

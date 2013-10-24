@@ -7,8 +7,8 @@ import 'package:dart_polymer_examples/custom_elements.dart';
 // it and call its init().
 
 init() {
-  AElement a = query('#a').xtag;
-  BElement b = query('#b').xtag;
+  AElement a = querySelector('#a');
+  BElement b = querySelector('#b');
   print(a.runtimeType);
   print(b.runtimeType);
   print(a is AElement);

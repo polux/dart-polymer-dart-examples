@@ -3,15 +3,19 @@ import 'package:polymer/polymer.dart';
 @CustomTag('days-until-birthday')
 class DaysUntilBirthdayElement extends PolymerElement {
   @observable String birthday;
+  @observable int numDays = -1;
   
-  created() {
-    super.created();
+  DaysUntilBirthdayElement.created() : super.created() {
     
     // When birthday changes, signal that numDays changes.
-    onPropertyChange(this, #birthday, () => notifyProperty(this, #numDays));
+    onPropertyChange(this, #birthday, () {
+      if (birthday != null) {
+        numDays = _numDays;
+      }
+    });
   }
   
-  int get numDays {
+  int get _numDays {
     if (birthday == null) {
       return null;
     } else {

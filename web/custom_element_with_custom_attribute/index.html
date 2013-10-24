@@ -3,32 +3,13 @@
 <html>
   <head>
     <title>index</title>
-    <script src="packages/polymer/boot.js"></script>
+    <link rel="import" href="my_element.html">
+    <script type="application/dart"
+          src="packages/polymer/init.dart"></script>
+    <script src="packages/browser/dart.js"></script>
   </head>
  
   <body>
-    <polymer-element name="my-child-element">
-      <template>
-        <h1>Hello from the child</h1>
-        <p>The camelCase is {{camelCase}}</p>
-      </template>  
-      <script type="application/dart" src="my_child_element.dart"></script>
-    </polymer-element>
-    
-    
-    <polymer-element name="my-element">
-      <template>
-        <h1>Hello from the custom element. The volume is {{volume}}</h1>
-        <p>And the myCamelCase is {{myCamelCase}}</p>
-        <p>
-          <my-child-element camelCase="{{volume}}"></my-child-element>
-        </p>
-      </template>  
-      <script type="application/dart" src="my_element.dart"></script>
-    </polymer-element>
-    
-
-    
     <my-element volume="11" myCamelCase="hello from attr"></my-element>
   </body>
 </html>

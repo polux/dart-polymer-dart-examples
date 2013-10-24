@@ -9,4 +9,6 @@ import 'package:polymer/polymer.dart';
 class AElement extends PolymerElement {
   // custom functionality goes here
   String foo = 'a';
+  
+  AElement.created() : super.created();
 }
