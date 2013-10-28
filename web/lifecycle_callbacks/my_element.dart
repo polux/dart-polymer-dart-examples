@@ -1,5 +1,4 @@
 import 'package:polymer/polymer.dart';
-import 'package:meta/meta.dart';
 
 @CustomTag('my-element')
 class MyElement extends PolymerElement {

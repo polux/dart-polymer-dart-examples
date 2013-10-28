@@ -4,7 +4,7 @@
   <template>
     <p>
       Name: <input type="text" value="{{newPerson.name}}"><br>
-      <button on-click="save">Save</button>
+      <button on-click="{{save}}">Save</button>
     </p>
     <ul>
       <template repeat="{{person in people}}">

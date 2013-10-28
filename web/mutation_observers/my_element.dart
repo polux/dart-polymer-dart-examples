@@ -17,9 +17,6 @@ class MyElement extends PolymerElement {
     });
   }
   
-  // TESTING
-  DocumentFragment instanceTemplate(Element tmpl) => tmpl.createInstance(this);
-  
   // Bindings, like repeat, happen asynchronously. To be notified
   // when the shadow root's tree is modified, use a MutationObserver.
   

@@ -13,7 +13,7 @@ class MyElement extends PolymerElement {
     // This is useful for waiting for a node to change in response
     // to some data change. Since we don't know when the node will
     // change, we can use onMutation.
-    onMutation($['list'], (MutationObserver obs) {
+    onMutation($['list']).then((List<MutationRecord> records) {
       $['out'].text = 'Change detected at ${new DateTime.now()}';
     });
     

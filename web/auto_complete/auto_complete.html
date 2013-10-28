@@ -27,7 +27,7 @@
         background-color: #CCC;
       }
     </style>
-    <input type="text" value="{{search}}" on-keyup="keyup">
+    <input type="text" value="{{search}}" on-keyup="{{keyup}}">
     <template if="{{results.length > 0}}">
       <ul>
         <template repeat="{{result in results}}">

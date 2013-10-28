@@ -2,7 +2,6 @@ import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'dart:async';
 import 'dart:convert';
-import 'package:meta/meta.dart';
 
 @CustomTag('codelab-localstorage')
 class CodelabLocalstorage extends PolymerElement {
