@@ -8,6 +8,7 @@
 <polymer-element name="x-b">
   <template>
     <p>B: [{{type}}]</p>
+    <p>The number is {{number}}</p>
     <x-c type="{{type}}"></x-c>
   </template>
 
@@ -16,7 +17,7 @@
 <polymer-element name="x-a">
   <template>
     <p>A: [{{type}}]</p>
-    <x-b type="{{type}}"></x-b>
+    <x-b type="{{type}}" number="{{originalNumber}}"></x-b>
   </template>
 
 </polymer-element>

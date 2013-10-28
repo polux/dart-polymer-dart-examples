@@ -10,6 +10,7 @@ class C extends PolymerElement {
 @CustomTag('x-b')
 class B extends PolymerElement {
   @published String type = '';
+  @published int number = 0;
   
   B.created() : super.created();
 }
@@ -17,6 +18,8 @@ class B extends PolymerElement {
 @CustomTag('x-a')
 class A extends PolymerElement {
   @observable String type = 'From A';
+  
+  @observable int originalNumber = 42;
   
   A.created() : super.created();
 }
