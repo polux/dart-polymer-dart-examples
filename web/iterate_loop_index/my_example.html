@@ -1,0 +1,10 @@
+<polymer-element name="my-example">
+  <template>
+    <ul>
+      <template repeat="{{fruit in fruits | enumerate}}">
+        <li>You should try the tasty {{fruit.value}}. It is number {{fruit.index}}.</li>
+      </template>
+    </ul>
+  </template>
+  <script type="application/dart" src="my_example.dart"></script>
+</polymer-element>
