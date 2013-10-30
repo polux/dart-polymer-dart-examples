@@ -12,12 +12,20 @@ class MyApp extends PolymerElement {
   MyApp.created() : super.created();
   
   DocumentFragment instanceTemplate(Element template) {
-    return templateBind(template).createInstance(this, new PolymerExpressions(globals: {
-        'integer': new StringToInt()
-      }));
+    return templateBind(template).createInstance(this, new _PolymerExpressionsWithEventDelegate(globals: {
+      'integer': new StringToInt()
+    }));
   }
   
   void clickMe(Event e, var detail, Node target) {
     print('clicked');
+  }
+}
+
+class _PolymerExpressionsWithEventDelegate extends PolymerExpressions {
+  _PolymerExpressionsWithEventDelegate({Map globals}) : super(globals:globals);
+  getBinding(model, String path, name, node) {
+    return Polymer.getBindingWithEvents(
+        model, path, name, node, super.getBinding);
   }
 }
