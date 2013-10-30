@@ -16,4 +16,8 @@ class MyApp extends PolymerElement {
         'integer': new StringToInt()
       }));
   }
+  
+  void clickMe(Event e, var detail, Node target) {
+    print('clicked');
+  }
 }
