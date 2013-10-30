@@ -1,6 +1,9 @@
 <polymer-element name="my-app">
   <template>
-    The count: <input type="number" value="{{count.count | integer}}">
+    The count: <input type="number" value="{{count.count | integer}}">.
+    <p>
+      You typed {{count.count}} and it's a {{count.count.runtimeType}}.
+    </p>
   </template>
   <script type="application/dart" src="my_app.dart"></script>
 </polymer-element>
