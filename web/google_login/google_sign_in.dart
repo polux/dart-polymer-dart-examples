@@ -4,7 +4,6 @@ import "package:google_plus_v1_api/plus_v1_api_browser.dart";
 import "package:js/js.dart" as js;
 import 'dart:html';
 import 'package:logging/logging.dart';
-import 'package:meta/meta.dart';
 import 'dart:convert' show JSON;
 
 final Logger log = new Logger('google-sign-in-element');
@@ -14,7 +13,7 @@ class GoogleSignIn extends PolymerElement {
   @observable bool isConnected = false;
   @published String clientId;
   @published String signInMsg;
-  
+
   SimpleOAuth2 authenticationContext;
   @observable Plus plusClient;
 
@@ -22,16 +21,16 @@ class GoogleSignIn extends PolymerElement {
     log.fine('In signin callback');
     if (authResult["access_token"] != null) {
       log.fine('looks like signin worked!');
-      
+
       authenticationContext = new SimpleOAuth2(null);
-      
+
       // Enable Authenticated requested with the granted token in the client libary
       authenticationContext.token = authResult["access_token"];
       authenticationContext.tokenType = authResult["token_type"];
-      
+
       plusClient = new Plus(authenticationContext);
       plusClient.makeAuthRequests = true;
-      
+
       isConnected = true;
       dispatchEvent(new CustomEvent('signincomplete'));
 
@@ -40,7 +39,7 @@ class GoogleSignIn extends PolymerElement {
       dispatchEvent(new CustomEvent('signinerror', detail: authResult["error"]));
     }
   }
-  
+
   // BUG, can't use shadow dom for some reason.
   // See https://code.google.com/p/dart/issues/detail?id=14210
   // See also https://code.google.com/p/dart/issues/detail?id=14230
@@ -52,7 +51,7 @@ class GoogleSignIn extends PolymerElement {
 
   void created() {
     super.created();
-    
+
     /**
      * Calls the method that handles the authentication flow.
      *
@@ -65,14 +64,14 @@ class GoogleSignIn extends PolymerElement {
             JSON.decode(js.context["JSON"]["stringify"](authResult));
         _onSignInCallback(dartAuthResult);
       });
-      
+
       ButtonElement button = host.query('#signin');
       button.dataset['clientId'] = clientId;
       button.text = signInMsg;
-      
+
       //js.context.gapi.signin.render(button, js.map(button.dataset));
     });
-    
+
     ScriptElement script = new ScriptElement()
     ..type = 'text/javascript'
     ..src = 'https://plus.google.com/js/client:plusone.js'
