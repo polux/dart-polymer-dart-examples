@@ -1,0 +1,8 @@
+<polymer-element name="my-nested" extends="li">
+  <template>
+        <template if="{{ fruit.length <= 5 }}">
+          Short name: [{{fruit}}]
+        </template>
+  </template>
+  <script type="application/dart" src="my_nested.dart"></script>
+</polymer-element>
