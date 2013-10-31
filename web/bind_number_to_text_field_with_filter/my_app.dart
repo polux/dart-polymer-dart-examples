@@ -1,7 +1,8 @@
-import 'package:polymer/polymer.dart';
-import 'dart:html';
-import 'models.dart';
-import 'ui_filters.dart';
+import 'package:polymer/polymer.dart' show CustomTag, PolymerElement, observable;
+import 'dart:html' show Event, Node;
+import 'models.dart' show Count;
+import 'ui_filters.dart' show StringToInt;
+import 'package:polymer_expressions/filter.dart' show Transformer;
 
 @CustomTag('my-app')
 class MyApp extends PolymerElement {
@@ -14,5 +15,5 @@ class MyApp extends PolymerElement {
   }
   
   // Filters and transformers can be referenced as fields.
-  final asInteger = new StringToInt();
+  final Transformer asInteger = new StringToInt();
 }
