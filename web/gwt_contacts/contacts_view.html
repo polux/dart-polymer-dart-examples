@@ -30,21 +30,21 @@
       <template if="{{selectedContact != null}}">
         <edit-contact-view
             contact="{{selectedContact}}"
-            on-ready="editReady">
+            on-ready="{{editReady}}">
         </edit-contact-view>
       </template>
       
       <template if="{{selectedContact == null}}">
         <header>
-          <button on-click="add">Add</button>
-          <button on-click="delete">Delete</button>
+          <button on-click="{{add}}">Add</button>
+          <button on-click="{{delete}}">Delete</button>
         </header>
         
         <div id="contact-list">
           <template repeat="{{contacts}}">
             <div>
               <input type="checkbox">
-              <span on-click="selectContact" data-id="{{id}}">{{name}}</span>
+              <span on-click="{{selectContact}}" data-id="{{id}}">{{name}}</span>
             </div>
           </template>
         </div>

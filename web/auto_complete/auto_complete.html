@@ -31,7 +31,7 @@
     <template if="{{results.length > 0}}">
       <ul>
         <template repeat="{{result in results}}">
-          <li on-click="select">{{result}}</li>
+          <li on-click="{{select}}">{{result}}</li>
         </template>
       </ul>
     </template>
