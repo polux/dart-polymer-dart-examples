@@ -4,7 +4,7 @@
   <template>
     Name: <input type="text" value="{{person.name}}">
     Agree: <input type="checkbox" checked="{{person.signedAgreement}}">
-    <button on-click="deletePerson">Delete</button>
+    <button on-click="{{deletePerson}}">Delete</button>
   </template>
   <script type="application/dart" src="person_tag.dart"></script>
 </polymer-element>
