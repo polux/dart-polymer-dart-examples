@@ -9,8 +9,7 @@ class AutoCompleteElement extends PolymerElement {
   int keyboardSelect = -1;
 
   AutoCompleteElement.created() : super.created() {
-    UListElement dataSource =
-        host.querySelector('.data-source') as UListElement;
+    UListElement dataSource = this.querySelector('.data-source') as UListElement;
     if (dataSource == null) {
       print("WARNING: expected to find a .data-source <ul> as a child");
       return;
@@ -25,8 +24,7 @@ class AutoCompleteElement extends PolymerElement {
   String get search => _search;
 
   void _setSearch(String str) {
-    _search = str;
-    notifyProperty(this, #search);
+    _search = notifyPropertyChange(#search, _search, str);
   }
 
   set search(String str) {

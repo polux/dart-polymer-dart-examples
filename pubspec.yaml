@@ -2,9 +2,9 @@ name: dart_polymer_examples
 description: Polymer.dart, Web Components, and Dart
 homepage: https://github.com/sethladd/dart-polymer-dart-examples
 environment:
-  sdk: '>=0.8.9'
+  sdk: '>=0.8.10'
 dependencies:
   google_oauth2_client: any
   google_plus_v1_api: any
   js: any
-  polymer: '>=0.8.7'
+  polymer: '>=0.8.10'
