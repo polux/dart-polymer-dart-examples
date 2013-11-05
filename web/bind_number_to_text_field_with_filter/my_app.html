@@ -1,0 +1,12 @@
+<polymer-element name="my-app">
+  <template>
+    The count: <input type="number" value="{{count.count | asInteger}}">.
+    <p>
+      You typed {{count.count}} and it's a {{count.count.runtimeType}}.
+    </p>
+    <p>
+      <button on-click="{{clickMe}}">Click me</button>
+    </p>
+  </template>
+  <script type="application/dart" src="my_app.dart"></script>
+</polymer-element>

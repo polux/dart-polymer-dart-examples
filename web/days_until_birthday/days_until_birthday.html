@@ -9,10 +9,10 @@
       <template if="{{numDays == 0}}">
         Today's the day. Happy birthday!
       </template>
-      <template if="{{numDays}}">
+      <template if="{{numDays > 0}}">
         It's {{numDays}} until your next birthday.
       </template>
-      <template if="{{!numDays}}">
+      <template if="{{numDays < 0}}">
         Please enter your birthdate above.
       </template>
     </div>

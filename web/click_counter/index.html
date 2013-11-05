@@ -3,10 +3,11 @@
 <html>
   <head>
     <link rel="import" href="click_counter.html">
-    <script src="packages/polymer/boot.js"></script>
+    <script type="application/dart">import 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
   </head>
  
   <body>   
-    <click-counter></click-counter>
+    <click-counter count="5"></click-counter>
   </body>
 </html>

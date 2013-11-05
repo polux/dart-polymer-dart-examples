@@ -6,17 +6,19 @@ import 'dart:html';
 // belongs to.
 @CustomTag("my-element")
 class MyElement extends PolymerElement {
-  void created() {
-    super.created();
-    
-    // Access the host element to add nodes to the "light" DOM
+  @observable String hello = 'Hi from data binding';
 
-    host.children.add(new Element.html('<p>CREATED: Hello from the light DOM</p>'));
-    
-    // Copy out children from the Shadown DOM and insert into the host.
-    // NOTE: only for illustration, not implying you should do this.
-    
-    Node shadow = shadowRoot.children.first.clone(true);
-    host.children.add(shadow);
+  MyElement.created() : super.created();
+
+  /**
+   * Test to see if we can use all the bits of polymer except the shadow
+   * root, which can confuse some CSS frameworks.
+   */
+  @override
+  Node shadowFromTemplate(Element template) {
+    var dom = instanceTemplate(template);
+    append(dom);
+    shadowRootReady(this, template);
+    return null; // no shadow here, it's all bright and shiny
   }
 }

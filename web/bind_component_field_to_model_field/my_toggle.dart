@@ -4,6 +4,8 @@ import 'package:polymer/polymer.dart';
 class ToggleComponent extends PolymerElement {
   @observable String state = 'On';
   
+  ToggleComponent.created() : super.created();
+  
   void toggle() {
     if (state == 'On') {
       state = 'Off';

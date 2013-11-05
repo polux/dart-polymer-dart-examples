@@ -1,0 +1,9 @@
+<polymer-element name="my-element">
+  <template>
+    <h1>Hello from inside the custom element</h1>
+    <template repeat="{{item in itemList}}">
+      <p>{{item['key']}} {{item['MyCaseSensitiveKey']}}</p>
+    </template>
+  </template>
+  <script type="application/dart" src="my_element.dart"></script>
+</polymer-element>

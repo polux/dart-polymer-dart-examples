@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<!-- 
+From https://github.com/hpoul/dart-polymer-dart-examples/tree/master/web/simple_focus_blur
+ -->
+
+
+<!--  THIS SAMPLE DOES NOT WORK, KNOWN BUG -->
+
+<html>
+  <head>
+    <title>index</title>
+    <!-- you have to import the HTML file that contains the custom element -->
+    <link rel="import" href="my_element.html">
+    <script type="application/dart">import 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+  </head>
+ 
+  <body>
+    
+    <p>Here is the input box: </p>
+    <input-focus-test></input-focus-test>
+
+  </body>
+</html>

@@ -8,10 +8,9 @@ class AutoCompleteElement extends PolymerElement {
   final List<String> haystack = [];
   int keyboardSelect = -1;
 
-  void created() {
-    super.created();
-
-    UListElement dataSource = host.query('.data-source') as UListElement;
+  AutoCompleteElement.created() : super.created() {
+    UListElement dataSource =
+        host.querySelector('.data-source') as UListElement;
     if (dataSource == null) {
       print("WARNING: expected to find a .data-source <ul> as a child");
       return;
@@ -50,7 +49,7 @@ class AutoCompleteElement extends PolymerElement {
   }
 
   keyup(KeyboardEvent e, var detail, Node target) {
-    switch (new KeyEvent(e).keyCode) {
+    switch (new KeyEvent.wrap(e).keyCode) {
       case KeyCode.ESC:
         _clear();
         break;
@@ -67,14 +66,14 @@ class AutoCompleteElement extends PolymerElement {
   }
 
   _moveDown() {
-    List<Element> lis = shadowRoot.queryAll('ul li');
+    List<Element> lis = shadowRoot.querySelectorAll('ul li');
     if (keyboardSelect >= 0) lis[keyboardSelect].classes.remove('selecting');
     keyboardSelect = ++keyboardSelect == lis.length ? 0 : keyboardSelect;
     lis[keyboardSelect].classes.add('selecting');
   }
 
   _moveUp() {
-    List<Element> lis = shadowRoot.queryAll('ul li');
+    List<Element> lis = shadowRoot.querySelectorAll('ul li');
     if (keyboardSelect >= 0) lis[keyboardSelect].classes.remove('selecting');
     if (keyboardSelect == -1) keyboardSelect = lis.length;
     keyboardSelect = --keyboardSelect == -1 ? lis.length-1 : keyboardSelect;
@@ -87,7 +86,7 @@ class AutoCompleteElement extends PolymerElement {
   }
 
   _select() {
-    List<Element> lis = shadowRoot.queryAll('ul li');
+    List<Element> lis = shadowRoot.querySelectorAll('ul li');
     _setSearch(lis[keyboardSelect].text);
     _reset();
   }

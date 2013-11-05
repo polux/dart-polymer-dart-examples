@@ -7,21 +7,15 @@ import "model.dart";
 
 @CustomTag("edit-contact-view")
 class EditContactView extends PolymerElement {
-  @observable Contact _contact;
+  @published Contact contact;
   Contact _originalContact;
+  
+  EditContactView.created() : super.created();
   
   static const EventStreamProvider<CustomEvent> _READY_EVENT = const EventStreamProvider("ready");
   Stream<CustomEvent> get onReady => _READY_EVENT.forTarget(this);
   static void _dispatchReadyEvent(Element element, bool canceled) {
     element.dispatchEvent(new CustomEvent("ready", detail: canceled));
-  }
-  
-  Contact get contact => _contact;
-  void set contact(Contact contact) {
-    _contact = contact;
-    _originalContact = new Contact.copy(contact);
-    
-    notifyProperty(this, const Symbol("contact"));
   }
   
   void save() {

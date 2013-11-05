@@ -1,0 +1,25 @@
+<polymer-element name="x-c">
+  <template>
+    <p>C: [{{type}}]</p>
+  </template>
+
+</polymer-element>
+
+<polymer-element name="x-b">
+  <template>
+    <p>B: [{{type}}]</p>
+    <p>The number is {{number}}</p>
+    <x-c type="{{type}}"></x-c>
+  </template>
+
+</polymer-element>
+
+<polymer-element name="x-a">
+  <template>
+    <p>A: [{{type}}]</p>
+    <x-b type="{{type}}" number="{{originalNumber}}"></x-b>
+  </template>
+
+</polymer-element>
+
+<script type="application/dart" src="all_elements.dart"></script>

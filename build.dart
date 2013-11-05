@@ -6,5 +6,5 @@
 import 'package:polymer/builder.dart';
 
 void main() {
-  build(entryPoints: ['web/simple_custom_element/index.html', 'web/todo_element/index.html']);
+  build(entryPoints: ['web/simple_custom_element_with_script/index.html', 'web/todo_element/index.html']);
 }

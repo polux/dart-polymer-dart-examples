@@ -1,6 +1,10 @@
 name: dart_polymer_examples
-description: A sample web application
+description: Polymer.dart, Web Components, and Dart
 homepage: https://github.com/sethladd/dart-polymer-dart-examples
+environment:
+  sdk: '>=0.8.9'
 dependencies:
-  polymer: ">= 0.8.0"
+  google_oauth2_client: any
+  google_plus_v1_api: any
   js: any
+  polymer: '>=0.8.7'

@@ -7,13 +7,12 @@ class MyElement extends PolymerElement {
   final List<String> timestamps = toObservable([]);
   MutationObserver observer;
   
-  created() {
-    super.created();
-    
+  MyElement.created() : super.created() {
     observer = new MutationObserver(_onMutation);
-    observer.observe(getShadowRoot('my-element').query('#timestamps'), childList: true, subtree: true);
+    observer.observe(shadowRoot.querySelector('#timestamps'), childList: true);
     
     new Timer.periodic(const Duration(seconds: 1), (t) {
+      print('timer fired');
       timestamps.add(new DateTime.now().toString());
     });
   }

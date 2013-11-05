@@ -24,6 +24,12 @@ See our tips and tricks for upgrading from
 * No more need for `extends PolymerElement with ObservableMixin`, just extend PolymerElement - Confirmed!
 * Use @published on fields that should be used for attributes (don't need the attributes attribute) - Confirmed!
 * onMutation
+* Provide direct access to oldValue/newValue in ChangeRecord (http://code.google.com/p/dart/issues/detail?id=12075)
+* Attaching custom objects to custom events
+* PropertyChangeEvent has oldValue and newValue (and target)
+* Directly extend the DOM class
+* Override shadowFromTemplate (https://code.google.com/p/dart/issues/detail?id=14230)
+  to generate nodes not in the shadow dom
 
 ## Web UI features that are missing from polymer.dart:
 
@@ -55,19 +61,8 @@ https://github.com/dart-lang/fancy-syntax/issues/26
 Confusion around importing nested components (with boot.js)
 https://code.google.com/p/dart/issues/detail?id=12400
 
-Polymer.dart still uses old lifecycle callbacks:
-https://code.google.com/p/dart/issues/detail?id=12716
-
-on-change stops firing if the input field has a bound value:
-handle_text_field_change
-https://code.google.com/p/dart/issues/detail?id=12722
-
 polymer.dart compiles to very large JavaScript files:
 https://code.google.com/p/dart/issues/detail?id=12730
-
-Names in nested templates aren't working:
-nested_templates
-https://code.google.com/p/dart/issues/detail?id=12742
 
 Binding to a select value doesn't work (but binding to selectedIndex works)
 bind_to_select_field
@@ -83,6 +78,10 @@ Radio buttons not un-setting.
 bind_to_radio_buttons
 https://code.google.com/p/dart/issues/detail?id=13478
 (In the meantime, see bind_to_radio_buttons for workaround.)
+
+Importing custom elements via packages not working?
+custom_elements_from_package_import
+https://code.google.com/p/dart/issues/detail?id=14366
 
 ## TODO
 

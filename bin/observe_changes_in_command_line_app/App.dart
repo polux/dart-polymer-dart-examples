@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:mirrors';
 import 'package:observe/observe.dart';
 
-class App extends Object with ObservableMixin {
+class App extends Object with Observable {
   @observable
   int counter = 0;
 }

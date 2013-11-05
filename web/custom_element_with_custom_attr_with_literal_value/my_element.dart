@@ -10,4 +10,6 @@ class MyElement extends PolymerElement {
 // value for you.
   @published bool flag = false;
   @published double doubleThing = 0.0;
+  
+  MyElement.created() : super.created();
 }

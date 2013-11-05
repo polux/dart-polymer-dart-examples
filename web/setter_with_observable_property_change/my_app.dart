@@ -1,5 +1,4 @@
 import 'package:polymer/polymer.dart';
-import 'package:meta/meta.dart';
 import 'dart:async';
 
 @CustomTag('my-app')
@@ -12,9 +11,7 @@ class MyApp extends PolymerElement {
     _time = notifyPropertyChange(#time, _time, newTime);
   }
   
-  @override
-  void created() {
-    super.created();
+  MyApp.created() : super.created() {
     new Timer.periodic(const Duration(seconds: 1), (t) {
       time = new DateTime.now().toString();
     });

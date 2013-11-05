@@ -3,39 +3,12 @@
 <html>
   <head>
     <title>index</title>
-    <script src="packages/polymer/boot.js"></script>
+    <link rel="import" href="my_element.html">
+    <script type="application/dart">import 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
   </head>
  
   <body>
-    <polymer-element name="my-element">
-      <template>
-        <ul id="list"></ul>
-        <output id="out"></output>
-      </template>
-      <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      import 'dart:html';
-      import 'dart:async';
-      
-      @CustomTag('my-element')
-      class MyElement extends PolymerElement {
-        created() {
-          super.created();
-          
-          // WARNING this only fires once,
-          // see https://groups.google.com/forum/#!topic/polymer-dev/llfRAC_cMIo
-          onMutation($['list'], (MutationObserver obs) {
-            $['out'].text = 'Change detected at ${new DateTime.now()}';
-          });
-          
-          new Timer.periodic(const Duration(seconds:1), (_) {
-            $['list'].children.add(new LIElement()..text='hello from timer');
-          });
-        }
-      }
-      </script>
-    </polymer-element>
-    
     <my-element></my-element>
   </body>
 </html>

@@ -9,4 +9,6 @@ import 'package:polymer/polymer.dart';
 class BElement extends PolymerElement {
   // custom functionality goes here
   String foo = 'b';
+  
+  BElement.created() : super.created();
 }

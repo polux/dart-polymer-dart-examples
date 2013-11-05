@@ -1,0 +1,12 @@
+<polymer-element name="my-element">
+  <template>
+    <p>
+      on-change only fires when the text field loses focus.
+      Look in your dev console to see your value printed out.
+      
+      <input type="text" on-change="{{handleChange}}" value="{{thing}}">
+    </p>
+  </template>
+  
+  <script type="application/dart" src="my_element.dart"></script>
+</polymer-element>

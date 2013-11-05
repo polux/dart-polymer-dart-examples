@@ -4,8 +4,8 @@
   <template>
     <p>
       <!-- passing arbitrary data to the updateMessage method using data- attributes -->
-      <button on-click="updateMessage" data-msg="You clicked Show">Show Message</button>
-      <button on-click="updateMessage" data-msg="You clicked Hide">Hide Message</button>
+      <button on-click="{{updateMessage}}" data-msg="You clicked Show">Show Message</button>
+      <button on-click="{{updateMessage}}" data-msg="You clicked Hide">Hide Message</button>
     </p>
 
     <p id="message">{{ message }}</p> <!-- bind the message -->

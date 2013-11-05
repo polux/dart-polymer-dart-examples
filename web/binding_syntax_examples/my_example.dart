@@ -1,5 +1,6 @@
 import 'package:polymer/polymer.dart';
 import 'package:polymer_expressions/polymer_expressions.dart';
+import 'package:template_binding/template_binding.dart';
 import 'models.dart';
 import 'dart:html';
 
@@ -8,7 +9,7 @@ class MyExample extends PolymerElement {
 
   @observable Person bob;
   
-  MyExample() {
+  MyExample.created() : super.created() {
     bob = new Person()
       ..firstName = 'Bob'
       ..lastName = 'Smith'
@@ -20,9 +21,9 @@ class MyExample extends PolymerElement {
         ..addresses['work'] = new Address('oak way', 'gotham');
   }
   
-  DocumentFragment instanceTemplate(Element template) =>
-      template.createInstance(this,
-          new PolymerExpressions(globals: {
-            'uppercase': (String input) => input.toUpperCase()
-          }));
+  DocumentFragment instanceTemplate(Element template) {
+    return templateBind(template).createInstance(this, new PolymerExpressions(globals: {
+        'uppercase': (String input) => input.toUpperCase()
+      }));
+  }
 }

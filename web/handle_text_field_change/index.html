@@ -3,25 +3,12 @@
 <html>
   <head>
     <title>index</title>
-    <script src='packages/polymer/boot.js'></script>
+    <link rel="import" href="my_element.html">
+    <script type="application/dart">import 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
   </head>
  
   <body>
-    
-    <polymer-element name="my-element">
-      <template>
-        <p>
-          on-change only fires when the text field loses focus.
-          Look in your dev console to see your value printed out.
-          
-          <!-- See https://code.google.com/p/dart/issues/detail?id=12722 -->
-          <!--<input type="text" on-change="handleChange" value="{{thing}}">-->
-        </p>
-      </template>
-      
-      <script type="application/dart" src="my_element.dart"></script>
-    </polymer-element>
-    
     <my-element id="hello"></my-element>
   </body>
 </html>

@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-
 <link rel="import" href="edit_contact_view.html">
 
-<polymer-element name="contacts-view" attributes="contacts">
+<polymer-element name="contacts-view">
   <template>
     <style>
       #container {
@@ -29,14 +27,14 @@
     </style>
     
     <div id="container">
-      <template if="{{_hasSelectedContact}}">
+      <template if="{{selectedContact != null}}">
         <edit-contact-view
             contact="{{selectedContact}}"
             on-ready="editReady">
         </edit-contact-view>
       </template>
       
-      <template if="{{!_hasSelectedContact}}">
+      <template if="{{selectedContact == null}}">
         <header>
           <button on-click="add">Add</button>
           <button on-click="delete">Delete</button>

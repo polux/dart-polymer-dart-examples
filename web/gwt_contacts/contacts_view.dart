@@ -3,27 +3,15 @@ library contacts_view;
 import "package:polymer/polymer.dart";
 import "dart:html";
 import "model.dart";
+import 'data_service.dart';
 
 @CustomTag("contacts-view")
 class ContactsView extends PolymerElement {
-  @observable ObservableList<Contact> contacts;
+  final List<Contact> contacts = toObservable([]);
   @observable Contact selectedContact;
   
-  bool get _hasSelectedContact => selectedContact != null;
-  
-  void created() {
-    super.created();
-    
-    new PathObserver(this, 'selectedContact').changes.listen((_) {
-      notifyProperty(this, const Symbol("_hasSelectedContact"));
-    });
-    
-    // This doesn't work, it wants _hasSelectedContact to have a setter
-    //bindProperty(#_hasSelectedContact, this, "selectedContact");
-    
-    // This was Polymer.dart <= 0.7
-//    bindProperty(this, const Symbol("selectedContact"), () =>
-//        notifyProperty(this, const Symbol("_hasSelectedContact")));
+  ContactsView.created() : super.created() {
+    contacts.addAll(getContacts());
   }
   
   void add() {
@@ -32,8 +20,10 @@ class ContactsView extends PolymerElement {
   }
   
   void delete() {
-    List<InputElement> checkboxes = getShadowRoot("contacts-view").queryAll("input:checked");
-    Iterable<String> ids = checkboxes.map((InputElement checkbox) => checkbox.nextElementSibling.attributes["data-id"]);
+    List<InputElement> checkboxes = shadowRoot.querySelectorAll("input:checked");
+    Iterable<String> ids = checkboxes.map((InputElement checkbox) {
+      return checkbox.nextElementSibling.attributes["data-id"];
+    });
     contacts.removeWhere((Contact contact) => ids.contains(contact.id));
   }
   

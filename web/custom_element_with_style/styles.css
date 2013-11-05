@@ -1,0 +1,25 @@
+@host {
+  :scope {
+    display: block;
+  }
+  
+  :scope:hover {
+    border: 1px solid black;
+  }
+}
+
+p {
+    color: red;
+}
+
+#message {
+    color: pink;
+}
+
+.important {
+    color: green;
+}
+
+#controls p {
+  color: orange;
+}

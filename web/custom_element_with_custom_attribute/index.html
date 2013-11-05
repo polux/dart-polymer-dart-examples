@@ -3,17 +3,12 @@
 <html>
   <head>
     <title>index</title>
-    <script src="packages/polymer/boot.js"></script>
+    <link rel="import" href="my_element.html">
+    <script type="application/dart">import 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
   </head>
  
   <body>
-    <polymer-element name="my-element">
-      <template>
-        <h1>Hello from the custom element. The volume is {{volume}}</h1>
-      </template>  
-      <script type="application/dart" src="my_element.dart"></script>
-    </polymer-element>
-    
-    <my-element volume="11"></my-element>
+    <my-element volume="11" myCamelCase="hello from attr"></my-element>
   </body>
 </html>

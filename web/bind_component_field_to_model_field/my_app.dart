@@ -6,6 +6,8 @@ import 'models.dart';
 class MyApp extends PolymerElement {
   final Switch lightSwitch = new Switch();
   
+  MyApp.created() : super.created();
+  
   void turnSwitchOn() {
     lightSwitch.flipped = 'On';
   }

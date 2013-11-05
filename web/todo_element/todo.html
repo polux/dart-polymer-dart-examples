@@ -37,20 +37,20 @@
     <div class="border well">
       <h2>My TODO List</h2>
       <div class="right">
-        <button on-click="markAllDone" class="btn btn-small">mark all done</button>
-        <button on-click="archiveDone" class="btn btn-small">archive done</button>
+        <button on-click="{{markAllDone}}" class="btn btn-small">mark all done</button>
+        <button on-click="{{archiveDone}}" class="btn btn-small">archive done</button>
       </div>
       <p>Remaining: <b>{{remainingCount}}</b> of <b>{{items.length}}</b> items</p>
       <ul class="well unstyled">
         <template repeat="{{item in items}}" >
-          <li is="todo-item" class="{{item.doneClass}}" item="{{item}}" on-todochange="todoChanged"></li>
+          <li is="todo-item" class="{{item.doneClass}}" item="{{item}}" on-todochange="{{todoChanged}}"></li>
         </template>
       </ul>
       
       <!-- can't extend an input field?? -->
       <!-- <input type="text" id="new-todo" is="todo-input"> -->
       <!-- FIXME when I can extend an input -->
-      <input type="text" on-keypress="addTodo" on-keyup="cancelTodo">
+      <input type="text" on-keypress="{{addTodo}}" on-keyup="{{cancelTodo}}">
     </div>
   </template>
   <script src="todo.dart" type="application/dart"></script>

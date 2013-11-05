@@ -2,8 +2,8 @@
 
 <polymer-element name="click-counter">
   <template>
-    <button on-click="increment">Click Me</button>
-    <p>You clicked the button {{count}} times.</p>
+    <button on-click="{{increment}}">Click Me</button>
+    <p>Click count: {{count}} times.</p>
   </template>
   <script type="application/dart" src="click_counter.dart"></script>
 </polymer-element>

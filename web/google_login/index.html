@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!--  I'LL COME BACK TO THIS ONE -->
+
+<html>
+  <head>
+    <title>Sign-in with Google+</title>
+    <script src="packages/polymer/boot.js"></script>
+  </head>
+ 
+  <body>   
+  
+  <polymer-element name="google-sign-in">
+    <template>
+      <!-- This will be pulled out of Shadow DOM, working around a bug -->
+      <button
+        id="signin"
+        class="g-signin"
+        data-scope="https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.login"
+        data-clientId="{{clientId}}"
+        data-callback="onSignInCallback"
+        data-accesstype="offline"
+        data-cookiepolicy="single_host_origin">
+        <content select=".sign-in-msg"></content>
+      </button>
+    </template>
+    <script type="application/dart" src="google_sign_in.dart"></script>
+  </polymer-element>
+
+    <google-sign-in clientId="250963735330.apps.googleusercontent.com"
+                    signInMsg="Please Sign In">
+    </google-sign-in>
+    
+    <script src="packages/browser/interop.js"></script>
+    <script src="packages/js/dart_interop.js"></script>
+  </body>
+</html>
